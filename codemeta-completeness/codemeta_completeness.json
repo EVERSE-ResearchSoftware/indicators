@@ -1,0 +1,21 @@
+{
+    "@context": {
+      "schema": "http://schema.org/",
+      "rs" : "https://w3id.org/everse/rsqi#"
+    },
+        "@id": "https://example.org/howfairis",
+        "@type": "schema:SoftwareApplication",
+    "schema:name": "CodeMeta Completeness",
+    "schema:description": "Completeness of a codemeta.json file",
+    "schema:keywords": ["codemeta", "metadata", "fair"],
+    "schema:url": "",
+    "schema:identifier": { "@id": "F1"},
+    "schema:status": "Active",
+    "schema:version": "1.0.0",
+    "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "Thomas Vuillaume"
+    },
+    "rs:hasQualityDimension": {"@id":"rs:FAIRness", "@type": "@id"}
+      
+  }
