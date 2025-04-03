@@ -1,7 +1,8 @@
 {
     "@context": {
       "schema": "http://schema.org/",
-      "rs" : "https://w3id.org/everse/rsqi#"
+      "rsqi" : "https://w3id.org/everse/rsqi#",
+      "rsqd" : "https://w3id.org/everse/rsqd/0.0.2"
     },
     "schema:name": "has static analysis for common vulnerabilities",
     "schema:description": "At least one static code analysis tool used includes rules or techniques to detect common vulnerabilities specific to the language or environment.",
@@ -11,9 +12,14 @@
     "schema:status": "Active",
     "schema:version": "1.0.0",
     "schema:author": {
-        "@type": "schema:Person",
-        "schema:name": "Thomas Vuillaume"
+        "@type": "schema:Organization",
+        "schema:name": "OpenSSF"
     },
-    "rs:hasQualityDimension": {"@id":"rs:Security", "@type": "@id"}
-      
+    "schema:contactPoint": {
+        "@type": "schema:Person",
+        "schema:name": "Thomas Vuillaume",
+        "schema:email": "thomas.vuillaume@lapp.in2p3.fr"
+    },
+    "rs:hasQualityDimension": {"@id":"rs:Security", "@type": "@id"},
+    "schema:dateCreated": "03-04-2025"
   }
