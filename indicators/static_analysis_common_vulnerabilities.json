@@ -1,0 +1,19 @@
+{
+    "@context": {
+      "schema": "http://schema.org/",
+      "rs" : "https://w3id.org/everse/rsqi#"
+    },
+    "schema:name": "has static analysis for common vulnerabilities",
+    "schema:description": "At least one static code analysis tool used includes rules or techniques to detect common vulnerabilities specific to the language or environment.",
+    "schema:keywords": ["security", "vulnerabilities"],
+    "schema:url": "",
+    "schema:identifier": { "@id": "Se27"},
+    "schema:status": "Active",
+    "schema:version": "1.0.0",
+    "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "Thomas Vuillaume"
+    },
+    "rs:hasQualityDimension": {"@id":"rs:Security", "@type": "@id"}
+      
+  }
