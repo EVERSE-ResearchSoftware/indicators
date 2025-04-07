@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/flexibility",
+    "@type": "SoftwareQualityDimension",
+    "name": "Flexibility",
+    "identifier":"https://w3id.org/everse/i/dimensions/flexibility",
+    "description": "Degree to which a product can be adapted to changes in its requirements, contexts of use or system environment.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }

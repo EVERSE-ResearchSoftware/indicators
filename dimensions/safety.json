@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/safety",
+    "@type": "SoftwareQualityDimension",
+    "name": "Safety",
+    "identifier":"https://w3id.org/everse/i/dimensions/safety",
+    "description": "This characteristic represents the degree to which a product under defined conditions to avoid a state in which human life, health, property, or the environment is endangered.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }

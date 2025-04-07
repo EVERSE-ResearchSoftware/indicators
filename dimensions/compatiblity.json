@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/compatibility",
+    "@type": "SoftwareQualityDimension",
+    "name": "Compatibility",
+    "identifier":"https://w3id.org/everse/i/dimensions/compatibility",
+    "description": "Degree to which a product, system or component can exchange information with other products, systems or components, and/or perform its required functions while sharing the same common environment and resources.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }
