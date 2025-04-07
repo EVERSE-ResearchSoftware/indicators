@@ -1,25 +1,22 @@
 {
-    "@context": {
-      "schema": "http://schema.org/",
-      "rsqi" : "https://w3id.org/everse/rsqi#",
-      "rsqd" : "https://w3id.org/everse/rsqd/0.0.2"
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities",
+    "@type": "rs:SoftwareQualityIndicator",
+    "name": "has static analysis for common vulnerabilities",
+    "description": "At least one static code analysis tool used includes rules or techniques to detect common vulnerabilities specific to the language or environment.",
+    "keywords": ["security", "vulnerabilities", "static analysis"],
+    "identifier": "https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities",
+    "status": "Active",
+    "version": "1.0.0",
+    "author": {
+        "@type": "Organization",
+        "name": "OpenSSF"
     },
-    "schema:name": "has static analysis for common vulnerabilities",
-    "schema:description": "At least one static code analysis tool used includes rules or techniques to detect common vulnerabilities specific to the language or environment.",
-    "schema:keywords": ["security", "vulnerabilities"],
-    "schema:url": "",
-    "schema:identifier": { "@id": "Se27"},
-    "schema:status": "Active",
-    "schema:version": "1.0.0",
-    "schema:author": {
-        "@type": "schema:Organization",
-        "schema:name": "OpenSSF"
-    },
-    "schema:contactPoint": {
+    "contactPoint": {
         "@type": "schema:Person",
-        "schema:name": "Thomas Vuillaume",
-        "schema:email": "thomas.vuillaume@lapp.in2p3.fr"
+        "name": "Thomas Vuillaume",
+        "email": "thomas.vuillaume@lapp.in2p3.fr"
     },
-    "rs:hasQualityDimension": {"@id":"rs:Security", "@type": "@id"},
-    "schema:dateCreated": "03-04-2025"
+    "qualityDimension": "https://w3id.org/everse/i/dimensions/security",
+    "dateCreated": "03-04-2025"
   }
