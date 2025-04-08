@@ -1,24 +1,19 @@
 {
-    "@context": {
-      "schema": "http://schema.org/",
-      "rsqi" : "https://w3id.org/everse/rsqi#",
-      "rsqd" : "https://w3id.org/everse/rsqd/0.0.2"      
-    },
-    "schema:name": "software has dependency management solution",
-    "schema:description": "Reviews how external libraries and dependencies are managed to ensure compatibility and security.",
-    "schema:keywords": ["sustaninability", "dependencies"],
-    "schema:identifier": { "@id": "hasDependencyManagement"},
-    "schema:status": "Active",
-    "schema:version": "1.0.0",
-    "schema:contactPoint": {
-        "@type": "schema:Person",
-        "schema:name": "Faruk Diblen",
-        "schema:email": "f.diblen@esciencecenter.nl"
-    },
-    "schema:author": {
-        "@type": "schema:Organization",
-        "schema:name": "BioHackathon"
-    },  
-    "rs:hasQualityDimension": {"@id":"rs:Sustaninability", "@type": "@id"},
-    "schema:dateCreated": "03-04-2025"
-  }
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/dependency_management",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Software has dependency management solution",
+  "identifier": "https://w3id.org/everse/i/indicators/dependency_management",
+  "description": "Reviews how external libraries and dependencies are managed to ensure compatibility and security.",
+  "status": "Active",
+  "keywords": [
+    "sustaninability", "dependencies"
+  ],
+  "version": "1.0.0",
+  "contact": {
+    "@type": "Person",
+    "name": "Faruk Diblen"
+  },
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustaninability" },
+  "dateCreated": "03-04-2025"
+}
