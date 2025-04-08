@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Software Quality Indicator",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "const": "https://raw.githubusercontent.com/EVERSE-ResearchSoftware/schemas/refs/heads/main/quality_indicators/0.0.2/context.jsonld"
+        },
+        "@type": {
+            "type": "string",
+            "const": "SoftwareQualityIndicator"
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of the quality indicator."
+        },
+        "description": {
+            "type": "string",
+            "description": "A brief description of the quality indicator."
+        },
+        "author": {
+            "type": "string",
+            "format": "uri",
+            "description": "The author of the quality indicator."
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The creation date of the quality indicator."
+        },
+        "version": {
+            "type": "string",
+            "description": "The version of the quality indicator."
+        },
+        "status": {
+            "type": "string",
+            "description": "The status of the quality indicator."
+        },
+        "keywords": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Keywords associated with the quality indicator."
+        },
+        "identifier": {
+            "type": "string",
+            "format": "uri",
+            "description": "An identifier for the quality indicator."
+        },
+        "qualityDimension": {
+            "type": "string",
+            "format": "uri",
+            "description": "The quality dimension this indicator pertains to."
+        },
+        "source": {
+            "type": "string",
+            "format": "uri",
+            "description": "The source from which this indicator is derived."
+        },
+        "contact": {
+            "type": "string",
+            "format": "uri",
+            "description": "Contact point for more information."
+        }
+    },
+    "required": [ "@context", "@type", "name", "description", "author", "created", "version" ],
+    "additionalProperties": false
+}
