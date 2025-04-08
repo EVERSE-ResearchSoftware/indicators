@@ -6,7 +6,6 @@
   "identifier":"https://w3id.org/everse/i/dimensions/functional_suitability",
   "description": " Represents the degree to which a product or system provides functions that meet stated and implied needs when used under specified conditions",
   "source": {
-    "@id":"https://iso25000.com/index.php/en/iso-25000-standards/iso-25010", 
     "name": "ISO/IEC 25010 standard", 
     "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
     }   
