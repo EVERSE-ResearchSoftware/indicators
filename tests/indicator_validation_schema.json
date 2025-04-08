@@ -5,11 +5,15 @@
     "properties": {
         "@context": {
             "type": "string",
-            "const": "https://raw.githubusercontent.com/EVERSE-ResearchSoftware/schemas/refs/heads/main/quality_indicators/0.0.2/context.jsonld"
+            "const": "https://w3id.org/everse/rsqi#"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
         },
         "@type": {
             "type": "string",
-            "const": "SoftwareQualityIndicator"
+            "description": "The type of the quality indicator."
         },
         "name": {
             "type": "string",
@@ -20,9 +24,18 @@
             "description": "A brief description of the quality indicator."
         },
         "author": {
-            "type": "string",
-            "format": "uri",
-            "description": "The author of the quality indicator."
+            "type": "object",
+            "description": "The author of the quality indicator.",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "format": "uri"
+
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
         },
         "created": {
             "type": "string",
@@ -45,14 +58,26 @@
             "description": "Keywords associated with the quality indicator."
         },
         "identifier": {
-            "type": "string",
-            "format": "uri",
-            "description": "An identifier for the quality indicator."
+            "type": "object",
+            "description": "An identifier for the quality indicator.",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "format": "uri"
+
+                }
+            }
         },
         "qualityDimension": {
-            "type": "string",
-            "format": "uri",
-            "description": "The quality dimension this indicator pertains to."
+            "type": "object",
+            "description": "The quality dimension this indicator pertains to.",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "format": "uri"
+
+                }
+            }
         },
         "source": {
             "type": "string",

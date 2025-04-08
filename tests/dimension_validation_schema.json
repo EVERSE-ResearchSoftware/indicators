@@ -79,5 +79,5 @@
         "identifier",
         "source"
     ],
-    "additionalProperties": true
+    "additionalProperties": false
 }
