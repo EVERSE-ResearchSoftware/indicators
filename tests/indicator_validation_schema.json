@@ -65,6 +65,14 @@
             "description": "Contact point for more information."
         }
     },
-    "required": [ "@context", "@type", "name", "description", "author", "created", "version" ],
+    "required": [
+        "@context",
+        "@type",
+        "name",
+        "description",
+        "author",
+        "created",
+        "version"
+    ],
     "additionalProperties": false
 }
