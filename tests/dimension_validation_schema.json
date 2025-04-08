@@ -5,7 +5,11 @@
     "properties": {
         "@context": {
             "type": "string",
-            "const": "https://raw.githubusercontent.com/EVERSE-ResearchSoftware/schemas/main/quality_dimensions/0.0.2/context.jsonld"
+            "const": "https://w3id.org/everse/rsqd#"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
         },
         "@type": {
             "type": "string",
@@ -48,26 +52,32 @@
             "format": "uri",
             "description": "Contact point for further inquiries."
         },
-        "isDefinedBy": {
-            "type": "string",
-            "format": "uri",
-            "description": "URI referencing the definition of this quality dimension."
-        },
-        "seeAlso": {
-            "type": "string",
-            "format": "uri",
-            "description": "URI linking to additional related resources."
+        "source": {
+            "type": "object",
+            "description": "Source of the quality dimension definition.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the source."
+
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL of the source."
+                }
+            },
+            "required": [
+                "name",
+                "url"
+            ]
         }
     },
     "required": [
         "@context",
-        "@type",
         "name",
         "description",
         "identifier",
-        "author",
-        "created",
-        "version"
+        "source"
     ],
-    "additionalProperties": false
+    "additionalProperties": true
 }
