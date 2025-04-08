@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Software Quality Dimension",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "const": "https://raw.githubusercontent.com/EVERSE-ResearchSoftware/schemas/main/quality_dimensions/0.0.2/context.jsonld"
+        },
+        "@type": {
+            "type": "string",
+            "const": "SoftwareQualityDimension"
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of the quality dimension."
+        },
+        "description": {
+            "type": "string",
+            "description": "A detailed description of the quality dimension."
+        },
+        "identifier": {
+            "type": "string",
+            "format": "uri",
+            "description": "A unique identifier for the quality dimension."
+        },
+        "keywords": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Keywords describing the quality dimension."
+        },
+        "author": {
+            "type": "string",
+            "format": "uri",
+            "description": "The author or creator of the quality dimension."
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date this quality dimension was created."
+        },
+        "version": {
+            "type": "string",
+            "description": "Version number of the quality dimension definition."
+        },
+        "contact": {
+            "type": "string",
+            "format": "uri",
+            "description": "Contact point for further inquiries."
+        },
+        "isDefinedBy": {
+            "type": "string",
+            "format": "uri",
+            "description": "URI referencing the definition of this quality dimension."
+        },
+        "seeAlso": {
+            "type": "string",
+            "format": "uri",
+            "description": "URI linking to additional related resources."
+        }
+    },
+    "required": [
+        "@context",
+        "@type",
+        "name",
+        "description",
+        "identifier",
+        "author",
+        "created",
+        "version"
+    ],
+    "additionalProperties": false
+}
