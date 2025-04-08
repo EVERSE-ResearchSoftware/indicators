@@ -72,7 +72,9 @@
         "description",
         "author",
         "created",
-        "version"
+        "version",
+        "identifier",
+        "qualityDimension"
     ],
     "additionalProperties": false
 }
