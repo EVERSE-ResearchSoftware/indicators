@@ -10,7 +10,8 @@
     "version": "1.0.0",
     "author": {
         "@type": "Organization",
-        "name": "OpenSSF"
+        "name": "OpenSSF",
+        "url": "https://openssf.org/"
     },
     "contactPoint": {
         "@type": "schema:Person",
