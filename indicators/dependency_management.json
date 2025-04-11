@@ -1,0 +1,19 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/dependency_management",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Software has dependency management solution",
+  "identifier": "https://w3id.org/everse/i/indicators/dependency_management",
+  "description": "Reviews how external libraries and dependencies are managed to ensure compatibility and security.",
+  "status": "Active",
+  "keywords": [
+    "sustaninability", "dependencies"
+  ],
+  "version": "1.0.0",
+  "contact": {
+    "@type": "Person",
+    "name": "Faruk Diblen"
+  },
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustaninability" },
+  "dateCreated": "03-04-2025"
+}
