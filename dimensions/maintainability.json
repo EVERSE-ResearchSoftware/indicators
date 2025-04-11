@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/maintainability",
+    "@type": "SoftwareQualityDimension",
+    "name": "Maintainability",
+    "identifier":"https://w3id.org/everse/i/dimensions/maintainability",
+    "description": "This characteristic represents the degree of effectiveness and efficiency with which a product or system can be modified to improve it, correct it or adapt it to changes in environment, and in requirements.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }
