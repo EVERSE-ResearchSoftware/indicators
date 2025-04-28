@@ -70,6 +70,16 @@
                 "name",
                 "url"
             ]
+        },
+        "isPartOf": {
+            "type": "object",
+            "description": "Indicates a dimension this dimension is part of.",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
         }
     },
     "required": [
