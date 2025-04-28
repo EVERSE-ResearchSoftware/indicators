@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="scientific software, knowledge graph, reproducibility, reusability" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 16px;
+            word-break: break-word;
+        }
+        th {
+            background-color: #1E90FF;
+            color: white;
+            font-size: 17px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #search-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        #search-input {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            border: 2px solid #005bb5;
+        }
+
+        #search-input:focus {
+            border-color: #1E90FF;
+            box-shadow: 0 0 5px rgba(30, 144, 255, 0.6);
+            outline: none;
+        }
+
+        #clear-search {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        #clear-search:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fh5co-loader"></div>
+
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-13 text-right menu-1">
+                            <ul>
+                                <li><a href="indicators.html">Indicators</a></li>
+                                <li class="active"><a href="dimensions.html">Dimensions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="fh5co-about">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Research Software Quality Dimensions</h2>
+                </div>
+            </div>
+
+            <div id="search-wrapper">
+                <input type="text" id="search-input" class="form-control" placeholder="Search in table...">
+                <button id="clear-search" title="Clear search">✕</button>
+            </div>
+
+            <table id="json-table">
+                <colgroup>
+                    <col style="width: 25%;">
+                    <col style="width: 15%;">
+                    <col style="width: 60%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Identifier</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let allData = [];
+    
+        async function fetchJSONFiles(directory) {
+            try {
+                const response = await fetch(`${directory}/utils/dimensions_list.json`);
+                const files = await response.json();
+    
+                for (const file of files) {
+                    const data = await fetch(`../dimensions/${file}`).then(res => res.json());
+                    allData.push(data);
+                }
+    
+                updateTable(allData);
+                handleHashNavigation();
+            } catch (error) {
+                console.error("Error al cargar los archivos JSON:", error);
+            }
+        }
+    
+        function updateTable(dataList) {
+            const tableBody = document.querySelector("#json-table tbody");
+            tableBody.innerHTML = "";
+    
+            dataList.forEach(data => {
+                const row = document.createElement("tr");
+                const rowId = data.name ? data.name.toLowerCase().replace(/[^a-zA-Z0-9-_]+/g, '_') : 'no_name';
+                row.id = rowId;
+    
+                const nameCell = document.createElement("td");
+                nameCell.textContent = data.name || "";
+                row.appendChild(nameCell);
+    
+                const identifierCell = document.createElement("td");
+                if (data.identifier && data.identifier.startsWith("http")) {
+                    const link = document.createElement("a");
+                    link.href = data.identifier;
+                    link.textContent = data.identifier;
+                    link.target = "_blank";
+                    link.style.color = "#1E90FF";
+                    identifierCell.appendChild(link);
+                } else {
+                    identifierCell.textContent = data.identifier || "";
+                }
+                row.appendChild(identifierCell);
+    
+                const descriptionCell = document.createElement("td");
+                descriptionCell.textContent = data.description || "";
+                row.appendChild(descriptionCell);
+    
+                tableBody.appendChild(row);
+            });
+        }
+    
+        function handleHashNavigation() {
+            const hash = window.location.hash;
+            if (!hash) return;
+    
+            const input = document.getElementById("search-input");
+            input.value = "";
+    
+            updateTable(allData);
+    
+            setTimeout(() => {
+                const rowId = hash.substring(1);
+                const row = document.getElementById(rowId);
+                if (row) {
+                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    row.style.backgroundColor = "#ffff99";
+                    setTimeout(() => row.style.backgroundColor = "", 2000);
+                }
+            }, 100);
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.getElementById("search-input");
+            const clearButton = document.getElementById("clear-search");
+    
+            input.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    const query = input.value.toLowerCase().trim();
+                    const filtered = allData.filter(item =>
+                        (item.name && item.name.toLowerCase().includes(query)) ||
+                        (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
+                        (item.description && item.description.toLowerCase().includes(query))
+                    );
+                    updateTable(filtered);
+                }
+            });
+    
+            clearButton.addEventListener("click", () => {
+                input.value = "";
+                input.focus();
+                updateTable(allData);
+            });
+    
+            window.addEventListener("hashchange", handleHashNavigation);
+    
+            fetchJSONFiles('.');
+        });
+    </script>
+    
+
+    <div class="row copyright">
+        <div class="col-md-12 text-center">
+            <p>
+                <small class="block">This page was built on a free template designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> (&copy; 2016 Free HTML5)</small>
+            </p>
+        </div>
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

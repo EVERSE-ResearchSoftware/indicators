@@ -1,0 +1,23 @@
+name: Update Indicators and Dimensions List
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Run script to update indicators and dimensions list
+      run: |
+        python web_generation_scripts/generate_lists.py
