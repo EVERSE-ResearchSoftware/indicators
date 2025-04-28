@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/performance_efficiency",
+    "@type": "SoftwareQualityDimension",
+    "name": "Performance Efficiency",
+    "identifier":"https://w3id.org/everse/i/dimensions/performance_efficiency",
+    "description": "This characteristic represents the degree to which a product performs its functions within specified time and throughput parameters and is efficient in the use of resources (such as CPU, memory, storage, network devices, energy, materials...) under specified conditions.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }
