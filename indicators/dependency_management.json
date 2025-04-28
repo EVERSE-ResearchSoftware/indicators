@@ -14,6 +14,12 @@
     "@type": "Person",
     "name": "Faruk Diblen"
   },
+  "source": {
+    "@type": "Dataset",
+    "identifier": "https://zenodo.org/record/14852424",
+    "url": "https://zenodo.org/records/14852424/files/Software%20Quality%20Indicators.xlsx",
+    "name": "Software Quality Indicators from BioHackathon 2024 (Sheet: Sustanability, Row: Su7)"
+  },
   "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustaninability" },
   "dateCreated": "03-04-2025"
 }
