@@ -184,11 +184,10 @@
             if (!hash) return;
     
             const input = document.getElementById("search-input");
-            input.value = ""; // limpiar filtro
+            input.value = "";
     
-            updateTable(allData); // mostrar toda la tabla
+            updateTable(allData);
     
-            // esperar a que se renderice la tabla
             setTimeout(() => {
                 const rowId = hash.substring(1);
                 const row = document.getElementById(rowId);

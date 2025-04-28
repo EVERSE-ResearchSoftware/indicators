@@ -195,14 +195,11 @@
             const hash = window.location.hash;
             if (!hash) return;
     
-            // 1. Limpiar el buscador
             const input = document.getElementById("search-input");
             input.value = "";
     
-            // 2. Mostrar toda la tabla
             updateTable(allData);
     
-            // 3. Esperar a que se renderice todo y hacer scroll
             setTimeout(() => {
                 const row = document.querySelector(hash);
                 if (row) {
@@ -236,7 +233,6 @@
                 updateTable(allData);
             });
     
-            // 👇 Escucha cambios en el hash (como si navegaras a #indicator_X)
             window.addEventListener("hashchange", handleHashNavigation);
     
             fetchJSONFiles('.');

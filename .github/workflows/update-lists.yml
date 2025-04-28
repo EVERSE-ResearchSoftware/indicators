@@ -20,4 +20,4 @@ jobs:
 
     - name: Run script to update indicators and dimensions list
       run: |
-        python generate_lists.py  # Asegúrate de que el script esté en la raíz de tu repositorio
+        python web_generation_scripts/generate_lists.py
