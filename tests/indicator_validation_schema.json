@@ -93,9 +93,21 @@
             "description": "The source from which this indicator is derived."
         },
         "contact": {
-            "type": "string",
-            "format": "uri",
-            "description": "Contact point for more information."
+            "type": "object",
+            "description": "Contact point for more information.",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            }
         }
     },
     "required": [
