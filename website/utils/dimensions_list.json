@@ -1,0 +1,12 @@
+[
+    "flexibility.json",
+    "functional_suitability.json",
+    "maintainability.json",
+    "reliability.json",
+    "compatibility.json",
+    "performance_efficiency.json",
+    "fairness.json",
+    "safety.json",
+    "interaction_capability.json",
+    "security.json"
+]

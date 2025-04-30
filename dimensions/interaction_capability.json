@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/interaction_capability",
+    "@type": "SoftwareQualityDimension",
+    "name": "Interaction Capability",
+    "identifier":"https://w3id.org/everse/i/dimensions/interaction_capability",
+    "description": "Degree to which a product or system can be interacted with by specified users to exchange information via the user interface to complete specific tasks in a variety of contexts of use.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }

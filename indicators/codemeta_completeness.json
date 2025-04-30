@@ -1,16 +1,17 @@
 {
     "@context": "https://w3id.org/everse/rsqi#",
     "@id": "https://w3id.org/everse/i/indicators/codemeta_completeness",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareQualityIndicator",
     "name": "CodeMeta Completeness",
     "description": "Completeness of a codemeta.json file",
-    "keywords": ["codemeta", "metadata", "fair"],
-    "identifier": { "@id": "https://w3id.org/everse/i/indicators/codemeta_completeness"},
+    "keywords": [ "codemeta", "metadata", "fair" ],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/codemeta_completeness" },
     "status": "Active",
     "version": "1.0.0",
     "author": {
         "@type": "schema:Person",
         "name": "Thomas Vuillaume"
     },
-    "qualityDimension": {"@id":"https://w3id.org/everse/i/dimensions/fairness"}
-  }
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "20-03-2025"
+}

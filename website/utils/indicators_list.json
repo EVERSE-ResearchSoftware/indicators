@@ -1,0 +1,5 @@
+[
+    "codemeta_completeness.json",
+    "no_critical_vulnerability.json",
+    "no_leaked_credential.json"
+]

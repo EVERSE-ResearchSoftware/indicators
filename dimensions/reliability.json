@@ -1,0 +1,12 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/reliability",
+    "@type": "SoftwareQualityDimension",
+    "name": "Reliability",
+    "identifier":"https://w3id.org/everse/i/dimensions/reliability",
+    "description": "Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time.",
+    "source": {
+      "name": "ISO/IEC 25010 standard",
+      "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"
+      }
+  }

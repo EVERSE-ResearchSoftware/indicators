@@ -1,0 +1,105 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Software Quality Indicator",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "const": "https://w3id.org/everse/rsqi#"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "type": "string",
+            "description": "The type of the quality indicator."
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of the quality indicator."
+        },
+        "description": {
+            "type": "string",
+            "description": "A brief description of the quality indicator."
+        },
+        "author": {
+            "type": "object",
+            "description": "The author of the quality indicator.",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "format": "uri"
+
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The creation date of the quality indicator."
+        },
+        "version": {
+            "type": "string",
+            "description": "The version of the quality indicator."
+        },
+        "status": {
+            "type": "string",
+            "description": "The status of the quality indicator."
+        },
+        "keywords": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Keywords associated with the quality indicator."
+        },
+        "identifier": {
+            "type": "object",
+            "description": "An identifier for the quality indicator.",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "format": "uri"
+
+                }
+            }
+        },
+        "qualityDimension": {
+            "type": "object",
+            "description": "The quality dimension this indicator pertains to.",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "format": "uri"
+
+                }
+            }
+        },
+        "source": {
+            "type": "string",
+            "format": "uri",
+            "description": "The source from which this indicator is derived."
+        },
+        "contact": {
+            "type": "string",
+            "format": "uri",
+            "description": "Contact point for more information."
+        }
+    },
+    "required": [
+        "@context",
+        "@type",
+        "name",
+        "description",
+        "author",
+        "created",
+        "version",
+        "identifier",
+        "qualityDimension"
+    ],
+    "additionalProperties": false
+}
