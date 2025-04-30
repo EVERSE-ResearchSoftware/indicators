@@ -17,11 +17,11 @@ def generate_lists():
     print(f'Accessing {dimensions_dir} ...')
     dimensions = [f for f in os.listdir(dimensions_dir) if f.endswith('.json')]
 
-    print(f'Checking f{indicators_list_file} ...')
+    print(f'Checking {indicators_list_file} ...')
     if os.path.exists(indicators_list_file):
         os.remove(indicators_list_file)
 
-    print(f'Checking f{dimensions_list_file} ...')
+    print(f'Checking {dimensions_list_file} ...')
     if os.path.exists(dimensions_list_file):
         os.remove(dimensions_list_file)
 
