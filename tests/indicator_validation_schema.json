@@ -88,9 +88,35 @@
             }
         },
         "source": {
-            "type": "string",
-            "format": "uri",
-            "description": "The source from which this indicator is derived."
+            "type": "array",
+            "description": "The source from which this indicator is derived.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "format": "uri"
+
+                    },
+                    "identifier": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "@type": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            }
         },
         "contact": {
             "type": "object",
