@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="website/images/everse_icon.ico">
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -20,12 +21,12 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            margin-top: 20px;
+            margin-top: 15px;
             table-layout: fixed;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 15px 20px;
+            padding: 12px 18px;  /* Aumento del padding para más espacio */
             text-align: left;
             vertical-align: top;
             font-size: 16px;
@@ -39,27 +40,27 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
+    
         #search-wrapper {
             display: flex;
             gap: 10px;
             align-items: center;
             margin-bottom: 15px;
         }
-
+    
         #search-input {
             font-size: 16px;
             padding: 10px;
             width: 100%;
             border: 2px solid #005bb5;
         }
-
+    
         #search-input:focus {
             border-color: #1E90FF;
             box-shadow: 0 0 5px rgba(30, 144, 255, 0.6);
             outline: none;
         }
-
+    
         #clear-search {
             padding: 10px 15px;
             font-size: 16px;
@@ -67,11 +68,30 @@
             background-color: #ddd;
             cursor: pointer;
         }
-
+    
         #clear-search:hover {
             background-color: #bbb;
         }
+    
+        /* Reducir espaciado vertical pero con un ligero aumento de padding */
+        #fh5co-about {
+            padding-top: 20px;   /* Aumento del padding */
+            padding-bottom: 20px; /* Aumento del padding */
+        }
+    
+        #fh5co-about .container {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+        .fh5co-heading {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     </style>
+    
 </head>
 
 <body>
@@ -81,9 +101,14 @@
         <nav class="fh5co-nav" role="navigation">
             <div class="top-menu">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xs-13 text-right menu-1">
-                            <ul>
+                    <div class="row" style="display: flex; align-items: center; justify-content: space-between;">
+                        <div class="col-xs-6">
+                            <a href="index.html">
+                                <img src="images/everse_logo.png" alt="Logo" style="height: 40px;">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 text-right menu-1">
+                            <ul style="display: flex; justify-content: flex-end; gap: 20px; margin: 0;">
                                 <li class="active"><a href="indicators.html">Indicators</a></li>
                                 <li><a href="dimensions.html">Dimensions</a></li>
                             </ul>
@@ -100,6 +125,15 @@
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Research Software Quality Indicators</h2>
                 </div>
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <p style="color: #333333;">A
+                        <a href="https://w3id.org/everse/rsqi#"
+                           target="_blank"
+                           style="color: #333333; text-decoration: underline; display: inline-block;">
+                            research software quality indicator
+                        </a> represents a specific software aspect that can be measured (e.g., FAIRness, test coverage, documentation coverage, etc.).
+                    </p>
+                </div>
             </div>
 
             <div id="search-wrapper">
@@ -109,16 +143,16 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 22%;">
-                    <col style="width: 20%;">
+                    <col style="width: 18%;">
+                    <col style="width: 18%;">
                     <col style="width: 15%;">
                     <col style="width: 8%;">
-                    <col style="width: 20%;">
+                    <col style="width: 26%;">
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Identifier</th>
+                        <th>Source</th>
                         <th>Keywords</th>
                         <th>Version</th>
                         <th>Description</th>
@@ -131,75 +165,84 @@
 
     <script>
         let allData = [];
-    
+
         async function fetchJSONFiles(directory) {
             try {
                 const response = await fetch(`${directory}/utils/indicators_list.json`);
                 const files = await response.json();
-    
+
                 for (const file of files) {
                     const data = await fetch(`../indicators/${file}`).then(res => res.json());
                     allData.push(data);
                 }
-    
+
                 updateTable(allData);
-                handleHashNavigation(); // Ejecutar al cargar con hash
+                handleHashNavigation();
             } catch (error) {
                 console.error("Error al cargar los archivos JSON:", error);
             }
         }
-    
+
         function updateTable(dataList) {
             const tableBody = document.querySelector("#json-table tbody");
             tableBody.innerHTML = "";
-    
+
             dataList.forEach(data => {
                 const row = document.createElement("tr");
                 const rowId = data.name ? data.name.replace(/\W+/g, '_') : 'no_name';
                 row.id = `indicator_${rowId}`;
-    
+
                 const nameCell = document.createElement("td");
-                nameCell.textContent = data.name || "";
+                if (data.identifier && data.identifier['@id']) {
+                    const link = document.createElement("a");
+                    link.href = data.identifier['@id'];
+                    link.textContent = data.name || data.identifier['@id'];
+                    link.target = "_blank";
+                    link.style.color = "#1E90FF";
+                    nameCell.appendChild(link);
+                } else {
+                    nameCell.textContent = data.name || "";
+                }
                 row.appendChild(nameCell);
-    
-                const identifierCell = document.createElement("td");
+
+                const sourceCell = document.createElement("td");
                 if (data.identifier && data.identifier['@id']) {
                     const link = document.createElement("a");
                     link.href = data.identifier['@id'];
                     link.textContent = data.identifier['@id'];
                     link.target = "_blank";
                     link.style.color = "#1E90FF";
-                    identifierCell.appendChild(link);
+                    sourceCell.appendChild(link);
                 } else {
-                    identifierCell.textContent = "";
+                    sourceCell.textContent = "";
                 }
-                row.appendChild(identifierCell);
-    
+                row.appendChild(sourceCell);
+
                 const keywordsCell = document.createElement("td");
                 keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
                 row.appendChild(keywordsCell);
-    
+
                 const versionCell = document.createElement("td");
                 versionCell.textContent = data.version || "";
                 row.appendChild(versionCell);
-    
+
                 const descriptionCell = document.createElement("td");
                 descriptionCell.textContent = data.description || "";
                 row.appendChild(descriptionCell);
-    
+
                 tableBody.appendChild(row);
             });
         }
-    
+
         function handleHashNavigation() {
             const hash = window.location.hash;
             if (!hash) return;
-    
+
             const input = document.getElementById("search-input");
             input.value = "";
-    
+
             updateTable(allData);
-    
+
             setTimeout(() => {
                 const row = document.querySelector(hash);
                 if (row) {
@@ -209,11 +252,11 @@
                 }
             }, 100);
         }
-    
+
         document.addEventListener("DOMContentLoaded", () => {
             const input = document.getElementById("search-input");
             const clearButton = document.getElementById("clear-search");
-    
+
             input.addEventListener("keydown", (event) => {
                 if (event.key === "Enter") {
                     const query = input.value.toLowerCase().trim();
@@ -226,28 +269,39 @@
                     updateTable(filtered);
                 }
             });
-    
+
             clearButton.addEventListener("click", () => {
                 input.value = "";
                 input.focus();
                 updateTable(allData);
             });
-    
+
             window.addEventListener("hashchange", handleHashNavigation);
-    
+
             fetchJSONFiles('.');
         });
     </script>
-    
-    
 
     <div class="row copyright">
         <div class="col-md-12 text-center">
+            <p style="font-size: 20px; margin-top: 20px; margin-bottom: 5px;">
+                This project has received funding from the European Union's Horizon Europe Programme 
+                under
+            </p>
+            <p style="font-size: 20px; margin-top: 0;">
+                GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
+            </p>
+    
             <p>
-                <small class="block">This page was built on a free template designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> (&copy; 2016 Free HTML5)</small>
+                <small class="block">
+                    This page was built on a free template designed by 
+                    <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> (&copy; 2016 Free HTML5)
+                </small>
             </p>
         </div>
     </div>
+    
+    
 
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
