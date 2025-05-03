@@ -1,0 +1,13 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/sustainability",
+    "@type": "SoftwareQualityDimension",
+    "name": "Sustainability",
+    "identifier":"https://w3id.org/everse/i/dimensions/sustainability",
+    "description": "The capacity of the software to endure. In other words, sustainability means that the software will continue to be available in the future, on new platforms, meeting new needs.",
+    "source": 
+      {
+        "name": "Defining Software Sustainability",
+        "url": "https://danielskatzblog.wordpress.com/2016/09/13/defining-software-sustainability/"
+      }
+  }
