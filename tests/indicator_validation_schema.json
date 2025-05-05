@@ -34,6 +34,14 @@
                 },
                 "name": {
                     "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
                 }
             }
         },
@@ -80,14 +88,52 @@
             }
         },
         "source": {
-            "type": "string",
-            "format": "uri",
-            "description": "The source from which this indicator is derived."
+            "type": "array",
+            "description": "The source from which this indicator is derived.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "format": "uri"
+
+                    },
+                    "identifier": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "@type": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            }
         },
         "contact": {
-            "type": "string",
-            "format": "uri",
-            "description": "Contact point for more information."
+            "type": "object",
+            "description": "Contact point for more information.",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            }
         }
     },
     "required": [
@@ -96,7 +142,6 @@
         "name",
         "description",
         "author",
-        "created",
         "version",
         "identifier",
         "qualityDimension"
