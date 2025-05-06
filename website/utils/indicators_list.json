@@ -1,6 +1,7 @@
 [
-    "dependency_management.json",
-    "no_leaked_credential.json",
     "no_critical_vulnerability.json",
-    "codemeta_completeness.json"
+    "codemeta_completeness2.json",
+    "no_leaked_credential.json",
+    "codemeta_completeness.json",
+    "dependency_management.json"
 ]
