@@ -26,7 +26,7 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 12px 18px;  /* Aumento del padding para más espacio */
+            padding: 12px 18px;
             text-align: left;
             vertical-align: top;
             font-size: 14px;
@@ -73,10 +73,9 @@
             background-color: #bbb;
         }
     
-        /* Reducir espaciado vertical pero con un ligero aumento de padding */
         #fh5co-about {
-            padding-top: 20px;   /* Aumento del padding */
-            padding-bottom: 20px; /* Aumento del padding */
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     
         #fh5co-about .container {
@@ -143,9 +142,9 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 15%;">
-                    <col style="width: 9%;">
-                    <col style="width: 15%;">
+                    <col style="width: 16%;">
+                    <col style="width: 12%;">
+                    <col style="width: 12%;">
                     <col style="width: 28%;">
                     <col style="width: 18%;">
                 </colgroup>
@@ -226,7 +225,9 @@
                 if (data.qualityDimension && data.qualityDimension['@id']) {
                     const link = document.createElement("a");
                     link.href = data.qualityDimension['@id'];
-                    link.textContent = data.qualityDimension['@id'];
+                    const parts = data.qualityDimension['@id'].split('/');
+                    const label = parts[parts.length - 1];
+                    link.textContent = label;
                     link.target = "_blank";
                     link.style.color = "#1E90FF";
                     dimensionCell.appendChild(link);
@@ -234,6 +235,7 @@
                     dimensionCell.textContent = "";
                 }
                 row.appendChild(dimensionCell);
+
 
                 const descriptionCell = document.createElement("td");
                 descriptionCell.textContent = data.description || "";
@@ -244,20 +246,13 @@
 
                 if (Array.isArray(data.source) && data.source.length > 0) {
                     data.source.forEach((src, index) => {
-                        let href = null;
-
-                        if (src.url) {
-                            href = src.url;
-                        } else if (src['@id']) {
-                            href = src['@id'];
-                        } else if (src.identifier) {
-                            href = src.identifier;
-                        }
+                        let href = src.url || src['@id'] || src.identifier;
+                        let label = src.name || href;
 
                         if (href) {
                             const link = document.createElement("a");
                             link.href = href;
-                            link.textContent = href;
+                            link.textContent = label;
                             link.target = "_blank";
                             link.style.color = "#1E90FF";
                             link.style.display = "block";
@@ -265,7 +260,6 @@
                             sourceCell.appendChild(link);
                         }
 
-                        // Añadir separador si no es el último enlace
                         if (index < data.source.length - 1) {
                             const separator = document.createElement("hr");
                             separator.style.borderTop = "1px dashed #ccc";
@@ -273,13 +267,11 @@
                             sourceCell.appendChild(separator);
                         }
                     });
-                } else if (data.identifier && data.identifier['@id']) {
-                    const link = document.createElement("a");
-                    link.href = data.identifier['@id'];
-                    link.textContent = data.identifier['@id'];
-                    link.target = "_blank";
-                    link.style.color = "#1E90FF";
-                    sourceCell.appendChild(link);
+                } else {
+                    const noSource = document.createElement("span");
+                    noSource.textContent = "no source available";
+                    noSource.style.color = "#999";
+                    sourceCell.appendChild(noSource);
                 }
 
                 row.appendChild(sourceCell);

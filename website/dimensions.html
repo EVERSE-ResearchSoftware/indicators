@@ -26,10 +26,10 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 12px 18px;  /* Aumento del padding para más espacio */
+            padding: 12px 18px;
             text-align: left;
             vertical-align: top;
-            font-size: 16px;
+            font-size: 14px;
             word-break: break-word;
         }
         th {
@@ -73,10 +73,9 @@
             background-color: #bbb;
         }
     
-        /* Reducir espaciado vertical pero con un ligero aumento de padding */
         #fh5co-about {
-            padding-top: 20px;   /* Aumento del padding */
-            padding-bottom: 20px; /* Aumento del padding */
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     
         #fh5co-about .container {
@@ -240,7 +239,7 @@
                     if (href) {
                         const link = document.createElement("a");
                         link.href = href;
-                        link.textContent = href;
+                        link.textContent = data.source.name || href;
                         link.target = "_blank";
                         link.style.color = "#1E90FF";
                         link.style.display = "block";
