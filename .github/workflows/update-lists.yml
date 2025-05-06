@@ -4,20 +4,22 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   update-lists:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Run script to update indicators and dimensions list
-      run: |
-        python web_generation_scripts/generate_lists.py
+      - name: Run script to update indicators and dimensions list
+        run: python web_generation_scripts/generate_lists.py
