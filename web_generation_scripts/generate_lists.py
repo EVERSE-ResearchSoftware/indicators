@@ -8,14 +8,13 @@ indicators_list_file = './website/utils/indicators_list.json'
 dimensions_list_file = './website/utils/dimensions_list.json'
 
 def generate_lists():
-    
     print('Generating lists...')
     
     print(f'Accessing {indicators_dir} ...')
-    indicators = [f for f in os.listdir(indicators_dir) if f.endswith('.json')]
+    indicators = sorted([f for f in os.listdir(indicators_dir) if f.endswith('.json')])
     
     print(f'Accessing {dimensions_dir} ...')
-    dimensions = [f for f in os.listdir(dimensions_dir) if f.endswith('.json')]
+    dimensions = sorted([f for f in os.listdir(dimensions_dir) if f.endswith('.json')])
 
     print(f'Checking {indicators_list_file} ...')
     if os.path.exists(indicators_list_file):
