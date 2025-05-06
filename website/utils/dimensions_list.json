@@ -1,12 +1,13 @@
 [
+    "compatibility.json",
+    "fairness.json",
     "flexibility.json",
     "functional_suitability.json",
-    "maintainability.json",
-    "reliability.json",
-    "compatibility.json",
-    "performance_efficiency.json",
-    "fairness.json",
-    "safety.json",
     "interaction_capability.json",
-    "security.json"
+    "maintainability.json",
+    "performance_efficiency.json",
+    "reliability.json",
+    "safety.json",
+    "security.json",
+    "sustainability.json"
 ]

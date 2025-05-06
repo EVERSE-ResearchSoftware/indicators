@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   update-lists:
@@ -20,4 +23,12 @@ jobs:
 
     - name: Run script to update indicators and dimensions list
       run: |
+        echo "Running generate_lists.py..."
         python web_generation_scripts/generate_lists.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add website/utils/indicators_list.json website/utils/dimensions_list.json
+        git diff --staged --quiet || (git commit -m "Update indicators and dimensions list [auto]" && git push origin main)
