@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="website/images/everse_icon.ico">
+    <link rel="icon" type="image/png" href="/website/images/everse_icon.png">
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -149,14 +149,14 @@
             <table id="json-table">
                 <colgroup>
                     <col style="width: 25%;">
-                    <col style="width: 15%;">
                     <col style="width: 60%;">
+                    <col style="width: 15%;">
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Source</th>
                         <th>Description</th>
+                        <th>Source</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -190,8 +190,21 @@
 
             dataList.forEach(data => {
                 const row = document.createElement("tr");
-                const rowId = data.name ? data.name.toLowerCase().replace(/[^a-zA-Z0-9-_]+/g, '_') : 'no_name';
+
+                function toSnakeCase(name) {
+                    if (/\s/.test(name)) {
+                        return name.toLowerCase().replace(/[^a-z0-9]+/gi, '_');
+                    } else {
+                        return name
+                            .replace(/([a-z])([A-Z])/g, '$1_$2')
+                            .replace(/[^a-z0-9]+/gi, '_')
+                            .toLowerCase();
+                    }
+                }
+
+                const rowId = data.name ? toSnakeCase(data.name) : 'no_name';
                 row.id = rowId;
+
 
                 const nameCell = document.createElement("td");
                 if (data.identifier && data.identifier.startsWith("http")) {
@@ -206,24 +219,40 @@
                 }
                 row.appendChild(nameCell);
 
-                const sourceCell = document.createElement("td");
-                if (data.identifier && data.identifier.startsWith("http")) {
-                    const link = document.createElement("a");
-                    link.href = data.identifier;
-                    link.textContent = data.identifier;
-                    link.target = "_blank";
-                    link.style.color = "#1E90FF";
-                    sourceCell.appendChild(link);
-                } else {
-                    sourceCell.textContent = data.identifier || "";
-                }
-                row.appendChild(sourceCell);
-
                 const descriptionCell = document.createElement("td");
                 descriptionCell.textContent = data.description || "";
                 row.appendChild(descriptionCell);
-
                 tableBody.appendChild(row);
+
+                const sourceCell = document.createElement("td");
+
+                if (data.source && typeof data.source === "object") {
+                    let href = null;
+
+                    if (data.source.url) {
+                        href = data.source.url;
+                    } else if (data.source['@id']) {
+                        href = data.source['@id'];
+                    } else if (data.source.identifier) {
+                        href = data.source.identifier;
+                    }
+
+                    if (href) {
+                        const link = document.createElement("a");
+                        link.href = href;
+                        link.textContent = href;
+                        link.target = "_blank";
+                        link.style.color = "#1E90FF";
+                        link.style.display = "block";
+                        sourceCell.appendChild(link);
+                    } else {
+                        sourceCell.textContent = "";
+                    }
+                } else {
+                    sourceCell.textContent = "";
+                }
+
+                row.appendChild(sourceCell);
             });
         }
 
@@ -277,12 +306,11 @@
 
     <div class="row copyright">
         <div class="col-md-12 text-center">
-            <p style="font-size: 20px; margin-top: 20px; margin-bottom: 5px;">
-                This project has received funding from the European Union's Horizon Europe Programme 
-                under
-            </p>
-            <p style="font-size: 20px; margin-top: 0;">
-                GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
+            <p>
+                <small class="block">
+                    This project has received funding from the European Union's Horizon Europe Programme 
+                    under GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
+                </small>
             </p>
 
             <p>

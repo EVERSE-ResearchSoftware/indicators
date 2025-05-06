@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="website/images/everse_icon.ico">
+    <link rel="icon" type="image/png" href="/website/images/everse_icon.png">
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -29,7 +29,7 @@
             padding: 12px 18px;  /* Aumento del padding para más espacio */
             text-align: left;
             vertical-align: top;
-            font-size: 16px;
+            font-size: 14px;
             word-break: break-word;
         }
         th {
@@ -143,19 +143,19 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 18%;">
-                    <col style="width: 18%;">
                     <col style="width: 15%;">
-                    <col style="width: 8%;">
-                    <col style="width: 26%;">
+                    <col style="width: 9%;">
+                    <col style="width: 15%;">
+                    <col style="width: 28%;">
+                    <col style="width: 18%;">
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Source</th>
                         <th>Keywords</th>
-                        <th>Version</th>
+                        <th>Quality Dimension</th>
                         <th>Description</th>
+                        <th>Source</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -189,8 +189,21 @@
 
             dataList.forEach(data => {
                 const row = document.createElement("tr");
-                const rowId = data.name ? data.name.replace(/\W+/g, '_') : 'no_name';
-                row.id = `indicator_${rowId}`;
+
+                function toSnakeCase(name) {
+                    if (/\s/.test(name)) {
+                        return name.toLowerCase().replace(/[^a-z0-9]+/gi, '_');
+                    } else {
+                        return name
+                            .replace(/([a-z])([A-Z])/g, '$1_$2')
+                            .replace(/[^a-z0-9]+/gi, '_')
+                            .toLowerCase();
+                    }
+                }
+
+                const rowId = data.name ? toSnakeCase(data.name) : 'no_name';
+                row.id = rowId;
+
 
                 const nameCell = document.createElement("td");
                 if (data.identifier && data.identifier['@id']) {
@@ -205,32 +218,72 @@
                 }
                 row.appendChild(nameCell);
 
+                const keywordsCell = document.createElement("td");
+                keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
+                row.appendChild(keywordsCell);
+
+                const dimensionCell = document.createElement("td");
+                if (data.qualityDimension && data.qualityDimension['@id']) {
+                    const link = document.createElement("a");
+                    link.href = data.qualityDimension['@id'];
+                    link.textContent = data.qualityDimension['@id'];
+                    link.target = "_blank";
+                    link.style.color = "#1E90FF";
+                    dimensionCell.appendChild(link);
+                } else {
+                    dimensionCell.textContent = "";
+                }
+                row.appendChild(dimensionCell);
+
+                const descriptionCell = document.createElement("td");
+                descriptionCell.textContent = data.description || "";
+                row.appendChild(descriptionCell);
+                tableBody.appendChild(row);
+
                 const sourceCell = document.createElement("td");
-                if (data.identifier && data.identifier['@id']) {
+
+                if (Array.isArray(data.source) && data.source.length > 0) {
+                    data.source.forEach((src, index) => {
+                        let href = null;
+
+                        if (src.url) {
+                            href = src.url;
+                        } else if (src['@id']) {
+                            href = src['@id'];
+                        } else if (src.identifier) {
+                            href = src.identifier;
+                        }
+
+                        if (href) {
+                            const link = document.createElement("a");
+                            link.href = href;
+                            link.textContent = href;
+                            link.target = "_blank";
+                            link.style.color = "#1E90FF";
+                            link.style.display = "block";
+                            link.style.marginBottom = "6px";
+                            sourceCell.appendChild(link);
+                        }
+
+                        // Añadir separador si no es el último enlace
+                        if (index < data.source.length - 1) {
+                            const separator = document.createElement("hr");
+                            separator.style.borderTop = "1px dashed #ccc";
+                            separator.style.margin = "6px 0";
+                            sourceCell.appendChild(separator);
+                        }
+                    });
+                } else if (data.identifier && data.identifier['@id']) {
                     const link = document.createElement("a");
                     link.href = data.identifier['@id'];
                     link.textContent = data.identifier['@id'];
                     link.target = "_blank";
                     link.style.color = "#1E90FF";
                     sourceCell.appendChild(link);
-                } else {
-                    sourceCell.textContent = "";
                 }
+
                 row.appendChild(sourceCell);
 
-                const keywordsCell = document.createElement("td");
-                keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
-                row.appendChild(keywordsCell);
-
-                const versionCell = document.createElement("td");
-                versionCell.textContent = data.version || "";
-                row.appendChild(versionCell);
-
-                const descriptionCell = document.createElement("td");
-                descriptionCell.textContent = data.description || "";
-                row.appendChild(descriptionCell);
-
-                tableBody.appendChild(row);
             });
         }
 
@@ -244,7 +297,8 @@
             updateTable(allData);
 
             setTimeout(() => {
-                const row = document.querySelector(hash);
+                const rowId = hash.substring(1);
+                const row = document.getElementById(rowId);
                 if (row) {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     row.style.backgroundColor = "#ffff99";
@@ -284,12 +338,11 @@
 
     <div class="row copyright">
         <div class="col-md-12 text-center">
-            <p style="font-size: 20px; margin-top: 20px; margin-bottom: 5px;">
-                This project has received funding from the European Union's Horizon Europe Programme 
-                under
-            </p>
-            <p style="font-size: 20px; margin-top: 0;">
-                GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
+            <p>
+                <small class="block">
+                    This project has received funding from the European Union's Horizon Europe Programme 
+                    under GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
+                </small>
             </p>
     
             <p>
