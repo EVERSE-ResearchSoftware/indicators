@@ -1,6 +1,11 @@
 [
     "codemeta_completeness.json",
     "dependency_management.json",
+    "has_ci-tests.json",
+    "has_citation.json",
+    "has_license.json",
     "no_critical_vulnerability.json",
-    "no_leaked_credential.json"
+    "no_leaked_credential.json",
+    "persistent_and_unique_identifier.json",
+    "readthedocs_documentation.json"
 ]
