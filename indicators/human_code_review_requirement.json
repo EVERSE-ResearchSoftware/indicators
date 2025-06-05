@@ -1,0 +1,32 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/human_code_review_requirement",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software requires human code review.",
+    "description": "This check tries to determine if the software requires human code review before pull requests.",
+    "keywords": ["fair", "review"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/human_code_review_requirement" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "OpenSSF",
+        "url" : "https://openssf.org/"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://github.com/ossf/scorecard/blob/cd152cb6742c5b8f2f3d2b5193b41d9c50905198/docs/checks.md#code-review",
+        "name": "OpenSSF Scorecard: Code-Review"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}

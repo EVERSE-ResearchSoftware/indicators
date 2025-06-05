@@ -1,0 +1,31 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_tests",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software provides tests.",
+    "description": "This check tries to determine if tests and data are provided to check that the software is operating as expected",
+    "keywords": [ "test", "functionality", "fair"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_tests" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url" : "https://zenodo.org/records/10047401",
+        "name" : "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}
