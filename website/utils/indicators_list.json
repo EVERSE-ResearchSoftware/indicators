@@ -1,6 +1,19 @@
 [
     "codemeta_completeness.json",
     "dependency_management.json",
+    "descriptive_metadata.json",
+    "has_ci-tests.json",
+    "has_citation.json",
+    "has_license.json",
+    "has_published_package.json",
+    "has_releases.json",
+    "human_code_review_requirement.json",
     "no_critical_vulnerability.json",
-    "no_leaked_credential.json"
+    "no_leaked_credential.json",
+    "persistent_and_unique_identifier.json",
+    "repository_workflows.json",
+    "requirements_specified.json",
+    "software_documentation.json",
+    "software_tests.json",
+    "version_control_use.json"
 ]
