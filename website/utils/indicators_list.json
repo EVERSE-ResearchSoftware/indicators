@@ -15,5 +15,6 @@
     "requirements_specified.json",
     "software_documentation.json",
     "software_tests.json",
+    "static_analysis_common_vulnerabilities.json",
     "version_control_use.json"
 ]
