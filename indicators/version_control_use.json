@@ -3,16 +3,22 @@
     "@id": "https://w3id.org/everse/i/indicators/version_control_use",
     "@type": "SoftwareQualityIndicator",
     "name": "Software makes use of version control",
-    "description": "This check tries to determine if the software uses version control.",
+    "description": "This indicator aims to determine if a software project uses version control.",
     "keywords": [ "version", "control", "fair", "repository", "identifier"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/version_control_use" },
     "status": "Active",
     "version": "1.0.0",
-    "author" : {
+    "author" : [
+        {
         "@type" : "schema:Organization",
-        "name" : "OpenSSF",
-        "url" : "https://openssf.org/"
-    },
+        "name" : "Elixir focus group",
+        "url" : "https://zenodo.org/communities/elixir/records"
+        },
+        {
+        "@type" : "schema:Organization",
+        "name" : "FAIR-IMPACT"
+        }
+    ],
     "contact": [
     {
         "@type": "schema:Person",
@@ -29,12 +35,12 @@
             "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
         },
         {
-            "url": "https://docs.google.com/spreadsheets/d/1lLLEsB7QZF32DeljFIDvCA70bvgG5QhsAZ9gZ6mCfLc/edit?gid=597829498#gid=597829498",
-            "name": "Unique Version Identifier"
+            "url": "https://doi.org/10.5281/zenodo.15474784",
+            "name": "Software Quality Indicators: extraction, categorisation and recommendations from canonical sources"
         },
         {
-            "url" : "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/",
-            "name" : "RSMD checklist"
+            "url" : "https://fair-impact.github.io/RSMD-guidelines/3.Reference_identification/",
+            "name" : "Reference and identification. RSMD-3.1"
         }
     ],
     "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
