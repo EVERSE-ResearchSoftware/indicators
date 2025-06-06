@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/has_published_package",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is published as a downloadable package",
-    "description": "This check tries to determine if the software is published as a downloadable package.",
+    "description": "This indicator aims to determine if a software project is published as a downloadable package.",
     "keywords": [ "release", "fair", "package", "packaging"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_published_package" },
     "status": "Active",
@@ -27,6 +27,6 @@
         "url": "https://github.com/ossf/scorecard/blob/cd152cb6742c5b8f2f3d2b5193b41d9c50905198/docs/checks.md#packaging",
         "name": "OpenSSF Scorecard: Packaging"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/flexibility" },
     "created": "23-05-2025"
 }

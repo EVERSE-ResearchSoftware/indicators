@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_citation",
     "@type": "SoftwareQualityIndicator",
     "name": "Software uses citation",
-    "description": "This check tries to determine if the project uses citation to reference contributors and authors. This is done by looking for a .cff file or any citations made in the README file.",
+    "description": "This indicator aims to determine if the project uses a citation to reference contributors and authors (e.g., through a CFF file, in the README, etc).",
     "keywords": [ "citation", "metadata", "fair", "contributors"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_citation" },
     "status": "Active",

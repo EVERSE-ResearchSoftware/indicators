@@ -4,7 +4,7 @@
     "@type": "SoftwareQualityDimension",
     "name": "Flexibility",
     "identifier":"https://w3id.org/everse/i/dimensions/flexibility",
-    "description": "Degree to which a product can be adapted to changes in its requirements, contexts of use or system environment.",
+    "description": "Degree to which a product can be adapted to changes in its requirements, contexts of use or system environment. This characteristic is composed of the following sub-characteristics:\n    - Adaptability - Degree to which a product or system can effectively and efficiently be adapted for or transferred to different hardware, software or other operational or usage environments.\n    - Scalability - Degree to which a product can handle growing or shrinking workloads or to adapt its capacity to handle variability.\n    - Installability - Degree of effectiveness and efficiency with which a product or system can be successfully installed and/or uninstalled in a specified environment.\n    - Replaceability - Degree to which a product can replace another specified software product for the same purpose in the same environment.",
     "source": {
       "name": "ISO/IEC 25010 standard",
       "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"

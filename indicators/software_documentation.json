@@ -1,11 +1,11 @@
 {
     "@context": "https://w3id.org/everse/rsqi#",
-    "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_documentation",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has documentation",
-    "description": "This check tries to determine if the software comes with many forms of documentation like readme or readthedocs",
+    "description": "This indicator aims to determine if a software project comes with many forms of documentation like readme or readthedocs",
     "keywords": [ "documentation", "fair", "usage", "readme"],
-    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests" },
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_documentation" },
     "status": "Active",
     "version": "1.0.0",
     "author" : {
@@ -24,9 +24,12 @@
     }
     ],
     "source": {
-        "url": "https://www.bestpractices.dev/en/criteria/0",
+        "url": "https://www.bestpractices.dev/en/criteria/0#0.documentation_basics",
         "name": "FLOSS Best Practices Criteria"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/interaction_capability" }
+    ],
     "created": "23-05-2025"
 }

@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/repository_workflows",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has workflows in its repository",
-    "description": "This check tries to determine if the software makes use of workflows to automatize processes like testing.",
+    "description": "This indicator tries aims determine if a software prpoject makes use of workflows to automatize processes like testing.",
     "keywords": [ "workflows", "github", "fair", "repository"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/repository_workflows" },
     "status": "Active",
@@ -27,12 +27,8 @@
         {
             "url": "https://github.com/ossf/scorecard/blob/cd152cb6742c5b8f2f3d2b5193b41d9c50905198/docs/checks.md#ci-tests",
             "name": "OpenSSF Scorecard: CI-Tests"
-        },
-        {
-            "url": "https://everse.software/RSQKit/your_tasks",
-            "name": "RSQKit: Your tasks"
         }
     ],
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability"},
     "created": "23-05-2025"
 }

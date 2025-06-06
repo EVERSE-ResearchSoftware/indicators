@@ -3,8 +3,8 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has continuous integration tests",
-    "description": "This check tries to determine if the project runs tests before pull requests are merged. It is currently limited to repositories hosted on GitHub, and does not support other source hosting repositories (i.e., Forges).",
-    "keywords": [ "continuous", "integration", "fair", "test"],
+    "description": "This indicator aims to determine if the project runs tests before pull requests are merged.",
+    "keywords": [ "continuous", "integration", "test"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests" },
     "status": "Active",
     "version": "1.0.0",
@@ -27,6 +27,6 @@
         "url": "https://github.com/ossf/scorecard/blob/cd152cb6742c5b8f2f3d2b5193b41d9c50905198/docs/checks.md#ci-tests",
         "name": "OpenSSF Scorecard: CI-Tests"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
     "created": "23-05-2025"
 }
