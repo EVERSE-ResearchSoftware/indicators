@@ -4,7 +4,7 @@
     "@type": "SoftwareQualityDimension",
     "name": "Performance Efficiency",
     "identifier":"https://w3id.org/everse/i/dimensions/performance_efficiency",
-    "description": "This characteristic represents the degree to which a product performs its functions within specified time and throughput parameters and is efficient in the use of resources (such as CPU, memory, storage, network devices, energy, materials...) under specified conditions.",
+    "description": "This characteristic represents the degree to which a product performs its functions within specified time and throughput parameters and is efficient in the use of resources (such as CPU, memory, storage, network devices, energy, materials...) under specified conditions. This characteristic is composed of the following sub-characteristics:\n    -Time behaviour - Degree to which the response time and throughput rates of a product or system, when performing its functions, meet requirements.\n    -Resource utilization - Degree to which the amounts and types of resources used by a product or system, when performing its functions, meet requirements.\n    - Capacity - Degree to which the maximum limits of a product or system parameter meet requirements.",
     "source": {
       "name": "ISO/IEC 25010 standard",
       "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"

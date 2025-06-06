@@ -3,15 +3,11 @@
     "@id": "https://w3id.org/everse/i/indicators/requirements_specified",
     "@type": "SoftwareQualityIndicator",
     "name": "Software specifies requirements",
-    "description": "This check tries to determine if the project specifies what is required to use the software.",
-    "keywords": [ "documentation", "metadata", "fair"],
+    "description": "This indicator tries to determine if the project specifies what is required to use the software.",
+    "keywords": [ "documentation", "requirements", "dependencies", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/requirements_specified" },
     "status": "Active",
     "version": "1.0.0",
-    "author" : {
-        "@type": "schema:Person",
-        "name": "Daniel Garijo"
-    },
     "contact": [
     {
         "@type": "schema:Person",
@@ -22,10 +18,18 @@
         "name": "Andres Montero"
     }
     ],
-    "source": {
+    "source":[{
         "url": "https://zenodo.org/records/10047401",
         "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
-    },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    },{
+        "url": "https://fair-impact.github.io/RSMD-guidelines/7.Re-execute/",
+        "name": "RSMD Guidelines - Re-execute: dependencies and execution environment"
+    }
+    ] ,
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/flexibility" },
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability" }
+    ],
     "created": "23-05-2025"
 }
