@@ -3,15 +3,11 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_tests",
     "@type": "SoftwareQualityIndicator",
     "name": "Software provides tests.",
-    "description": "This check tries to determine if tests and data are provided to check that the software is operating as expected",
+    "description": "This indicator aims to determine if tests and data are provided to check that a software project is operating as expected",
     "keywords": [ "test", "functionality", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_tests" },
     "status": "Active",
     "version": "1.0.0",
-    "author" : {
-        "@type": "schema:Person",
-        "name": "Daniel Garijo"
-    },
     "contact": [
     {
         "@type": "schema:Person",
