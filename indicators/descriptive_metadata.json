@@ -1,0 +1,37 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/descriptive_metadata",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has descriptive metadata",
+    "description": "This check tries to determine if the software comes with descriptive metadata that provides information like identifier, author, title, keywords, etc.",
+    "keywords": [ "releases", "repository", "fair"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/descriptive_metadata" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "Helmholtz Association"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": [
+        {
+            "url" : "https://zenodo.org/records/10047401",
+            "name" : "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
+        },
+        {
+            "url" : "https://zenodo.org/records/10047401",
+            "name" : "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
+        }
+    ],
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}

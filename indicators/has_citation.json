@@ -1,0 +1,27 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_citation",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software uses citation",
+    "description": "This check tries to determine if the project uses citation to reference contributors and authors. This is done by looking for a .cff file or any citations made in the README file.",
+    "keywords": [ "citation", "metadata", "fair", "contributors"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_citation" },
+    "status": "Active",
+    "version": "1.0.0",
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://zenodo.org/records/10047401",
+        "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}

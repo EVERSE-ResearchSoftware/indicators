@@ -1,0 +1,31 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/persistent_and_unique_identifier",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has persistent and unique identifier",
+    "description": "This check tries to determine if the software identifier is based on a suitable identifier scheme, and test it can be resolved. This is done by checking if the identifier uses an identifier scheme contained in a list of globally unique identifier schemes",
+    "keywords": [ "identifier", "unique", "fair", "persistent", "metadata"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/persistent_and_unique_identifier" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://zenodo.org/records/10047401",
+        "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}

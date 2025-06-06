@@ -1,0 +1,31 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_releases",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has releases",
+    "description": "This check tries to determine if the software's repository has releases. This can be achieved by looking for tags or using software that retrieves related data.",
+    "keywords": [ "releases", "repository", "fair"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_releases" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "RSQKit Community"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://everse.software/RSQKit/your_tasks",
+        "name": "RSQKit: Your tasks"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}

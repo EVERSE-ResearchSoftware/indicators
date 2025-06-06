@@ -1,0 +1,32 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_license",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has license",
+    "description": "This check tries to determine if the project has published a license. It works by using either hosting APIs or by checking standard locations for a file named according to common conventions for licenses.",
+    "keywords": [ "license", "metadata", "fair" ],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_license" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "OpenSSF",
+        "url" : "https://openssf.org/"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://github.com/ossf/scorecard/blob/cd152cb6742c5b8f2f3d2b5193b41d9c50905198/docs/checks.md#license",
+        "name": "OpenSSF Scorecard: License"
+    },
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "23-05-2025"
+}
