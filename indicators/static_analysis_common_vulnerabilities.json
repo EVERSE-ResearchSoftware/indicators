@@ -10,7 +10,7 @@
         "name": "FLOSS Best Practices Criteria (Passing Badge)"
     },
     "keywords": ["security", "vulnerabilities", "static analysis"],
-    "identifier": "https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities",
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities"},
     "status": "Active",
     "version": "1.0.0",
     "author": {

@@ -16,6 +16,7 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
     <style>
         table {
             width: 100%;
@@ -40,27 +41,27 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-    
+
         #search-wrapper {
             display: flex;
             gap: 10px;
             align-items: center;
             margin-bottom: 15px;
         }
-    
+
         #search-input {
             font-size: 16px;
             padding: 10px;
             width: 100%;
             border: 2px solid #005bb5;
         }
-    
+
         #search-input:focus {
             border-color: #1E90FF;
             box-shadow: 0 0 5px rgba(30, 144, 255, 0.6);
             outline: none;
         }
-    
+
         #clear-search {
             padding: 10px 15px;
             font-size: 16px;
@@ -68,29 +69,62 @@
             background-color: #ddd;
             cursor: pointer;
         }
-    
+
         #clear-search:hover {
             background-color: #bbb;
         }
-    
+
         #fh5co-about {
             padding-top: 20px;
             padding-bottom: 20px;
         }
-    
+
         #fh5co-about .container {
             padding-top: 0;
             padding-bottom: 0;
             margin-top: 0;
             margin-bottom: 0;
+            position: relative;
         }
-    
+
         .fh5co-heading {
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
+        /* LOADING OVERLAY */
+        #table-loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 300px;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #333;
+            display: none;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #1E90FF;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
-    
 </head>
 
 <body>
@@ -140,6 +174,12 @@
                 <button id="clear-search" title="Clear search">✕</button>
             </div>
 
+            <!-- LOADING OVERLAY -->
+            <div id="table-loading-overlay">
+                <div class="spinner"></div>
+                <p>Loading indicators...</p>
+            </div>
+
             <table id="json-table">
                 <colgroup>
                     <col style="width: 16%;">
@@ -166,6 +206,9 @@
         let allData = [];
 
         async function fetchJSONFiles(directory) {
+            const overlay = document.getElementById("table-loading-overlay");
+            overlay.style.display = "flex"; // Mostrar overlay
+
             try {
                 const response = await fetch(`${directory}/utils/indicators_list.json`);
                 const files = await response.json();
@@ -179,6 +222,8 @@
                 handleHashNavigation();
             } catch (error) {
                 console.error("Error al cargar los archivos JSON:", error);
+            } finally {
+                overlay.style.display = "none"; // Ocultar overlay
             }
         }
 
@@ -189,27 +234,18 @@
             dataList.forEach(data => {
                 const row = document.createElement("tr");
 
-                function toSnakeCase(name) {
-                    if (/\s/.test(name)) {
-                        return name.toLowerCase().replace(/[^a-z0-9]+/gi, '_');
-                    } else {
-                        return name
-                            .replace(/([a-z])([A-Z])/g, '$1_$2')
-                            .replace(/[^a-z0-9]+/gi, '_')
-                            .toLowerCase();
-                    }
+                let rowId = "no_id";
+                if (data.identifier && data.identifier['@id']) {
+                    const parts = data.identifier['@id'].split('/');
+                    rowId = parts[parts.length - 1];
                 }
-
-                const rowId = data.name ? toSnakeCase(data.name) : 'no_name';
                 row.id = rowId;
 
-
                 const nameCell = document.createElement("td");
-                if (data.identifier && data.identifier['@id']) {
+                if (data.name && rowId !== "no_id") {
                     const link = document.createElement("a");
-                    link.href = data.identifier['@id'];
-                    link.textContent = data.name || data.identifier['@id'];
-                    link.target = "_blank";
+                    link.href = `#${rowId}`;
+                    link.textContent = data.name;
                     link.style.color = "#1E90FF";
                     nameCell.appendChild(link);
                 } else {
@@ -222,51 +258,80 @@
                 row.appendChild(keywordsCell);
 
                 const dimensionCell = document.createElement("td");
-                if (data.qualityDimension && data.qualityDimension['@id']) {
-                    const link = document.createElement("a");
-                    link.href = data.qualityDimension['@id'];
-                    const parts = data.qualityDimension['@id'].split('/');
-                    const label = parts[parts.length - 1];
-                    link.textContent = label;
-                    link.target = "_blank";
-                    link.style.color = "#1E90FF";
-                    dimensionCell.appendChild(link);
-                } else {
-                    dimensionCell.textContent = "";
-                }
-                row.appendChild(dimensionCell);
 
+                function appendDimensionLink(dim, cell, addSeparator = false) {
+                    const href = typeof dim === "string" ? dim : (dim['@id'] || dim.url || dim.identifier);
+                    if (href) {
+                        const parts = href.split('/');
+                        const label = parts[parts.length - 1];
+                        const link = document.createElement("a");
+                        link.href = href;
+                        link.textContent = label;
+                        link.target = "_blank";
+                        link.style.color = "#1E90FF";
+                        link.style.display = "block";
+                        link.style.marginBottom = "6px";
+                        cell.appendChild(link);
+                    }
+
+                    if (addSeparator) {
+                        const separator = document.createElement("hr");
+                        separator.style.borderTop = "1px dashed #444";
+                        separator.style.margin = "6px 0";
+                        cell.appendChild(separator);
+                    }
+                }
+
+                if (Array.isArray(data.qualityDimension)) {
+                    data.qualityDimension.forEach((dim, index) => {
+                        appendDimensionLink(dim, dimensionCell, index < data.qualityDimension.length - 1);
+                    });
+                } else if (data.qualityDimension) {
+                    appendDimensionLink(data.qualityDimension, dimensionCell);
+                } else {
+                    const noDim = document.createElement("span");
+                    noDim.textContent = "no dimension available";
+                    noDim.style.color = "#999";
+                    dimensionCell.appendChild(noDim);
+                }
+
+                row.appendChild(dimensionCell);
 
                 const descriptionCell = document.createElement("td");
                 descriptionCell.textContent = data.description || "";
                 row.appendChild(descriptionCell);
-                tableBody.appendChild(row);
 
                 const sourceCell = document.createElement("td");
 
-                if (Array.isArray(data.source) && data.source.length > 0) {
+                function appendSourceLink(src, cell, addSeparator = false) {
+                    let href = src.url || src['@id'] || src.identifier;
+                    let label = src.name || href;
+
+                    if (href) {
+                        const link = document.createElement("a");
+                        link.href = href;
+                        link.textContent = label;
+                        link.target = "_blank";
+                        link.style.color = "#1E90FF";
+                        link.style.display = "block";
+                        link.style.marginBottom = "6px";
+                        cell.appendChild(link);
+                    }
+
+                    if (addSeparator) {
+                        const separator = document.createElement("hr");
+                        separator.style.borderTop = "1px dashed #444";
+                        separator.style.margin = "6px 0";
+                        cell.appendChild(separator);
+                    }
+                }
+
+                if (Array.isArray(data.source)) {
                     data.source.forEach((src, index) => {
-                        let href = src.url || src['@id'] || src.identifier;
-                        let label = src.name || href;
-
-                        if (href) {
-                            const link = document.createElement("a");
-                            link.href = href;
-                            link.textContent = label;
-                            link.target = "_blank";
-                            link.style.color = "#1E90FF";
-                            link.style.display = "block";
-                            link.style.marginBottom = "6px";
-                            sourceCell.appendChild(link);
-                        }
-
-                        if (index < data.source.length - 1) {
-                            const separator = document.createElement("hr");
-                            separator.style.borderTop = "1px dashed #ccc";
-                            separator.style.margin = "6px 0";
-                            sourceCell.appendChild(separator);
-                        }
+                        appendSourceLink(src, sourceCell, index < data.source.length - 1);
                     });
+                } else if (data.source && typeof data.source === "object") {
+                    appendSourceLink(data.source, sourceCell);
                 } else {
                     const noSource = document.createElement("span");
                     noSource.textContent = "no source available";
@@ -275,7 +340,7 @@
                 }
 
                 row.appendChild(sourceCell);
-
+                tableBody.appendChild(row);
             });
         }
 
@@ -336,7 +401,7 @@
                     under GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
                 </small>
             </p>
-    
+
             <p>
                 <small class="block">
                     This page was built on a free template designed by 
@@ -345,8 +410,6 @@
             </p>
         </div>
     </div>
-    
-    
 
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>

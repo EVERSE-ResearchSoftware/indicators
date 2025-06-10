@@ -204,7 +204,6 @@
                 const rowId = data.name ? toSnakeCase(data.name) : 'no_name';
                 row.id = rowId;
 
-
                 const nameCell = document.createElement("td");
                 if (data.identifier && data.identifier.startsWith("http")) {
                     const link = document.createElement("a");
@@ -219,12 +218,10 @@
                 row.appendChild(nameCell);
 
                 const descriptionCell = document.createElement("td");
-                descriptionCell.textContent = data.description || "";
+                descriptionCell.innerHTML = (data.description || "").replace(/\r?\n/g, "<br>");
                 row.appendChild(descriptionCell);
-                tableBody.appendChild(row);
 
                 const sourceCell = document.createElement("td");
-
                 if (data.source && typeof data.source === "object") {
                     let href = null;
 
@@ -250,10 +247,12 @@
                 } else {
                     sourceCell.textContent = "";
                 }
-
                 row.appendChild(sourceCell);
+
+                tableBody.appendChild(row);
             });
         }
+
 
         function handleHashNavigation() {
             const hash = window.location.hash;
