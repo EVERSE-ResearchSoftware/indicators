@@ -92,7 +92,6 @@
             margin-bottom: 20px;
         }
 
-        /* LOADING OVERLAY */
         #table-loading-overlay {
             position: absolute;
             top: 0;
@@ -174,7 +173,6 @@
                 <button id="clear-search" title="Clear search">✕</button>
             </div>
 
-            <!-- LOADING OVERLAY -->
             <div id="table-loading-overlay">
                 <div class="spinner"></div>
                 <p>Loading indicators...</p>
@@ -207,7 +205,7 @@
 
         async function fetchJSONFiles(directory) {
             const overlay = document.getElementById("table-loading-overlay");
-            overlay.style.display = "flex"; // Mostrar overlay
+            overlay.style.display = "flex";
 
             try {
                 const response = await fetch(`${directory}/utils/indicators_list.json`);
@@ -215,7 +213,7 @@
 
                 for (const file of files) {
                     const data = await fetch(`../indicators/${file}`).then(res => res.json());
-                    data._filename = file; // 🔧 Guardar nombre del archivo JSON
+                    data._filename = file;
                     allData.push(data);
                 }
 
@@ -224,7 +222,7 @@
             } catch (error) {
                 console.error("Error al cargar los archivos JSON:", error);
             } finally {
-                overlay.style.display = "none"; // Ocultar overlay
+                overlay.style.display = "none";
             }
         }
 
