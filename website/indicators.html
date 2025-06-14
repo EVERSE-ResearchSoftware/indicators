@@ -92,7 +92,6 @@
             margin-bottom: 20px;
         }
 
-        /* LOADING OVERLAY */
         #table-loading-overlay {
             position: absolute;
             top: 0;
@@ -174,7 +173,6 @@
                 <button id="clear-search" title="Clear search">✕</button>
             </div>
 
-            <!-- LOADING OVERLAY -->
             <div id="table-loading-overlay">
                 <div class="spinner"></div>
                 <p>Loading indicators...</p>
@@ -207,7 +205,7 @@
 
         async function fetchJSONFiles(directory) {
             const overlay = document.getElementById("table-loading-overlay");
-            overlay.style.display = "flex"; // Mostrar overlay
+            overlay.style.display = "flex";
 
             try {
                 const response = await fetch(`${directory}/utils/indicators_list.json`);
@@ -215,6 +213,7 @@
 
                 for (const file of files) {
                     const data = await fetch(`../indicators/${file}`).then(res => res.json());
+                    data._filename = file;
                     allData.push(data);
                 }
 
@@ -223,7 +222,7 @@
             } catch (error) {
                 console.error("Error al cargar los archivos JSON:", error);
             } finally {
-                overlay.style.display = "none"; // Ocultar overlay
+                overlay.style.display = "none";
             }
         }
 
@@ -242,15 +241,31 @@
                 row.id = rowId;
 
                 const nameCell = document.createElement("td");
+
                 if (data.name && rowId !== "no_id") {
-                    const link = document.createElement("a");
-                    link.href = data.identifier['@id'];
-                    link.textContent = data.name;
-                    link.style.color = "#1E90FF";
-                    nameCell.appendChild(link);
+                    const nameLink = document.createElement("a");
+                    nameLink.href = data.identifier['@id'];
+                    nameLink.textContent = data.name;
+                    nameLink.style.color = "#1E90FF";
+                    nameLink.style.marginRight = "8px";
+                    nameCell.appendChild(nameLink);
+
+                    const iconLink = document.createElement("a");
+                    iconLink.href = `https://github.com/EVERSE-ResearchSoftware/indicators/blob/main/indicators/${data._filename}`;
+                    iconLink.target = "_blank";
+
+                    const iconImg = document.createElement("img");
+                    iconImg.src = "images/JSON-LD.svg";
+                    iconImg.style.width = "16px";
+                    iconImg.style.height = "16px";
+                    iconImg.style.verticalAlign = "middle";
+
+                    iconLink.appendChild(iconImg);
+                    nameCell.appendChild(iconLink);
                 } else {
                     nameCell.textContent = data.name || "";
                 }
+
                 row.appendChild(nameCell);
 
                 const keywordsCell = document.createElement("td");
@@ -392,6 +407,7 @@
             fetchJSONFiles('.');
         });
     </script>
+
 
     <div class="row copyright">
         <div class="col-md-12 text-center">
