@@ -1,13 +1,17 @@
 [
+    "archived_in_scholarly_repository.json",
+    "archived_in_software_heritage.json",
     "codemeta_completeness.json",
     "dependency_management.json",
     "descriptive_metadata.json",
     "has_ci-tests.json",
     "has_citation.json",
     "has_license.json",
+    "has_no_linting_issues.json",
     "has_published_package.json",
     "has_releases.json",
     "human_code_review_requirement.json",
+    "listed_in_registry.json",
     "no_critical_vulnerability.json",
     "no_leaked_credential.json",
     "persistent_and_unique_identifier.json",
@@ -16,5 +20,6 @@
     "software_documentation.json",
     "software_tests.json",
     "static_analysis_common_vulnerabilities.json",
+    "uses_fuzzing.json",
     "version_control_use.json"
 ]
