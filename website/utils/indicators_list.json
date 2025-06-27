@@ -21,5 +21,6 @@
     "software_tests.json",
     "static_analysis_common_vulnerabilities.json",
     "uses_fuzzing.json",
+    "uses_tool_for_warning_and_mistakes.json",
     "version_control_use.json"
 ]
