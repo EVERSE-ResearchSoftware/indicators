@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/listed_in_registry",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is listed in a registry",
-    "description": "The target source code repository is in a disciplinary or community registry (e.g ascl.net, bio.tools, swMath, RRID portal, RSD, WikiData, DataCite) to ensure that software can be found and accessed.",
+    "description": "The target source code repository is in a disciplinary or community registry (e.g ascl.net, bio.tools, swMath, RRID portal, RSD, WikiData, DataCite, etc.) to ensure that software can be found and accessed.",
     "source": {
         "@id": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/",
         "url": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/#accessibility-and-preservation",
@@ -11,15 +11,22 @@
     },
     "keywords": ["repository", "fair", "software heritage"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/archived_in_software_heritage"},
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
     "status": "Active",
     "version": "1.0.0",
     "author" : {
         "@type" : "schema:Organization",
         "name" : "FAIR-IMPACT"
     },
-    "qualityDimension": [
-        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
-        { "@id": "https://w3id.org/everse/i/dimensions/findability" }
-    ],
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
     "created": "23-06-2025"
   }

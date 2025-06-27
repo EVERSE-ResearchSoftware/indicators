@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/has_no_linting_issues",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has no linting issues",
-    "description": "The target source code repository has no programmatic or stylistic errors in its code files",
+    "description": "The project addresses or resolves warnings identified by compilers, safe modes, or linters.",
     "keywords": [ "linting", "code analysis", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_no_linting_issues" },
     "status": "Active",
