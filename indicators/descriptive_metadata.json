@@ -32,6 +32,9 @@
             "name" : "Description & classification. RSMD-4.1"
         }
     ],
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/findability" }
+    ],
     "created": "23-05-2025"
 }

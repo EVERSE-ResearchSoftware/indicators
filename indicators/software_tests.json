@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_tests",
     "@type": "SoftwareQualityIndicator",
     "name": "Software provides tests.",
-    "description": "This indicator aims to determine if tests and data are provided to check that a software project is operating as expected",
+    "description": "Evaluates the extent to which the software has been tested, including unit tests, integration tests, and system tests, to ensure reliability and correctness.",
     "keywords": [ "test", "functionality", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_tests" },
     "status": "Active",
@@ -22,6 +22,9 @@
         "url" : "https://zenodo.org/records/10047401",
         "name" : "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/reliability" }
+    ],
     "created": "23-05-2025"
 }
