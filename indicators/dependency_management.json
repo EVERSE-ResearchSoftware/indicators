@@ -29,6 +29,10 @@
       "name": "RSMD checklist"
     }
   ],
-  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustaninability" },
+  "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/sustainability" },
+        { "@id": "https://w3id.org/everse/i/dimensions/security" },
+        { "@id": "https://w3id.org/everse/i/dimensions/compatibility" }
+    ],
   "created": "03-04-2025"
 }

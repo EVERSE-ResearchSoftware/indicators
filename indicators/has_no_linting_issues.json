@@ -1,0 +1,34 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/has_no_linting_issues",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has no linting issues",
+    "description": "The project addresses or resolves warnings identified by compilers, safe modes, or linters.",
+    "keywords": [ "linting", "code analysis", "fair"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_no_linting_issues" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "Super-Linter"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": {
+        "url": "https://github.com/super-linter/super-linter",
+        "name": "Super-Linter"
+    },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability" }
+    ],
+    "created": "23-06-2025"
+}
