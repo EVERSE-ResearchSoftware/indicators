@@ -25,7 +25,7 @@
     "source": {
         "@id": "https://zenodo.org/records/10723608",
         "url": "https://zenodo.org/records/10723608",
-        "name": "Ensure Software Quality"
+        "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
     },
     "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
     "created": "14-07-2025"
