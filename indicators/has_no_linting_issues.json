@@ -22,10 +22,16 @@
         "name": "Andres Montero"
     }
     ],
-    "source": {
-        "url": "https://github.com/super-linter/super-linter",
-        "name": "Super-Linter"
-    },
+    "source": [
+        {
+            "url": "https://github.com/super-linter/super-linter",
+            "name": "Super-Linter"
+        },
+        {
+            "url": "https://www.bestpractices.dev/en/criteria/0#0.warnings_fixed",
+            "name": "OpenSSF best practices"
+        }
+    ],
     "qualityDimension": [
         { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
         { "@id": "https://w3id.org/everse/i/dimensions/maintainability" }
