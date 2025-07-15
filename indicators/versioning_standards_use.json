@@ -24,7 +24,7 @@
     ],
     "source": {
         "@id": "https://doi.org/10.5281/zenodo.15535629",
-        "url": "https://zenodo.org/records/10723608",
+        "url": "https://doi.org/10.5281/zenodo.15535629",
         "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
     },
     "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
