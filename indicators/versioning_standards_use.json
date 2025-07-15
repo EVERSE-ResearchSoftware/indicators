@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/versioning_standards_use",
     "@type": "SoftwareQualityIndicator",
     "name": "Software follows versioning standards",
-    "description": "This indicator aims to determine if a software's version or versions follow a established community convention like SemVer or CalVer.",
+    "description": "This indicator aims to determine if the version (or versions) of a software tool follows an established community convention like semantic versioning (SemVer) or calendar versioning (CalVer).",
     "keywords": [ "version", "versioning", "fair", "releases"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/versioning_standards_use" },
     "status": "Active",
