@@ -27,6 +27,9 @@
         "url": "https://www.bestpractices.dev/en/criteria/0#0.repo_interim",
         "name": "OpenSSF Best Practices (change control)"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" }
+    ],
     "created": "23-05-2025"
 }
