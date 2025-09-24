@@ -3,6 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/human_code_review_requirement",
     "@type": "SoftwareQualityIndicator",
     "name": "Software requires human code review.",
+    "abbreviation": "human code review requirement",
     "description": "This indicator aims to determine if a software project requires human code review before pull requests.",
     "keywords": ["human-in-the-loop","pull request","review"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/human_code_review_requirement" },

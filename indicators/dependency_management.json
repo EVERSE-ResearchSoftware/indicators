@@ -3,6 +3,7 @@
   "@id": "https://w3id.org/everse/i/indicators/dependency_management",
   "@type": "SoftwareQualityIndicator",
   "name": "Software has dependency management solution",
+  "abbreviation": "dependency management",
   "identifier": { "@id": "https://w3id.org/everse/i/indicators/dependency_management" },
   "description": "Reviews how external libraries and dependencies are managed to ensure compatibility and security.",
   "status": "Active",

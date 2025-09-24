@@ -3,6 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/has_published_package",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is published as a downloadable package",
+    "abbreviation": "has published package",
     "description": "This indicator aims to determine if a software project is published as a downloadable package.",
     "keywords": [ "release", "fair", "package", "packaging"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_published_package" },

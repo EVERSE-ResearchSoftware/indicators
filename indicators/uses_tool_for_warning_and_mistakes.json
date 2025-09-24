@@ -3,6 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/uses_tool_for_warnings_or_mistakes",
     "@type": "SoftwareQualityIndicator",
     "name": "Software uses a tool for warnings or mistakes",
+    "abbreviation": "uses tool for warnings or mistakes",
     "description": "This indicator checks that the project enables one or more compiler warning flags, a \"safe\" language mode, or uses a separate \"linter\" tool to look for code quality errors or common simple mistakes, if there is at least one FLOSS tool that can implement this criterion in the selected language.",
     "keywords": [ "linting", "code analysis", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/uses_tool_for_warnings_or_mistakes" },
