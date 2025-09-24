@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/archived_in_software_heritage",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is archived in Software Heritage",
-    "abbreviation": "archived in software heritage",
+    "abbreviation": "archived_in_software_heritage",
     "description": "The source code repository is found in the universal source code archive, Software Heritage, to ensure long-term access to the full development history.",
     "alternateName": "FRSM-08",
     "source": {

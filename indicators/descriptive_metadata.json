@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/descriptive_metadata",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has descriptive metadata",
-    "abbreviation": "descriptive metadata",
+    "abbreviation": "descriptive_metadata",
     "alternateName": "FRSM-06",
     "description": "This indicator aims to determine if a software component comes with descriptive metadata that provides information. This includes, but is not limited to: name, domain, programming language, date created, date of first publication, keywords, related links, etc..",
     "keywords": [ "metadata", "software", "fair", "findability"],

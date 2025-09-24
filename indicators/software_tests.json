@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_tests",
     "@type": "SoftwareQualityIndicator",
     "name": "Software provides tests.",
-    "abbreviation": "software has tests",
+    "abbreviation": "software_has_tests",
     "alternateName": "FRSM-14",
     "description": "Evaluates the extent to which the software has been tested, including unit tests, integration tests, and system tests, to ensure reliability and correctness.",
     "keywords": [ "test", "functionality", "fair"],

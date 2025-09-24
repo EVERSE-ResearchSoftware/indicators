@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/codemeta_completeness",
     "@type": "SoftwareQualityIndicator",
     "name": "CodeMeta completeness",
-    "abbreviation": "codemeta completeness",
+    "abbreviation": "codemeta_completeness",
     "description": "Indicator that checks the completeness of a codemeta.json file, i.e., the percentage of properties that are filled with metadata. This indicator does not assess the quality of the metadata fields available.",
     "keywords": [ "codemeta", "metadata", "fair" ],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/codemeta_completeness" },

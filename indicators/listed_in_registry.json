@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/listed_in_registry",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is listed in a registry",
-    "abbreviation": "listed in registry",
+    "abbreviation": "listed_in_registry",
     "description": "The target source code repository is in a disciplinary or community registry (e.g ascl.net, bio.tools, swMath, RRID portal, RSD, WikiData, DataCite, etc.) to ensure that software can be found and accessed.",
     "source": {
         "@id": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/",
