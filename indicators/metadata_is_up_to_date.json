@@ -9,10 +9,6 @@
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/metadata_is_up_to_date" },
     "status": "Active",
     "version": "1.0.0",
-    "author" : {
-        "@type" : "schema:Organization",
-        "name" : "EOSC-SWRelMan-11"
-    },
     "contact": [
     {
         "@type": "schema:Person",
