@@ -3,6 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/archived_in_scholarly_repository",
     "@type": "SoftwareQualityIndicator",
     "name": "Software is archived in a scholarly repository",
+    "abbreviation": "archived_in_scholarly_repository",
     "description": "The source code repository is archived in a scholarly repository (e.g Zenodo, HAL) to ensure that software can be found and accessed in a scholarly context ",
     "source": {
         "@id": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/",

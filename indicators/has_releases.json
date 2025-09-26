@@ -3,9 +3,11 @@
     "@id": "https://w3id.org/everse/i/indicators/has_releases",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has releases",
+    "abbreviation": "has_releases",
     "description": "To enable collaborative review, the project's source repository MUST include interim versions for review between releases; it MUST NOT include only final releases. This indicator determines if a software project has releases. This can be achieved by looking for tags or using software that retrieves related data.",
     "keywords": [ "releases", "repository", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_releases" },
+    "alternateName": "FRSM-03",
     "status": "Active",
     "version": "1.0.0",
     "author" : {
@@ -27,6 +29,9 @@
         "url": "https://www.bestpractices.dev/en/criteria/0#0.repo_interim",
         "name": "OpenSSF Best Practices (change control)"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" }
+    ],
     "created": "23-05-2025"
 }
