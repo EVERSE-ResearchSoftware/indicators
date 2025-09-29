@@ -2,13 +2,6 @@ name: Update Indicators and Dimensions List
 
 on:
   push:
-    branches:
-      - main
-      - development
-  pull_request:
-    branches:
-      - main
-      - development
 
 jobs:
   update-lists:
