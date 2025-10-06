@@ -8,7 +8,7 @@
     "source": {
         "@id": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/",
         "url": "https://fair-impact.github.io/RSMD-guidelines/8.rsmd_checklist/#accessibility-and-preservation",
-        "name": "Accesibility and preservation. RSMD 2.3"
+        "name": "Accessibility and preservation. RSMD 2.3"
     },
     "keywords": ["repository", "fair", "software heritage, zenodo"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/listed_in_registry"},
