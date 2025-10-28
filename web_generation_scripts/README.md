@@ -1,11 +1,28 @@
-## generate_lists.py
+## generate_api.py
 
-This script is used to update the list of json files located in both the indicators and dimensions directories in order to make the website show its table with its content up to date.
+This script generates consolidated JSON API endpoint files for both dimensions and indicators from their respective JSON files. The generated files can be served as static API endpoints that external services can fetch.
+These files are also used by the website to dynamically load the list of dimensions and indicators.
 
-## indicator_append.py
+**Usage:**
+```bash
+# Generate both API endpoints (dimensions and indicators)
+python web_generation_scripts/generate_api.py
 
-This script is used to append the different indicators located in each json file into a single json-ld.
+# Generate only dimensions API
+python web_generation_scripts/generate_api.py --dimensions-only
 
-## dimension_append.py
+# Generate only indicators API
+python web_generation_scripts/generate_api.py --indicators-only
+```
 
-Similarly, this script does the same as the indicator_append.py script but with the dimensions.
+**Output:** 
+- `api/dimensions.json` - All dimensions with metadata (version, last update date, count)
+- `api/indicators.json` - All indicators with metadata (version, last update date, count)
+
+**Features:**
+- Single unified script for both API endpoints
+- Reduces code duplication
+- Flexible command-line options
+- Automatic sorting by name
+- Removes unnecessary fields (e.g., "created")
+- JSON-LD formatted for semantic web integration
