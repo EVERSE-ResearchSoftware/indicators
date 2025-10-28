@@ -178,3 +178,7 @@ cython_debug/
 website/css/.DS_Store
 website/js/.DS_Store
 website/sass/.DS_Store
+
+# API endpoints (generated during deployment)
+api/
+
