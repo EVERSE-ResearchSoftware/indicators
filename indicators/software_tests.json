@@ -20,6 +20,10 @@
         "name": "Andres Montero"
     }
     ],
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "FAIR-IMPACT"
+    },
     "source": {
         "url" : "https://zenodo.org/records/10047401",
         "name" : "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"
