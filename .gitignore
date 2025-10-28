@@ -178,3 +178,9 @@ cython_debug/
 website/css/.DS_Store
 website/js/.DS_Store
 website/sass/.DS_Store
+
+# API endpoint (built during deployment, should not be committed)
+api/
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md

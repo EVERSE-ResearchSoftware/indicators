@@ -208,19 +208,17 @@
             overlay.style.display = "flex";
 
             try {
-                const response = await fetch(`${directory}/utils/indicators_list.json`);
-                const files = await response.json();
-
-                for (const file of files) {
-                    const data = await fetch(`../indicators/${file}`).then(res => res.json());
-                    data._filename = file;
-                    allData.push(data);
-                }
+                // Fetch from the API endpoint
+                const response = await fetch(`${directory}/../api/indicators.json`);
+                const apiData = await response.json();
+                
+                // Extract the indicators array from the API response
+                allData = apiData.indicators || [];
 
                 updateTable(allData);
                 handleHashNavigation();
             } catch (error) {
-                console.error("Error al cargar los archivos JSON:", error);
+                console.error("Error loading indicators from API:", error);
             } finally {
                 overlay.style.display = "none";
             }
