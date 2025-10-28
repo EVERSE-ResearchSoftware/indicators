@@ -19,6 +19,20 @@
         "name": "Daniel Garijo"
     }
     ],
+    "author" : [
+    {
+        "@type": "schema:Person",
+        "name": "Tom François"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Thomas Vuillaume"
+    }    
+    ],
     "source": [
         {
             "url" : "https://doi.org/10.5281/zenodo.10647227",
