@@ -179,7 +179,7 @@ website/css/.DS_Store
 website/js/.DS_Store
 website/sass/.DS_Store
 
-# API endpoint (built during deployment, should not be committed)
+# API endpoints (generated during deployment)
 api/
 
 #Ignore vscode AI rules

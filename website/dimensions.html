@@ -169,7 +169,7 @@
         async function fetchJSONFiles(directory) {
             try {
                 // Fetch from the new API endpoint
-                const response = await fetch(`${directory}/api/dimensions.json`);
+                const response = await fetch(`${directory}/../api/dimensions.json`);
                 const apiData = await response.json();
                 
                 // Extract the dimensions array from the API response

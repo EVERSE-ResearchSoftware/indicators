@@ -25,7 +25,7 @@ jobs:
       run: |
         echo "Running generate_api.py..."
         python web_generation_scripts/generate_api.py
-        echo "API endpoints generated (will be deployed with website, not committed to repo)"
+        echo "API endpoints generated in api/ (will be deployed with GitHub Pages)"
 
     - name: Commit and push changes
       run: |
