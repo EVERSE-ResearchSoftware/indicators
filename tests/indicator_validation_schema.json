@@ -23,6 +23,10 @@
             "type": "string",
             "description": "Abbreviation or short form of the indicator name."
         },
+        "alternateName": {
+            "type": "string",
+            "title": "Alternate name available for the indicator."
+        },
         "description": {
             "type": "string",
             "description": "A brief description of the quality indicator."
