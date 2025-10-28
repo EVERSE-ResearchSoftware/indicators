@@ -3,6 +3,8 @@
     "@id": "https://w3id.org/everse/i/indicators/requirements_specified",
     "@type": "SoftwareQualityIndicator",
     "name": "Software specifies requirements",
+    "abbreviation": "requirements_specified",
+    "alternateName": "FRSM-13",
     "description": "This indicator tries to determine if the project specifies what is required to use the software.",
     "keywords": [ "documentation", "requirements", "dependencies", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/requirements_specified" },

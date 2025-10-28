@@ -3,6 +3,8 @@
     "@id": "https://w3id.org/everse/i/indicators/version_control_use",
     "@type": "SoftwareQualityIndicator",
     "name": "Software makes use of version control",
+    "abbreviation": "version_control_use",
+    "alternateName": "FRSM-17",
     "description": "This indicator aims to determine if a software project uses version control.",
     "keywords": [ "version", "control", "fair", "repository", "identifier"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/version_control_use" },

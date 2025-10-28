@@ -3,6 +3,7 @@
   "@id": "https://w3id.org/everse/i/dimensions/functional_suitability",
   "@type": "SoftwareQualityDimension",
   "name": "Functional suitability",
+  "abbreviation": "functional_suitability",
   "identifier": "https://w3id.org/everse/i/dimensions/functional_suitability",
   "description": "This characteristic represents the degree to which a product or system provides functions that meet stated and implied needs when used under specified conditions. This characteristic is composed of the following sub-characteristics: \n    Functional completeness - Degree to which the set of functions covers all the specified tasks and intended users' objectives.\n     Functional correctness - Degree to which a product or system provides accurate results when used by intended users.\n    Functional appropriateness - Degree to which the functions facilitate the accomplishment of specified tasks and objectives.",
   "source": {

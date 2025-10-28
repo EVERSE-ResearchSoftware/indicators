@@ -3,6 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has continuous integration tests",
+    "abbreviation": "has_ci-tests",
     "description": "This indicator aims to determine if the project runs tests before pull requests are merged.",
     "keywords": [ "continuous", "integration", "test"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_ci-tests" },

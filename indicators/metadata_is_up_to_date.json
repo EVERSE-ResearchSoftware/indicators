@@ -1,0 +1,33 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/metadata_is_up_to_date",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software has up-to-date metadata",
+    "abbreviation": "metadata_is_up_to_date",
+    "description": "Metadata information reflects the current description of a software project. This indicator ensures that the current project metadata provides up to date, accurate and relevant information about a software component.",
+    "keywords": [ "metadata", "software", "fair", "findability", "maintainability"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/metadata_is_up_to_date" },
+    "status": "Active",
+    "version": "1.0.0",
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Tom François"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    }
+    ],
+    "source": [
+        {
+            "url" : "https://doi.org/10.5281/zenodo.10647227",
+            "name" : "EOSC-SWRelMan-11: Metadata: Supportability, Maintainability, Availability."
+        }
+    ],
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability" }
+    ],  
+    "created": "24-09-2025"
+}
