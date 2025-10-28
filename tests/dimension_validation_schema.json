@@ -19,6 +19,10 @@
             "type": "string",
             "description": "The name of the quality dimension."
         },
+        "abbreviation": {
+            "type": "string",
+            "description": "Abbreviation or short form of the dimension name."
+        },
         "description": {
             "type": "string",
             "description": "A detailed description of the quality dimension."
@@ -34,9 +38,58 @@
             "description": "Keywords describing the quality dimension."
         },
         "author": {
-            "type": "string",
-            "format": "uri",
-            "description": "The author or creator of the quality dimension."
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The author or creator of the quality dimension."
+                },
+                {
+                    "type": "object",
+                    "description": "The author or creator of the quality dimension.",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "description": "Multiple authors or creators of the quality dimension.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                }
+            ]
         },
         "created": {
             "type": "string",
@@ -48,27 +101,93 @@
             "description": "Version number of the quality dimension definition."
         },
         "contact": {
-            "type": "string",
-            "format": "uri",
-            "description": "Contact point for further inquiries."
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Contact point for further inquiries."
+                },
+                {
+                    "type": "object",
+                    "description": "Contact point for further inquiries.",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "description": "Multiple contact points for further inquiries.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            }
+                        }
+                    }
+                }
+            ]
         },
         "source": {
-            "type": "object",
-            "description": "Source of the quality dimension definition.",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the source."
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Source of the quality dimension definition.",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name of the source."
 
+                        },
+                        "url": {
+                            "type": "string",
+                            "description": "URL of the source."
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "url"
+                    ]
                 },
-                "url": {
-                    "type": "string",
-                    "description": "URL of the source."
+                {
+                    "type": "array",
+                    "description": "Multiple sources of the quality dimension definition.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the source."
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "URL of the source."
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "url"
+                        ]
+                    }
                 }
-            },
-            "required": [
-                "name",
-                "url"
             ]
         },
         "isPartOf": {
