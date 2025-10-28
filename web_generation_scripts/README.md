@@ -1,22 +1,28 @@
-## generate_lists.py
+## generate_api.py
 
-This script is used to update the list of json files located in both the indicators and dimensions directories in order to make the website show its table with its content up to date.
-
-## indicator_append.py
-
-This script is used to append the different indicators located in each json file into a single json-ld.
-
-## dimension_append.py
-
-Similarly, this script does the same as the indicator_append.py script but with the dimensions.
-
-## generate_dimensions_api.py
-
-This script generates a consolidated JSON API endpoint file (`website/api/dimensions.json`) from all dimension JSON files in the `dimensions/` folder. The generated file can be served as a static API endpoint that external services can fetch to retrieve the complete list of software quality dimensions.
+This script generates consolidated JSON API endpoint files for both dimensions and indicators from their respective JSON files. The generated files can be served as static API endpoints that external services can fetch.
+These files are also used by the website to dynamically load the list of dimensions and indicators.
 
 **Usage:**
 ```bash
-python web_generation_scripts/generate_dimensions_api.py
+# Generate both API endpoints (dimensions and indicators)
+python web_generation_scripts/generate_api.py
+
+# Generate only dimensions API
+python web_generation_scripts/generate_api.py --dimensions-only
+
+# Generate only indicators API
+python web_generation_scripts/generate_api.py --indicators-only
 ```
 
-**Output:** `website/api/dimensions.json` - A JSON file containing all dimensions with metadata including version, last update date, and total count.
+**Output:** 
+- `api/dimensions.json` - All dimensions with metadata (version, last update date, count)
+- `api/indicators.json` - All indicators with metadata (version, last update date, count)
+
+**Features:**
+- Single unified script for both API endpoints
+- Reduces code duplication
+- Flexible command-line options
+- Automatic sorting by name
+- Removes unnecessary fields (e.g., "created")
+- JSON-LD formatted for semantic web integration

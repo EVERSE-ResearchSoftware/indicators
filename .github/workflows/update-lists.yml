@@ -28,6 +28,12 @@ jobs:
         echo "Running generate_lists.py..."
         python web_generation_scripts/generate_lists.py
 
+    - name: Generate API endpoints
+      run: |
+        echo "Running generate_api.py..."
+        python web_generation_scripts/generate_api.py
+        echo "API endpoints generated (will be deployed with website, not committed to repo)"
+
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"
