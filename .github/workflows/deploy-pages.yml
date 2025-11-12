@@ -32,7 +32,7 @@ jobs:
       - name: Generate API endpoints
         run: |
           echo "Generating API endpoints..."
-          python web_generation_scripts/generate_api.py
+          python scripts/generate_api.py
           echo "✓ API endpoints generated"
           ls -lh api/
 
