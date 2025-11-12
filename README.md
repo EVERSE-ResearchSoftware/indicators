@@ -36,9 +36,9 @@ The repository provides JSON API endpoints that consolidate all indicators and d
 
 ```javascript
 // Fetch all indicators
-const response = await fetch('https://everse.software/indicators/api/indicators.json');
-const data = await response.json();
-console.log(`Found ${data.count} indicators`);
+const indicator_response = await fetch('https://everse.software/indicators/api/indicators.json');
+const indicator_data = await indicator_response.json();
+console.log(`Found ${indicator_data.count} indicators`);
 
 // Fetch all dimensions
 const dimResponse = await fetch('https://everse.software/indicators/api/dimensions.json');
