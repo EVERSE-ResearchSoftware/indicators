@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - ${{ github.event.repository.default_branch }}
+  pull_request:
+    branches:
+      - ${{ github.event.repository.default_branch }}
 
 permissions:
   contents: read
@@ -39,7 +42,7 @@ jobs:
           name: api-endpoints
           path: 'api/'
 
-  build:
+  build-pages:
     runs-on: ubuntu-latest
     needs: generate-api
     steps:
@@ -61,11 +64,13 @@ jobs:
           path: '.'
 
   deploy:
+    # deploy only on pushes to the default branch
+    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-pages
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
