@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - ${{ github.event.repository.default_branch }}
+      - main
   pull_request:
     branches:
-      - ${{ github.event.repository.default_branch }}
+      - main
 
 permissions:
   contents: read
@@ -64,8 +64,8 @@ jobs:
           path: '.'
 
   deploy:
-    # deploy only on pushes to the default branch
-    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    # Only deploy on pushes to main, not on pull requests
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
