@@ -41,9 +41,9 @@ const indicator_data = await indicator_response.json();
 console.log(`Found ${indicator_data.count} indicators`);
 
 // Fetch all dimensions
-const dimResponse = await fetch('https://everse.software/indicators/api/dimensions.json');
-const dimData = await dimResponse.json();
-console.log(`Found ${dimData.count} dimensions`);
+const dimension_response = await fetch('https://everse.software/indicators/api/dimensions.json');
+const dimension_data = await dimension_response.json();
+console.log(`Found ${dimension_data.count} dimensions`);
 ```
 
 ### Generating API Files
