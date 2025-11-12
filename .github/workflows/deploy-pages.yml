@@ -4,15 +4,16 @@ on:
   push:
     branches:
       - main
+<<<<<<< HEAD
   workflow_dispatch:
+=======
+>>>>>>> f1fdc7c (separate jobs)
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -40,8 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: api-endpoints
-          path: api/
-          retention-days: 1
+          path: 'api/'
 
   build:
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v
         with:
           path: '.'
 
