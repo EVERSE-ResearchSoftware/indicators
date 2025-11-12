@@ -6,9 +6,9 @@ This script reads all dimension and indicator JSON files from their respective f
 and creates consolidated JSON files that can be served as API endpoints.
 
 Usage:
-    python web_generation_scripts/generate_api.py
-    python web_generation_scripts/generate_api.py --dimensions-only
-    python web_generation_scripts/generate_api.py --indicators-only
+    python scripts/generate_api.py
+    python scripts/generate_api.py --dimensions-only
+    python scripts/generate_api.py --indicators-only
 """
 
 import argparse

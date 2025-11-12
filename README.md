@@ -46,3 +46,20 @@ const dimData = await dimResponse.json();
 console.log(`Found ${dimData.count} dimensions`);
 ```
 
+### Generating API Files
+
+The API files are automatically generated from the individual JSON files in the `indicators/` and `dimensions/` folders:
+
+```bash
+# Generate both APIs
+python scripts/generate_api.py
+
+# Generate only indicators API
+python scripts/generate_api.py --indicators-only
+
+# Generate only dimensions API
+python scripts/generate_api.py --dimensions-only
+```
+
+**Note**: The API files are generated in `api/` during the GitHub Actions workflow and are automatically served by GitHub Pages at `/api/indicators.json` and `/api/dimensions.json`. They are not committed to the repository to avoid data duplication.
+
