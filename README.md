@@ -13,7 +13,7 @@ A list of dimensions is available at [https://w3id.org/everse/i/dimensions](http
 The repository provides JSON API endpoints that consolidate all indicators and dimensions for easy consumption by external services:
 
 ### Indicators API
-- **Endpoint**: `https://everse.software/indicators/api/indicators.json`
+- **Endpoint**: https://everse.software/indicators/api/indicators.json
 - **Description**: Returns all software quality indicators with metadata
 - **Format**: JSON-LD compatible
 - **Fields**: 
@@ -23,7 +23,7 @@ The repository provides JSON API endpoints that consolidate all indicators and d
   - `indicators`: Array of all indicator objects
 
 ### Dimensions API
-- **Endpoint**: `https://everse.software/indicators/api/dimensions.json`
+- **Endpoint**: https://everse.software/indicators/api/dimensions.json
 - **Description**: Returns all software quality dimensions with metadata
 - **Format**: JSON-LD compatible
 - **Fields**:
