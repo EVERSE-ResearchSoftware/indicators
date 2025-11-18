@@ -292,6 +292,7 @@
         "@context",
         "@type",
         "name",
+        "abbreviation",
         "description",
         "author",
         "version",
