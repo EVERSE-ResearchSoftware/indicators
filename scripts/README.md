@@ -6,13 +6,13 @@ These files are also used by the website to dynamically load the list of dimensi
 **Usage:**
 ```bash
 # Generate both API endpoints (dimensions and indicators)
-python web_generation_scripts/generate_api.py
+python scripts/generate_api.py
 
 # Generate only dimensions API
-python web_generation_scripts/generate_api.py --dimensions-only
+python scripts/generate_api.py --dimensions-only
 
 # Generate only indicators API
-python web_generation_scripts/generate_api.py --indicators-only
+python scripts/generate_api.py --indicators-only
 ```
 
 **Output:** 
