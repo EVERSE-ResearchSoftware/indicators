@@ -204,6 +204,7 @@
     "required": [
         "@context",
         "name",
+        "abbreviation",
         "description",
         "identifier",
         "source"

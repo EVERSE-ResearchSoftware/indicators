@@ -147,13 +147,15 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 25%;">
-                    <col style="width: 60%;">
-                    <col style="width: 15%;">
+                    <col style="width: 25%;"> <!-- Name -->
+                    <col style="width: 20%;"> <!-- Abbreviation -->
+                    <col style="width: 40%;"> <!-- Description -->
+                    <col style="width: 15%;"> <!-- Source -->
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Abbreviation</th>
                         <th>Description</th>
                         <th>Source</th>
                     </tr>
@@ -215,6 +217,10 @@
                     nameCell.textContent = data.name || "";
                 }
                 row.appendChild(nameCell);
+
+                const abbreviationCell = document.createElement("td");
+                abbreviationCell.textContent = data.abbreviation || "";
+                row.appendChild(abbreviationCell);
 
                 const descriptionCell = document.createElement("td");
                 descriptionCell.innerHTML = (data.description || "").replace(/\r?\n/g, "<br>");
@@ -282,6 +288,7 @@
                     const query = input.value.toLowerCase().trim();
                     const filtered = allData.filter(item =>
                         (item.name && item.name.toLowerCase().includes(query)) ||
+                        (item.abbreviation && item.abbreviation.toLowerCase().includes(query)) ||
                         (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
                         (item.description && item.description.toLowerCase().includes(query))
                     );
