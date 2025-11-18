@@ -180,15 +180,17 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 16%;">
-                    <col style="width: 12%;">
-                    <col style="width: 12%;">
-                    <col style="width: 28%;">
-                    <col style="width: 18%;">
+                    <col style="width: 16%;"> <!-- Name -->
+                    <col style="width: 12%;"> <!-- Abbreviation -->
+                    <col style="width: 12%;"> <!-- Keywords -->
+                    <col style="width: 24%;"> <!-- Quality Dimension -->
+                    <col style="width: 24%;"> <!-- Description -->
+                    <col style="width: 12%;"> <!-- Source -->
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Abbreviation</th>
                         <th>Keywords</th>
                         <th>Quality Dimension</th>
                         <th>Description</th>
@@ -265,6 +267,10 @@
                 }
 
                 row.appendChild(nameCell);
+
+                const abbreviationCell = document.createElement("td");
+                abbreviationCell.textContent = data.abbreviation || "";
+                row.appendChild(abbreviationCell);
 
                 const keywordsCell = document.createElement("td");
                 keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
@@ -386,6 +392,7 @@
                     const query = input.value.toLowerCase().trim();
                     const filtered = allData.filter(item =>
                         (item.name && item.name.toLowerCase().includes(query)) ||
+                        (item.abbreviation && item.abbreviation.toLowerCase().includes(query)) ||
                         (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
                         (item.description && item.description.toLowerCase().includes(query)) ||
                         (item.identifier && item.identifier['@id'] && item.identifier['@id'].toLowerCase().includes(query))
