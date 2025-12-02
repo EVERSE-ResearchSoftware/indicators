@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="scientific software, knowledge graph, reproducibility, reusability" />
+    <link rel="stylesheet" href="css/icomoon.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/style.css">
@@ -180,15 +180,17 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 16%;">
-                    <col style="width: 12%;">
-                    <col style="width: 12%;">
-                    <col style="width: 28%;">
-                    <col style="width: 18%;">
+                    <col style="width: 16%;"> <!-- Name -->
+                    <col style="width: 12%;"> <!-- Abbreviation -->
+                    <col style="width: 12%;"> <!-- Keywords -->
+                    <col style="width: 24%;"> <!-- Quality Dimension -->
+                    <col style="width: 24%;"> <!-- Description -->
+                    <col style="width: 12%;"> <!-- Source -->
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Abbreviation</th>
                         <th>Keywords</th>
                         <th>Quality Dimension</th>
                         <th>Description</th>
@@ -208,19 +210,17 @@
             overlay.style.display = "flex";
 
             try {
-                const response = await fetch(`${directory}/utils/indicators_list.json`);
-                const files = await response.json();
-
-                for (const file of files) {
-                    const data = await fetch(`../indicators/${file}`).then(res => res.json());
-                    data._filename = file;
-                    allData.push(data);
-                }
+                // Fetch from the API endpoint
+                const response = await fetch(`${directory}/../api/indicators.json`);
+                const apiData = await response.json();
+                
+                // Extract the indicators array from the API response
+                allData = apiData.indicators || [];
 
                 updateTable(allData);
                 handleHashNavigation();
             } catch (error) {
-                console.error("Error al cargar los archivos JSON:", error);
+                console.error("Error loading indicators from API:", error);
             } finally {
                 overlay.style.display = "none";
             }
@@ -255,7 +255,7 @@
                     iconLink.target = "_blank";
 
                     const iconImg = document.createElement("img");
-                    iconImg.src = "images/JSON-LD.svg";
+                    iconImg.src = "images/json-ld-logo.png";
                     iconImg.style.width = "16px";
                     iconImg.style.height = "16px";
                     iconImg.style.verticalAlign = "middle";
@@ -267,6 +267,10 @@
                 }
 
                 row.appendChild(nameCell);
+
+                const abbreviationCell = document.createElement("td");
+                abbreviationCell.textContent = data.abbreviation || "";
+                row.appendChild(abbreviationCell);
 
                 const keywordsCell = document.createElement("td");
                 keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
@@ -388,6 +392,7 @@
                     const query = input.value.toLowerCase().trim();
                     const filtered = allData.filter(item =>
                         (item.name && item.name.toLowerCase().includes(query)) ||
+                        (item.abbreviation && item.abbreviation.toLowerCase().includes(query)) ||
                         (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
                         (item.description && item.description.toLowerCase().includes(query)) ||
                         (item.identifier && item.identifier['@id'] && item.identifier['@id'].toLowerCase().includes(query))

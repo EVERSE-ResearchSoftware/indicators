@@ -3,6 +3,8 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_citation",
     "@type": "SoftwareQualityIndicator",
     "name": "Software uses citation",
+    "abbreviation": "software_has_citation",
+    "alternateName": "FRSM-12",
     "description": "This indicator aims to determine if the project uses a citation to reference contributors and authors (e.g., through a CFF file, in the README, etc).",
     "keywords": [ "citation", "metadata", "fair", "contributors"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_citation" },
@@ -18,6 +20,10 @@
         "name": "Andres Montero"
     }
     ],
+    "author" : {
+        "@type" : "schema:Organization",
+        "name" : "FAIR-IMPACT"
+    },
     "source": {
         "url": "https://zenodo.org/records/10047401",
         "name": "D5.2 - Metrics for automated FAIR software assessment in a disciplinary context"

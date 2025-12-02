@@ -19,31 +19,68 @@
             "type": "string",
             "description": "The name of the quality indicator."
         },
+        "abbreviation": {
+            "type": "string",
+            "description": "Abbreviation or short form of the indicator name."
+        },
+        "alternateName": {
+            "type": "string",
+            "title": "Alternate name available for the indicator."
+        },
         "description": {
             "type": "string",
             "description": "A brief description of the quality indicator."
         },
         "author": {
-            "type": "object",
-            "description": "The author of the quality indicator.",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "format": "uri"
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "The author of the quality indicator.",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "format": "uri"
 
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
                 },
-                "name": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string",
-                    "format": "email"
-                },
-                "url": {
-                    "type": "string",
-                    "format": "uri"
+                {
+                    "type": "array",
+                    "description": "Multiple authors of the quality indicator.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "format": "uri"
+
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
                 }
-            }
+            ]
         },
         "created": {
             "type": "string",
@@ -77,69 +114,185 @@
             }
         },
         "qualityDimension": {
-            "type": "object",
-            "description": "The quality dimension this indicator pertains to.",
-            "properties": {
-                "@id": {
-                    "type": "string",
-                    "format": "uri"
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "The quality dimension this indicator pertains to.",
+                    "properties": {
+                        "@id": {
+                            "type": "string",
+                            "format": "uri"
 
-                }
-            }
-        },
-        "source": {
-            "type": "array",
-            "description": "The source from which this indicator is derived.",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "@id": {
-                        "type": "string",
-                        "format": "uri"
-
-                    },
-                    "identifier": {
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    "@type": {
-                        "type": "string"
-                    },
-                    "url": {
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    "name": {
-                        "type": "string"
+                        }
                     }
                 },
-                "required": [
-                    "name"
-                ]
-            }
+                {
+                    "type": "array",
+                    "description": "Multiple quality dimensions this indicator pertains to.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "format": "uri"
+
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "source": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "The source from which this indicator is derived.",
+                    "properties": {
+                        "@id": {
+                            "type": "string",
+                            "format": "uri"
+
+                        },
+                        "identifier": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "@type": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "description": "Multiple sources from which this indicator is derived.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "format": "uri"
+
+                            },
+                            "identifier": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "@type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    }
+                }
+            ]
         },
         "contact": {
-            "type": "object",
-            "description": "Contact point for more information.",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "format": "uri"
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Contact point for more information.",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    }
                 },
-                "name": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string",
-                    "format": "email"
+                {
+                    "type": "array",
+                    "description": "Multiple contact points for more information.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            }
+                        }
+                    }
                 }
-            }
+            ]
+        },
+        "contactPoint": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Contact point for more information.",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "description": "Multiple contact points for more information.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            }
+                        }
+                    }
+                }
+            ]
         }
     },
     "required": [
         "@context",
         "@type",
         "name",
+        "abbreviation",
         "description",
         "author",
         "version",
