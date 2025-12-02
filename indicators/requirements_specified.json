@@ -8,6 +8,7 @@
     "description": "This indicator tries to determine if the project specifies what is required to use the software.",
     "keywords": [ "documentation", "requirements", "dependencies", "fair"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/requirements_specified" },
+    "sameAs": "https://doi.org/10.25504/FAIRsharing.b8eeb9",
     "status": "Active",
     "version": "1.0.0",
     "contact": [
