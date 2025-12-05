@@ -210,13 +210,10 @@
             overlay.style.display = "flex";
 
             try {
-                // Fetch from the API endpoint
                 const response = await fetch(`${directory}/../api/indicators.json`);
                 const apiData = await response.json();
                 
-                // Extract the indicators array from the API response
                 allData = apiData.indicators || [];
-
                 updateTable(allData);
                 handleHashNavigation();
             } catch (error) {
@@ -241,7 +238,6 @@
                 row.id = rowId;
 
                 const nameCell = document.createElement("td");
-
                 if (data.name && rowId !== "no_id") {
                     const nameLink = document.createElement("a");
                     nameLink.href = data.identifier['@id'];
@@ -265,7 +261,6 @@
                 } else {
                     nameCell.textContent = data.name || "";
                 }
-
                 row.appendChild(nameCell);
 
                 const abbreviationCell = document.createElement("td");
@@ -277,7 +272,6 @@
                 row.appendChild(keywordsCell);
 
                 const dimensionCell = document.createElement("td");
-
                 function appendDimensionLink(dim, cell, addSeparator = false) {
                     const href = typeof dim === "string" ? dim : (dim['@id'] || dim.url || dim.identifier);
                     if (href) {
@@ -313,7 +307,6 @@
                     noDim.style.color = "#999";
                     dimensionCell.appendChild(noDim);
                 }
-
                 row.appendChild(dimensionCell);
 
                 const descriptionCell = document.createElement("td");
@@ -321,7 +314,6 @@
                 row.appendChild(descriptionCell);
 
                 const sourceCell = document.createElement("td");
-
                 function appendSourceLink(src, cell, addSeparator = false) {
                     let href = src.url || src['@id'] || src.identifier;
                     let label = src.name || href;
@@ -357,10 +349,53 @@
                     noSource.style.color = "#999";
                     sourceCell.appendChild(noSource);
                 }
-
                 row.appendChild(sourceCell);
+
                 tableBody.appendChild(row);
             });
+        }
+
+        // Funciones para filtrar columnas complejas
+        function matchesQualityDimension(item, query) {
+            if (!item.qualityDimension) return false;
+
+            if (Array.isArray(item.qualityDimension)) {
+                return item.qualityDimension.some(dim => {
+                    const val = dim['@id'] || dim.url || dim.identifier || '';
+                    return val.toLowerCase().includes(query);
+                });
+            }
+
+            if (typeof item.qualityDimension === 'object') {
+                const val = item.qualityDimension['@id'] || item.qualityDimension.url || item.qualityDimension.identifier || '';
+                return val.toLowerCase().includes(query);
+            }
+
+            if (typeof item.qualityDimension === 'string') {
+                return item.qualityDimension.toLowerCase().includes(query);
+            }
+
+            return false;
+        }
+
+        function matchesSource(item, query) {
+            if (!item.source) return false;
+
+            if (Array.isArray(item.source)) {
+                return item.source.some(src => {
+                    const val = src.url || src['@id'] || src.identifier || '';
+                    const name = src.name || '';
+                    return val.toLowerCase().includes(query) || name.toLowerCase().includes(query);
+                });
+            }
+
+            if (typeof item.source === 'object') {
+                const val = item.source.url || item.source['@id'] || item.source.identifier || '';
+                const name = item.source.name || '';
+                return val.toLowerCase().includes(query) || name.toLowerCase().includes(query);
+            }
+
+            return false;
         }
 
         function handleHashNavigation() {
@@ -395,7 +430,9 @@
                         (item.abbreviation && item.abbreviation.toLowerCase().includes(query)) ||
                         (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
                         (item.description && item.description.toLowerCase().includes(query)) ||
-                        (item.identifier && item.identifier['@id'] && item.identifier['@id'].toLowerCase().includes(query))
+                        (item.identifier && item.identifier['@id'] && item.identifier['@id'].toLowerCase().includes(query)) ||
+                        matchesQualityDimension(item, query) ||
+                        matchesSource(item, query)
                     );
                     updateTable(filtered);
                 }
@@ -412,6 +449,7 @@
             fetchJSONFiles('.');
         });
     </script>
+
 
 
     <div class="row copyright">
