@@ -10,7 +10,7 @@ A list of dimensions is available at [https://w3id.org/everse/i/dimensions](http
 
 ## API Endpoints
 
-The repository provides JSON API endpoints that consolidate all indicators and dimensions for easy consumption by external services:
+The repository provides JSON API endpoints that consolidate all indicators and dimensions for easy consumption by external services. They are produced by the action pipelines when deploying the website.
 
 ### Indicators API
 - **Endpoint**: https://everse.software/indicators/api/indicators.json
