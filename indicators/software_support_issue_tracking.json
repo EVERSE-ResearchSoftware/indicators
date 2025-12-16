@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_support_issue_tracking",
     "@type": "SoftwareQualityIndicator",
     "name": "Software provides issue tracking",
-    "abbreviation": "support_issue_tracking",
+    "abbreviation": "software_support_issue_tracking",
     "description": "The software project offers an accessible issue tracking system (e.g., GitHub/GitLab Issues or a helpdesk) that is used to report, document, and manage bugs, enhancement requests, and user-facing operational issues.",
     "source": {
         "@id": "https://zenodo.org/records/17035105",
