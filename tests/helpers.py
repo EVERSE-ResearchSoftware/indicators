@@ -69,3 +69,61 @@ def validate_json_files_using_schema(schema_file_path, json_file_path):
         "The schema validation failed for one or more files:\n"
         + "\n".join(validation_errors)
     )
+
+
+def validate_json_files_consistency(json_file_path):
+    
+    json_files = glob.glob(f"{json_file_path}/*.json")
+    
+    if not json_files:
+        pytest.skip(f"No json files found in {json_file_path}/ directory.")
+
+    validation_errors = []
+
+    for json_file_name in json_files:
+        filename = os.path.basename(json_file_name)
+
+        print(f"\nChecking consistency for {filename}...")
+
+        try:
+            with open(json_file_name, "r") as f:
+                data = json.load(f)
+            
+            if json_file_path == "indicators":
+                identifier = data.get("identifier", {}).get("@id")
+            elif json_file_path == "dimensions":
+                identifier = data.get("identifier", "")
+
+            id = data.get("@id")
+            
+            abbreviation = data.get("abbreviation")
+
+            if id != identifier:
+                validation_errors.append(
+                    "@id and identifier fields are not equal"
+                )
+
+            identifier_suffix = id.rstrip("/").split("/")[-1]
+            
+            if abbreviation != identifier_suffix:
+                validation_errors.append(
+                    f"{filename}: abbreviation ({abbreviation}) "
+                    f"!= identifier suffix ({identifier_suffix})"
+                )
+
+            expected_filename = f"{abbreviation}.json"
+            if filename != expected_filename:
+                validation_errors.append(
+                    f"{filename}: filename does not match abbreviation "
+                    f"(expected {expected_filename})"
+                )
+
+        except json.JSONDecodeError as e:
+            validation_errors.append(f"{filename}: Invalid JSON - {e}")
+        except Exception as e:
+            validation_errors.append(f"{filename}: Unexpected error - {e}")
+
+    assert not validation_errors, (
+        "JSON consistency validation failed for one or more files:\n"
+        + "\n".join(validation_errors)
+    )
