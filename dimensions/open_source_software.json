@@ -1,0 +1,13 @@
+{
+    "@context": "https://w3id.org/everse/rsqd#",
+    "@id": "https://w3id.org/everse/i/dimensions/open_source_software",
+    "@type": "SoftwareQualityDimension",
+    "name": "Open Source Software",
+    "abbreviation": "open_source_software",
+    "identifier":"https://w3id.org/everse/i/dimensions/open_source_software",
+    "description": "Open Source Software encompasses practices that align with academic research purposes and enable verification, reproducibility, and community collaboration. This includes source code availability, appropriate licensing, integration with open source ecosystems, and alignment with community practices.",
+    "source": {
+      "name": "",
+      "url": ""
+      }
+  }
