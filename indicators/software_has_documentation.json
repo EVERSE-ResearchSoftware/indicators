@@ -3,7 +3,7 @@
     "@id": "https://w3id.org/everse/i/indicators/software_has_documentation",
     "@type": "SoftwareQualityIndicator",
     "name": "Software has documentation",
-    "abbreviation": "software_documentation",
+    "abbreviation": "software_has_documentation",
     "alternateName": "FRSM-05",
     "description": "This indicator aims to determine if a software project comes with many forms of documentation like readme or readthedocs",
     "keywords": [ "documentation", "fair", "usage", "readme"],
