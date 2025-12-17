@@ -5,7 +5,7 @@
   "name": "Functional suitability",
   "abbreviation": "functional_suitability",
   "identifier": "https://w3id.org/everse/i/dimensions/functional_suitability",
-  "description": "This characteristic represents the degree to which a product or system provides functions that meet stated and implied needs when used under specified conditions. This characteristic is composed of the following sub-characteristics:\n\n- **Functional completeness**\n\nDegree to which the set of functions covers all the specified tasks and intended users' objectives.\n\n- **Functional correctness**\n\nDegree to which a product or system provides accurate results when used by intended users.\n\n- **Functional appropriateness**\n\nDegree to which the functions facilitate the accomplishment of specified tasks and objectives.",
+  "description": "This characteristic represents the degree to which a product or system provides functions that meet stated and implied needs when used under specified conditions. This characteristic is composed of the following sub-characteristics:\n\n**Functional completeness**\n\nDegree to which the set of functions covers all the specified tasks and intended users' objectives.\n\n**Functional correctness**\n\nDegree to which a product or system provides accurate results when used by intended users.\n\n**Functional appropriateness**\n\nDegree to which the functions facilitate the accomplishment of specified tasks and objectives.",
   "source": {
     "name": "ISO/IEC 25010 standard",
     "url": "https://iso25000.com/index.php/en/iso-25000-standards/iso-25010"

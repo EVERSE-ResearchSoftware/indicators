@@ -40,6 +40,10 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        td p {
+            margin: 0.4em 0;
+        }
     
         #search-wrapper {
             display: flex;
@@ -165,6 +169,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <script>
         let allData = [];
 
@@ -223,7 +229,7 @@
                 row.appendChild(abbreviationCell);
 
                 const descriptionCell = document.createElement("td");
-                descriptionCell.innerHTML = (data.description || "").replace(/\r?\n/g, "<br>");
+                descriptionCell.innerHTML = marked.parse(data.description || "");
                 row.appendChild(descriptionCell);
 
                 const sourceCell = document.createElement("td");
