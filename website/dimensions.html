@@ -212,13 +212,26 @@
                 row.id = rowId;
 
                 const nameCell = document.createElement("td");
-                if (data.identifier && data.identifier.startsWith("http")) {
-                    const link = document.createElement("a");
-                    link.href = data.identifier;
-                    link.textContent = data.name || "";
-                    link.target = "_blank";
-                    link.style.color = "#1E90FF";
-                    nameCell.appendChild(link);
+                if (data.name && rowId !== "no_id") {
+                    const nameLink = document.createElement("a");
+                    nameLink.href = data.identifier['@id'];
+                    nameLink.textContent = data.name;
+                    nameLink.style.color = "#1E90FF";
+                    nameLink.style.marginRight = "8px";
+                    nameCell.appendChild(nameLink);
+
+                    const iconLink = document.createElement("a");
+                    iconLink.href = `https://github.com/EVERSE-ResearchSoftware/indicators/blob/main/dimensions/${data._filename}`;
+                    iconLink.target = "_blank";
+
+                    const iconImg = document.createElement("img");
+                    iconImg.src = "images/json-ld-logo.png";
+                    iconImg.style.width = "16px";
+                    iconImg.style.height = "16px";
+                    iconImg.style.verticalAlign = "middle";
+
+                    iconLink.appendChild(iconImg);
+                    nameCell.appendChild(iconLink);
                 } else {
                     nameCell.textContent = data.name || "";
                 }
