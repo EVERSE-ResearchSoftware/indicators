@@ -1,0 +1,196 @@
+{
+    "codemeta_completeness": {
+        "url": ""
+    },
+    "archived_in_scholarly_repository": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        }
+    },
+    "archived_in_software_heritage": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        }
+    },
+    "dependency_management": {
+        "chaoss": {
+            "url": "https://chaoss.community/kb/metric-libyears/"
+        }
+    },
+    "descriptive_metadata": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F2_existence_of_metadata/"
+        },
+        "helmholtz": {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        }
+    },
+    "has_ci-tests": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests"
+        }
+    },
+    "has_no_linting_issues": {
+        "url": ""
+    },
+    "has_published_package": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#packaging"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/accessibility/A1_downloadable/"
+        }
+    },
+    "has_releases": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    },
+    "human_code_review_requirement": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review"
+        }
+    },
+    "listed_in_registry": {
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        },
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105"
+        }
+    },
+    "metadata_is_up_to_date": {
+        "url": ""
+    },
+    "no_critical_vulnerability": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#vulnerabilities"
+        }
+    },
+    "no_leaked_credentials": {
+        "url": ""
+    },
+    "persistent_and_unique_identifier": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F1_identity_uniqueness/"
+        },
+        "helmholtz": {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        }
+    },
+    "repository_workflows": {
+        "url": ""
+    },
+    "requirements_specified": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/interoperability/I3_dependencies_available/"
+        },
+        "helmholtz": {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        }
+    },
+    "software_has_citation": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    },
+    "software_has_documentation": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R1_usage_documentation/"
+        },
+        "helmholtz": {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        },
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105"
+        }
+    },
+    "software_has_license": {
+        "chaoss": {
+            "url": "https://chaoss.community/kb/metric-licenses-declared/"
+        },
+        "fair_impact": [
+            {
+                "url": "https://fair-impact.eu/metrics-software"
+            },
+            {
+                "url": "https://fair-impact.eu/metrics-software"
+            }
+        ],
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#license"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R2_license/"
+        },
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105"
+        }
+    },
+    "software_has_tests": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105"
+        }
+    },
+    "software_test_coverage": {
+        "chaoss": {
+            "url": "https://chaoss.community/kb/metric-test-coverage/"
+        }
+    },
+    "static_analysis_common_vulnerabilities": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sast"
+        }
+    },
+    "support_issue_tracking": {
+        "url": ""
+    },
+    "uses_fuzzing": {
+        "openssf": {
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#cfuzzing"
+        }
+    },
+    "uses_tool_for_warnings_and_mistakes": {
+        "url": ""
+    },
+    "version_control_use": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R4_provenance/"
+        }
+    },
+    "versioning_standards_use": {
+        "fair_impact": {
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "helmholtz": {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        },
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105"
+        }
+    }
+}
