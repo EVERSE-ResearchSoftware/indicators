@@ -26,16 +26,16 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 12px 18px;
+            padding: 2px 18px;
             text-align: left;
             vertical-align: top;
-            font-size: 14px;
+            font-size: 12px;
             word-break: break-word;
         }
         th {
             background-color: #1E90FF;
             color: white;
-            font-size: 17px;
+            font-size: 13px;
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
@@ -152,8 +152,8 @@
             <table id="json-table">
                 <colgroup>
                     <col style="width: 25%;"> <!-- Name -->
-                    <col style="width: 20%;"> <!-- Abbreviation -->
-                    <col style="width: 40%;"> <!-- Description -->
+                    <col style="width: 12%;"> <!-- Abbreviation -->
+                    <col style="width: 48%;"> <!-- Description -->
                     <col style="width: 15%;"> <!-- Source -->
                 </colgroup>
                 <thead>
@@ -214,7 +214,7 @@
                 const nameCell = document.createElement("td");
                 if (data.name && rowId !== "no_id") {
                     const nameLink = document.createElement("a");
-                    nameLink.href = data.identifier;
+                    nameLink.href = data["@id"];
                     nameLink.textContent = data.name;
                     nameLink.style.color = "#1E90FF";
                     nameLink.style.marginRight = "8px";
