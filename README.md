@@ -20,6 +20,11 @@ curl -sH "Accept:application/ld+json"  https://w3id.org/everse/i/indicators/pers
 will yield the description of the corresponding indicator in JSON-LD, while clicking on its URL (i.e., [https://w3id.org/everse/i/indicators/persistent_and_unique_identifier](https://w3id.org/everse/i/indicators/persistent_and_unique_identifier)) will take you to website.
 
 
+## Contributing new Quality Indicators
+If you want to create a new quality indicator, please open a pull request or an issue. 
+If you decide to open a pull request, please validate your JSON-LD with an open validator like [the JSON-LD Playground](https://json-ld.org/playground/) to agilize the review. Please make sure your indicator has a source, so we can double check its source and usefulness.
+
+
 ## JSON API Endpoints
 
 The repository provides JSON API endpoints that consolidate all indicators and dimensions for easy consumption by external services. They are produced by the action pipelines when deploying the website.
