@@ -1,18 +1,45 @@
-# Indicators
+# Indicators and Dimensions
 
-This is EVERSE repository to maintain a list of Research Software Quality indicators
+This is EVERSE repository to maintain a list of Research Software Quality indicators and their corresponding Quality Dimensions.
 
-The metadata for each indicator follows the [RS Quality indicators metadata schema](https://w3id.org/everse/rsqi#).
+The metadata for each indicator follows the [RS Quality indicators metadata schema](https://w3id.org/everse/rsqi#). The metadata of each quality dimension follows the [RS Quality dimension metadata schema](https://w3id.org/everse/rsqd#).
 
 A list of indicators supported by EVERSE can be seen at [https://w3id.org/everse/i/indicators/](https://w3id.org/everse/i/indicators/) (e.g., [https://everse.software/indicators/website/indicators.html#no_leaked_credentials](https://everse.software/indicators/website/indicators.html#no_leaked_credentials))
 
 A list of dimensions is available at [https://w3id.org/everse/i/dimensions](https://w3id.org/everse/i/dimensions) (e.g., [https://w3id.org/everse/i/dimensions/functional_suitability](https://w3id.org/everse/i/dimensions/functional_suitability))
 
-## API Endpoints
+## Naming Conventions
+All indicators and dimensions follow the naming schema: `https://w3id.org/everse/i/[indicators|dimensions]/{id}`, where `{id}` corresponds to the local identifier of the indicator or dimension. Note: the local identifier corresponds to its `Abbreviation`.
+
+
+## Content Negotiation
+Every indicator is resolvable in a machine-readable manner, using JSON-LD and HTML. For example, the following command:
+```
+curl -sH "Accept:application/ld+json"  https://w3id.org/everse/i/indicators/persistent_and_unique_identifier -L
+```
+will yield the description of the corresponding indicator in JSON-LD, while clicking on its URL (i.e., [https://w3id.org/everse/i/indicators/persistent_and_unique_identifier](https://w3id.org/everse/i/indicators/persistent_and_unique_identifier)) will take you to website.
+
+
+## Contributing new Quality Indicators
+If you want to create a new quality indicator, please open a pull request or an issue. 
+If you decide to open a pull request, please validate your JSON-LD with an open validator like [the JSON-LD Playground](https://json-ld.org/playground/) to agilize the review. Please make sure your indicator has a source, so we can double check its source and usefulness.
+The following template may guide you when creating a description of your indicator:
+```
+### What is being measured?
+    Explain what you are measuring
+### Why should we measure it?
+    Explain why
+### What must be provided for the measurement? 
+    For example, a zenodo record, or a GitHub id.
+### How is the measurement executed?
+    Explain the exact process for assessing the indicator
+```
+
+## JSON API Endpoints
 
 The repository provides JSON API endpoints that consolidate all indicators and dimensions for easy consumption by external services. They are produced by the action pipelines when deploying the website.
 
-### Indicators API
+### Indicators JSON download
 - **Endpoint**: https://everse.software/indicators/api/indicators.json
 - **Description**: Returns all software quality indicators with metadata
 - **Format**: JSON-LD compatible
@@ -22,7 +49,7 @@ The repository provides JSON API endpoints that consolidate all indicators and d
   - `lastUpdated`: Date of last generation (YYYY-MM-DD)
   - `indicators`: Array of all indicator objects
 
-### Dimensions API
+### Dimensions JSON download
 - **Endpoint**: https://everse.software/indicators/api/dimensions.json
 - **Description**: Returns all software quality dimensions with metadata
 - **Format**: JSON-LD compatible
@@ -48,7 +75,7 @@ console.log(`Found ${dimension_data.count} dimensions`);
 
 ### Generating API Files
 
-The API files are automatically generated from the individual JSON files in the `indicators/` and `dimensions/` folders:
+The JSON files are automatically generated from the individual JSON files in the `indicators/` and `dimensions/` folders:
 
 ```bash
 # Generate both APIs
@@ -61,5 +88,5 @@ python scripts/generate_api.py --indicators-only
 python scripts/generate_api.py --dimensions-only
 ```
 
-**Note**: The API files are generated in `api/` during the GitHub Actions workflow and are automatically served by GitHub Pages at `/api/indicators.json` and `/api/dimensions.json`. They are not committed to the repository to avoid data duplication.
+**Note**: The JSON files are generated in `api/` during the GitHub Actions workflow and are automatically served by GitHub Pages at `/api/indicators.json` and `/api/dimensions.json`. They are not committed to the repository to avoid data duplication.
 
