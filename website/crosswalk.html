@@ -100,13 +100,12 @@
             min-height: 300px;
             background: rgba(255, 255, 255, 0.9);
             z-index: 999;
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             font-size: 18px;
             color: #333;
-            display: none;
         }
 
         .spinner {
@@ -156,11 +155,11 @@
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Crosswalk table for equivalent indicators</h2>
+                    <h2>Equivalent Indicators Crosswalk</h2>
                 </div>
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <p style="color: #333333;">
-                        Here you can find a table representing the equivalences in other sources for each indicator showed in the indicators table
+                        Here you can find a table that shows equivalent indicators from other sources
                     </p>
                 </div>
             </div>
@@ -172,26 +171,28 @@
 
             <div id="table-loading-overlay">
                 <div class="spinner"></div>
-                <p>Loading crosswalk...</p>
+                <p>Loading indicators...</p>
             </div>
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width: 16%;"> <!-- Name -->
-                    <col style="width: 12%;"> <!-- Abbreviation -->
-                    <col style="width: 12%;"> <!-- Keywords -->
-                    <col style="width: 24%;"> <!-- Quality Dimension -->
-                    <col style="width: 24%;"> <!-- Description -->
-                    <col style="width: 12%;"> <!-- Source -->
+                    <col style="width:16%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:24%">
+                    <col style="width:24%">
+                    <col style="width:12%">
+                    <col style="width:12%">
                 </colgroup>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Abbreviation</th>
-                        <th>Keywords</th>
-                        <th>Quality Dimension</th>
-                        <th>Description</th>
-                        <th>Source</th>
+                        <th>Elixir</th>
+                        <th>CHAOSS</th>
+                        <th>Helmholtz</th>
+                        <th>FAIR Impact</th>
+                        <th>FAIRSOFT</th>
+                        <th>OpenSSF</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -201,23 +202,59 @@
 
     <script>
         let allData = [];
+        let crosswalkByIndicatorId = {};
 
         async function fetchJSONFiles(directory) {
             const overlay = document.getElementById("table-loading-overlay");
             overlay.style.display = "flex";
 
             try {
-                const response = await fetch(`${directory}/../api/indicators.json`);
-                const apiData = await response.json();
-                
-                allData = apiData.indicators || [];
+                const [indicatorRes, crosswalkRes] = await Promise.all([
+                    fetch(`${directory}/../api/indicators.json`),
+                    fetch(`${directory}/../website/utils/crosswalk.json`)
+                ]);
+
+                const indicatorData = await indicatorRes.json();
+                crosswalkByIndicatorId = await crosswalkRes.json();
+
+                allData = indicatorData.indicators || [];
                 updateTable(allData);
                 handleHashNavigation();
             } catch (error) {
-                console.error("Error loading indicators from API:", error);
+                console.error("Error loading data:", error);
             } finally {
                 overlay.style.display = "none";
             }
+        }
+
+        function buildCrosswalkCell(cell, entry) {
+            if (!entry) {
+                cell.textContent = "—";
+                cell.style.color = "#999";
+                return;
+            }
+
+            const values = Array.isArray(entry) ? entry : [entry];
+
+            values.forEach((item, index) => {
+                if (!item || !item.url) return;
+
+                const link = document.createElement("a");
+                link.href = item.url;
+                link.textContent = item.name || item.url;
+                link.target = "_blank";
+                link.style.display = "block";
+                link.style.color = "#1E90FF";
+                link.style.marginBottom = "4px";
+                cell.appendChild(link);
+
+                if (index < values.length - 1) {
+                    const hr = document.createElement("hr");
+                    hr.style.borderTop = "1px dashed #444";
+                    hr.style.margin = "4px 0";
+                    cell.appendChild(hr);
+                }
+            });
         }
 
         function updateTable(dataList) {
@@ -234,181 +271,56 @@
                 }
                 row.id = rowId;
 
+                const mapping = crosswalkByIndicatorId[rowId] || {};
+
                 const nameCell = document.createElement("td");
                 if (data.name && rowId !== "no_id") {
-                    const nameLink = document.createElement("a");
-                    nameLink.href = data.identifier['@id'];
-                    nameLink.textContent = data.name;
-                    nameLink.style.color = "#1E90FF";
-                    nameLink.style.marginRight = "8px";
-                    nameCell.appendChild(nameLink);
 
-                    const iconLink = document.createElement("a");
-                    iconLink.href = `https://github.com/EVERSE-ResearchSoftware/indicators/blob/main/indicators/${data._filename}`;
-                    iconLink.target = "_blank";
+                    const link = document.createElement("a");
+                    link.href = data.identifier['@id'];
+                    link.textContent = data.name;
+                    link.style.color = "#1E90FF";
+                    link.style.marginRight = "8px";
+                    nameCell.appendChild(link);
 
-                    const iconImg = document.createElement("img");
-                    iconImg.src = "images/json-ld-logo.png";
-                    iconImg.style.width = "16px";
-                    iconImg.style.height = "16px";
-                    iconImg.style.verticalAlign = "middle";
+                    if (data._filename) {
+                        const iconLink = document.createElement("a");
+                        iconLink.href = `https://github.com/EVERSE-ResearchSoftware/indicators/blob/main/indicators/${data._filename}`;
+                        iconLink.target = "_blank";
 
-                    iconLink.appendChild(iconImg);
-                    nameCell.appendChild(iconLink);
-                } else {
-                    nameCell.textContent = data.name || "";
+                        const iconImg = document.createElement("img");
+                        iconImg.src = "images/json-ld-logo.png";
+                        iconImg.style.width = "16px";
+                        iconImg.style.height = "16px";
+                        iconImg.style.verticalAlign = "middle";
+
+                        iconLink.appendChild(iconImg);
+                        nameCell.appendChild(iconLink);
+                    }
                 }
                 row.appendChild(nameCell);
 
-                const abbreviationCell = document.createElement("td");
-                abbreviationCell.textContent = data.abbreviation || "";
-                row.appendChild(abbreviationCell);
-
-                const keywordsCell = document.createElement("td");
-                keywordsCell.textContent = Array.isArray(data.keywords) ? data.keywords.join(", ") : data.keywords || "";
-                row.appendChild(keywordsCell);
-
-                const dimensionCell = document.createElement("td");
-                function appendDimensionLink(dim, cell, addSeparator = false) {
-                    const href = typeof dim === "string" ? dim : (dim['@id'] || dim.url || dim.identifier);
-                    if (href) {
-                        const parts = href.split('/');
-                        const label = parts[parts.length - 1];
-                        const link = document.createElement("a");
-                        link.href = href;
-                        link.textContent = label;
-                        link.target = "_blank";
-                        link.style.color = "#1E90FF";
-                        link.style.display = "block";
-                        link.style.marginBottom = "6px";
-                        cell.appendChild(link);
-                    }
-
-                    if (addSeparator) {
-                        const separator = document.createElement("hr");
-                        separator.style.borderTop = "1px dashed #444";
-                        separator.style.margin = "6px 0";
-                        cell.appendChild(separator);
-                    }
-                }
-
-                if (Array.isArray(data.qualityDimension)) {
-                    data.qualityDimension.forEach((dim, index) => {
-                        appendDimensionLink(dim, dimensionCell, index < data.qualityDimension.length - 1);
+                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf"]
+                    .forEach(key => {
+                        const cell = document.createElement("td");
+                        buildCrosswalkCell(cell, mapping[key]);
+                        row.appendChild(cell);
                     });
-                } else if (data.qualityDimension) {
-                    appendDimensionLink(data.qualityDimension, dimensionCell);
-                } else {
-                    const noDim = document.createElement("span");
-                    noDim.textContent = "no dimension available";
-                    noDim.style.color = "#999";
-                    dimensionCell.appendChild(noDim);
-                }
-                row.appendChild(dimensionCell);
-
-                const descriptionCell = document.createElement("td");
-                descriptionCell.textContent = data.description || "";
-                row.appendChild(descriptionCell);
-
-                const sourceCell = document.createElement("td");
-                function appendSourceLink(src, cell, addSeparator = false) {
-                    let href = src.url || src['@id'] || src.identifier;
-                    let label = src.name || href;
-
-                    if (href) {
-                        const link = document.createElement("a");
-                        link.href = href;
-                        link.textContent = label;
-                        link.target = "_blank";
-                        link.style.color = "#1E90FF";
-                        link.style.display = "block";
-                        link.style.marginBottom = "6px";
-                        cell.appendChild(link);
-                    }
-
-                    if (addSeparator) {
-                        const separator = document.createElement("hr");
-                        separator.style.borderTop = "1px dashed #444";
-                        separator.style.margin = "6px 0";
-                        cell.appendChild(separator);
-                    }
-                }
-
-                if (Array.isArray(data.source)) {
-                    data.source.forEach((src, index) => {
-                        appendSourceLink(src, sourceCell, index < data.source.length - 1);
-                    });
-                } else if (data.source && typeof data.source === "object") {
-                    appendSourceLink(data.source, sourceCell);
-                } else {
-                    const noSource = document.createElement("span");
-                    noSource.textContent = "no source available";
-                    noSource.style.color = "#999";
-                    sourceCell.appendChild(noSource);
-                }
-                row.appendChild(sourceCell);
 
                 tableBody.appendChild(row);
             });
-        }
-
-        // Funciones para filtrar columnas complejas
-        function matchesQualityDimension(item, query) {
-            if (!item.qualityDimension) return false;
-
-            if (Array.isArray(item.qualityDimension)) {
-                return item.qualityDimension.some(dim => {
-                    const val = dim['@id'] || dim.url || dim.identifier || '';
-                    return val.toLowerCase().includes(query);
-                });
-            }
-
-            if (typeof item.qualityDimension === 'object') {
-                const val = item.qualityDimension['@id'] || item.qualityDimension.url || item.qualityDimension.identifier || '';
-                return val.toLowerCase().includes(query);
-            }
-
-            if (typeof item.qualityDimension === 'string') {
-                return item.qualityDimension.toLowerCase().includes(query);
-            }
-
-            return false;
-        }
-
-        function matchesSource(item, query) {
-            if (!item.source) return false;
-
-            if (Array.isArray(item.source)) {
-                return item.source.some(src => {
-                    const val = src.url || src['@id'] || src.identifier || '';
-                    const name = src.name || '';
-                    return val.toLowerCase().includes(query) || name.toLowerCase().includes(query);
-                });
-            }
-
-            if (typeof item.source === 'object') {
-                const val = item.source.url || item.source['@id'] || item.source.identifier || '';
-                const name = item.source.name || '';
-                return val.toLowerCase().includes(query) || name.toLowerCase().includes(query);
-            }
-
-            return false;
         }
 
         function handleHashNavigation() {
             const hash = window.location.hash;
             if (!hash) return;
 
-            const input = document.getElementById("search-input");
-            input.value = "";
-
             updateTable(allData);
 
             setTimeout(() => {
-                const rowId = hash.substring(1);
-                const row = document.getElementById(rowId);
+                const row = document.getElementById(hash.substring(1));
                 if (row) {
-                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    row.scrollIntoView({ behavior: "smooth", block: "center" });
                     row.style.backgroundColor = "#ffff99";
                     setTimeout(() => row.style.backgroundColor = "", 2000);
                 }
@@ -419,35 +331,25 @@
             const input = document.getElementById("search-input");
             const clearButton = document.getElementById("clear-search");
 
-            input.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") {
-                    const query = input.value.toLowerCase().trim();
-                    const filtered = allData.filter(item =>
-                        (item.name && item.name.toLowerCase().includes(query)) ||
-                        (item.abbreviation && item.abbreviation.toLowerCase().includes(query)) ||
-                        (item.keywords && JSON.stringify(item.keywords).toLowerCase().includes(query)) ||
-                        (item.description && item.description.toLowerCase().includes(query)) ||
-                        (item.identifier && item.identifier['@id'] && item.identifier['@id'].toLowerCase().includes(query)) ||
-                        matchesQualityDimension(item, query) ||
-                        matchesSource(item, query)
-                    );
-                    updateTable(filtered);
+            input.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    const q = input.value.toLowerCase().trim();
+                    updateTable(allData.filter(i =>
+                        (i.name && i.name.toLowerCase().includes(q)) ||
+                        (i.identifier && i.identifier['@id'] && i.identifier['@id'].toLowerCase().includes(q))
+                    ));
                 }
             });
 
             clearButton.addEventListener("click", () => {
                 input.value = "";
-                input.focus();
                 updateTable(allData);
             });
 
             window.addEventListener("hashchange", handleHashNavigation);
-
-            fetchJSONFiles('.');
+            fetchJSONFiles(".");
         });
     </script>
-
-
 
     <div class="row copyright">
         <div class="col-md-12 text-center">
@@ -477,6 +379,7 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
     <script src="js/main.js"></script>
+
 
 </body>
 </html>

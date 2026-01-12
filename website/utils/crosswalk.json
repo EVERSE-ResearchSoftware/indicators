@@ -1,0 +1,210 @@
+{
+    "codemeta_completeness": {
+        "name": "",
+        "url": ""
+    },
+    "archived_in_scholarly_repository": {
+        "fair_impact": {
+            "name": "FRSM-08: Does the software have a publicy available, openly accessible and persistent metadata record?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "F3. Discoverability",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        }
+    },
+    "archived_in_software_heritage": {
+        "fair_impact": {
+            "name": "FRSM-08: Does the software have a publicy available, openly accessible and persistent metadata record?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "F3. Discoverability",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        }
+    },
+    "dependency_management": {
+        "chaoss": {
+            "name": "Libyears",
+            "url": "https://chaoss.community/kb/metric-licenses-declared/"
+        }
+    },
+    "descriptive_metadata": {
+        "fair_impact": {
+            "name": "FRSM-04: Does the software include descriptive metadata which helps define its purpose?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "F2. Existence of Metadata",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F2_existence_of_metadata/"
+        }
+    },
+    "has_ci-tests": {
+        "openssf": {
+            "name": "CI-Tests",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests"
+        }
+    },
+    "has_no_linting_issues": {
+        "name": "",
+        "url": ""
+    },
+    "has_published_package": {
+        "openssf": {
+            "name": "Packaging",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#packaging"
+        },
+        "fairsoft": {
+            "name": "A1. Existence of an available working version",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/accessibility/A1_downloadable/"
+        }
+    },
+    "has_releases": {
+        "fair_impact": {
+            "name": "FRSM-03: Does each version of the software have an unique identifier?",
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    },
+    "human_code_review_requirement": {
+        "openssf": {
+            "name": "Code-Review",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review"
+        }
+    },
+    "listed_in_registry": {
+        "fairsoft": {
+            "name": "F3. Discoverability",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        }
+    },
+    "metadata_is_up_to_date": {
+        "name": "",
+        "url": ""
+    },
+    "no_critical_vulnerability": {
+        "openssf": {
+            "name": "Vulnerabilities",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#vulnerabilities"
+        }
+    },
+    "no_leaked_credentials": {
+        "name": "",
+        "url": ""
+    },
+    "persistent_and_unique_identifier": {
+        "fair_impact": {
+            "name": "FRSM-01: Does the software have a globally unique and persistent identifier?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "F1. Identity Uniqueness",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F1_identity_uniqueness/"
+        },
+        "helmholtz": {
+            "name": "",
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5"
+        }
+    },
+    "repository_workflows": {
+        "name": "",
+        "url": ""
+    },
+    "requirements_specified": {
+        "fair_impact": {
+            "name": "FRSM-13: Does the software describe what is required to use it?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "I3. Dependencies availability",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/interoperability/I3_dependencies_available/"
+        }
+    },
+    "software_has_citation": {
+        "fair_impact": {
+            "name": "FRSM-12: Does the software provide references to other objects that support its use?",
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    },
+    "software_has_documentation": {
+        "fair_impact": {
+            "name": "FRSM-05: Does the software include development metadata which helps define its status?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "R1. Existence of usage documentation",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R1_usage_documentation/"
+        }
+    },
+    "software_has_license": {
+        "chaoss": {
+            "name": "License Declared",
+            "url": "https://chaoss.community/kb/metric-licenses-declared/"
+        },
+        "fair_impact": [
+            {
+                "name": "FRSM-16: Does the software metadata record include licensing information?",
+                "url": "https://fair-impact.eu/metrics-software"
+            },
+            {
+                "name": "FRSM-15: Does the software source code include licensing information for the software and any bundled external software?",
+                "url": "https://fair-impact.eu/metrics-software"
+            }
+        ],
+        "openssf": {
+            "name": "License",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#license"
+        },
+        "fairsoft": {
+            "name": "Existence of license and/or terms of use",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R2_license/"
+        }
+    },
+    "software_has_tests": {
+        "fair_impact": {
+            "name": "FRSM-14: Does the software come with test cases to demonstrate it is working?",
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    },
+    "software_test_coverage": {
+        "chaoss": {
+            "name": "Test Coverage",
+            "url": "https://chaoss.community/kb/metric-test-coverage/"
+        }
+    },
+    "static_analysis_common_vulnerabilities": {
+        "openssf": {
+            "name": "SAST",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sast"
+        }
+    },
+    "support_issue_tracking": {
+        "name": "",
+        "url": ""
+    },
+    "uses_fuzzing": {
+        "openssf": {
+            "name": "Fuzzing",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#cfuzzing"
+        }
+    },
+    "uses_tool_for_warnings_and_mistakes": {
+        "name": "",
+        "url": ""
+    },
+    "version_control_use": {
+        "fair_impact": {
+            "name": "FRSM-17: Does the software include provenance information that describes the development of the software?",
+            "url": "https://fair-impact.eu/metrics-software"
+        },
+        "fairsoft": {
+            "name": "R4. Existence of Versioning and Historical Traceability",
+            "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R4_provenance/"
+        }
+    },
+    "versioning_standards_use": {
+        "fair_impact": {
+            "name": "FRSM-03: Does each version of the software have an unique identifier?",
+            "url": "https://fair-impact.eu/metrics-software"
+        }
+    }
+}
