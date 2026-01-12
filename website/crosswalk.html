@@ -179,8 +179,8 @@
                     <col style="width:16%">
                     <col style="width:12%">
                     <col style="width:12%">
-                    <col style="width:24%">
-                    <col style="width:24%">
+                    <col style="width:12%">
+                    <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
                 </colgroup>
@@ -228,34 +228,51 @@
         }
 
         function buildCrosswalkCell(cell, entry) {
+            cell.style.textAlign = "center";
+            cell.style.verticalAlign = "middle";
+
             if (!entry) {
-                cell.textContent = "—";
+                cell.textContent = "-";
                 cell.style.color = "#999";
                 return;
             }
 
             const values = Array.isArray(entry) ? entry : [entry];
+            let hasUrl = false;
 
             values.forEach((item, index) => {
-                if (!item || !item.url) return;
+                if (item && item.url) {
+                    hasUrl = true;
 
-                const link = document.createElement("a");
-                link.href = item.url;
-                link.textContent = item.name || item.url;
-                link.target = "_blank";
-                link.style.display = "block";
-                link.style.color = "#1E90FF";
-                link.style.marginBottom = "4px";
-                cell.appendChild(link);
+                    const link = document.createElement("a");
+                    link.href = item.url;
+                    link.textContent = "X";
+                    link.target = "_blank";
 
-                if (index < values.length - 1) {
-                    const hr = document.createElement("hr");
-                    hr.style.borderTop = "1px dashed #444";
-                    hr.style.margin = "4px 0";
-                    cell.appendChild(hr);
+                    link.style.display = "block";
+                    link.style.textAlign = "center";
+                    link.style.fontSize = "20px";
+                    link.style.fontWeight = "700";
+                    link.style.color = "#1E90FF";
+                    link.style.margin = "4px 0";
+
+                    cell.appendChild(link);
+
+                    if (index < values.length - 1) {
+                        const hr = document.createElement("hr");
+                        hr.style.borderTop = "1px dashed #444";
+                        hr.style.margin = "4px 0";
+                        cell.appendChild(hr);
+                    }
                 }
             });
+
+            if (!hasUrl) {
+                cell.textContent = "-";
+                cell.style.color = "#999";
+            }
         }
+
 
         function updateTable(dataList) {
             const tableBody = document.querySelector("#json-table tbody");
