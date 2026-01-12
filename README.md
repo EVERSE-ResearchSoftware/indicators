@@ -23,7 +23,17 @@ will yield the description of the corresponding indicator in JSON-LD, while clic
 ## Contributing new Quality Indicators
 If you want to create a new quality indicator, please open a pull request or an issue. 
 If you decide to open a pull request, please validate your JSON-LD with an open validator like [the JSON-LD Playground](https://json-ld.org/playground/) to agilize the review. Please make sure your indicator has a source, so we can double check its source and usefulness.
-
+The following template may guide you when creating a description of your indicator:
+```
+### What is being measured?
+    Explain what you are measuring
+### Why should we measure it?
+    Explain why
+### What must be provided for the measurement? 
+    For example, a zenodo record, or a GitHub id.
+### How is the measurement executed?
+    Explain the exact process for assessing the indicator
+```
 
 ## JSON API Endpoints
 
