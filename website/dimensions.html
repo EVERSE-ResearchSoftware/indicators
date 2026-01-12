@@ -214,7 +214,7 @@
                 const nameCell = document.createElement("td");
                 if (data.name && rowId !== "no_id") {
                     const nameLink = document.createElement("a");
-                    nameLink.href = data.identifier['@id'];
+                    nameLink.href = data.identifier;
                     nameLink.textContent = data.name;
                     nameLink.style.color = "#1E90FF";
                     nameLink.style.marginRight = "8px";
