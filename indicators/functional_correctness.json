@@ -2,7 +2,7 @@
   "@context": "https://w3id.org/everse/rsqi#",
   "@id": "https://w3id.org/everse/i/indicators/functional_correctness",
   "@type": "SoftwareQualityIndicator",
-  "name": "has a measure of functional correctness",
+  "name": "Has a measure of functional correctness",
   "abbreviation": "functional_correctness",
   "description": "For analysis code specifically, is there a quantifiable measure of the functional correctness of the software output. This indicator focuses on computational/statistical correctness. For example, in an ML model software context, the indicator measures whether the repository reports metrics like Accuracy, F1-score, or ROC-AUC to prove the model performs as intended. However other performance metrics may also address the indicator. Evaluation metrics may be provided through documentation, tables or scripts available in the source code of the target tool.",
   "source": {
