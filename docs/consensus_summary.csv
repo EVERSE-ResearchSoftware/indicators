@@ -4,7 +4,7 @@ https://w3id.org/everse/i/indicators/archived_in_software_heritage,Software is a
 https://w3id.org/everse/i/indicators/codemeta_completeness,CodeMeta completeness,not relevant,recommended,recommended
 https://w3id.org/everse/i/indicators/dependency_management,Software has dependency management solution,recommended,crucial,crucial
 https://w3id.org/everse/i/indicators/descriptive_metadata,Software has descriptive metadata,good to have,recommended,crucial
-https://w3id.org/everse/i/indicators/software_has_ci-tests,Software has continuous integration tests,not relevant,good to have,crucial
+https://w3id.org/everse/i/indicators/has_ci-tests,Software has continuous integration tests,not relevant,good to have,crucial
 https://w3id.org/everse/i/indicators/software_has_citation,Software uses citation,good to have,recommended,recommended
 https://w3id.org/everse/i/indicators/software_has_license,Software has license,crucial,crucial,crucial
 https://w3id.org/everse/i/indicators/has_no_linting_issues,Software has no linting issues,not relevant,recommended,crucial
@@ -18,10 +18,10 @@ https://w3id.org/everse/i/indicators/no_leaked_credentials,No leaked credentials
 https://w3id.org/everse/i/indicators/persistent_and_unique_identifier,Software has persistent and unique identifier,recommended,recommended,crucial
 https://w3id.org/everse/i/indicators/repository_workflows,Software has ci/cd workflows in its repository,good to have,recommended,crucial
 https://w3id.org/everse/i/indicators/requirements_specified,Software specifies requirements,good to have,recommended,crucial
-https://w3id.org/everse/i/indicators/software_documentation,Software has documentation,good to have,recommended,crucial
+https://w3id.org/everse/i/indicators/software_has_documentation,Software has documentation,good to have,recommended,crucial
 https://w3id.org/everse/i/indicators/software_has_tests,Software provides tests,good to have,good to have,crucial
-https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities,has static analysis for common vulnerabilities,good to have,good to have,crucial
-https://w3id.org/everse/i/indicators/fuzzing_use,Software uses fuzzing,not relevant,good to have,good to have
-https://w3id.org/everse/i/indicators/uses_tool_for_warnings_or_mistakes,Software uses a tool for warnings or mistakes,good to have,good to have,good to have
+https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities,Has static analysis for common vulnerabilities,good to have,good to have,crucial
+https://w3id.org/everse/i/indicators/uses_fuzzing,Software uses fuzzing,not relevant,good to have,good to have
+https://w3id.org/everse/i/indicators/uses_tool_for_warnings_and_mistakes,Software uses a tool for warnings or mistakes,good to have,good to have,good to have
 https://w3id.org/everse/i/indicators/version_control_use,Software makes use of version control,recommended,crucial,crucial
 https://w3id.org/everse/i/indicators/versioning_standards_use,Software follows versioning standards,good to have,recommended,crucial
