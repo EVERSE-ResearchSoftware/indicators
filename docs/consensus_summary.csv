@@ -20,7 +20,7 @@ https://w3id.org/everse/i/indicators/repository_workflows,Software has ci/cd wor
 https://w3id.org/everse/i/indicators/requirements_specified,Software specifies requirements,good to have,recommended,crucial
 https://w3id.org/everse/i/indicators/software_has_documentation,Software has documentation,good to have,recommended,crucial
 https://w3id.org/everse/i/indicators/software_has_tests,Software provides tests,not relevant,good to have,crucial
-https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities,has static analysis for common vulnerabilities,good to have,good to have,crucial
+https://w3id.org/everse/i/indicators/static_analysis_common_vulnerabilities,Has static analysis for common vulnerabilities,good to have,good to have,crucial
 https://w3id.org/everse/i/indicators/uses_fuzzing,Software uses fuzzing,not relevant,not relevant,good to have
 https://w3id.org/everse/i/indicators/uses_tool_for_warnings_and_mistakes,Software uses a tool for warnings or mistakes,good to have,good to have,recommended
 https://w3id.org/everse/i/indicators/version_control_use,Software makes use of version control,crucial,crucial,crucial
