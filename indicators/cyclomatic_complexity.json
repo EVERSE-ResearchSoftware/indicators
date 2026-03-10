@@ -1,6 +1,6 @@
 {
   "@context": "https://w3id.org/everse/rsqi#",
-  "@id": "https://w3id.org/everse/i/indicators/cyclomatic_complexity",
+  "@id": "https://w3id.org/everse/i/indicators/cyclomatic_complexity_ok",
   "@type": "SoftwareQualityIndicator",
   "name": "Cyclomatic complexity follows community conventions",
   "abbreviation": "cyclomatic_complexity",
