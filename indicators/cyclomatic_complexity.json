@@ -5,7 +5,7 @@
   "name": "Cyclomatic complexity follow community conventions",
   "abbreviation": "cyclomatic_complexity",
   "identifier": { "@id": "https://w3id.org/everse/i/indicators/cyclomatic_complexity" },
-  "description": "Cyclomatic complexity (i.e., the number of linearly independent paths through a program’s source code) of the whole software component or modules/components/classes/functions/methods. Cyclomatic complexity is created by calculating the number of different code paths in the flow of the program. A program that has complex control flow requires more tests to achieve good code coverage and is less maintainable.",
+  "description": "Cyclomatic complexity (i.e., the number of linearly independent paths through a program’s source code) of the whole software component or modules/components/classes/functions/methods should follow the conventions established by the community  responsible for maintaining the tool. Cyclomatic complexity is created by calculating the number of different code paths in the flow of the program. A program that has complex control flow requires more tests to achieve good code coverage and is less maintainable.",
   "status": "Active",
   "keywords": [
     "maintainability", "complexity, code"
