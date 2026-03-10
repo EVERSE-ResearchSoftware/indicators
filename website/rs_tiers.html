@@ -225,10 +225,8 @@
         let originalData = [];
 
         const tierOrder = ["crucial", "recommended", "good to have", "not relevant"];
-        let currentSort = {
-            column: null,
-            index: -1
-        };
+        let activeSortColumn = null;
+        
 
         async function fetchCSVFile(csvPath) {
             const overlay = document.getElementById("table-loading-overlay");
@@ -322,39 +320,22 @@
         }
 
         function sortByTier(column) {
-            if (currentSort.column !== column) {
-                currentSort.column = column;
-                currentSort.index = -1;
-            }
-
-            const presentValues = tierOrder.filter(value =>
-                allData.some(item =>
-                    (item[column] || "").toLowerCase() === value
-                )
-            );
-
-            if (presentValues.length === 0) {
-                return;
-            }
-
-            currentSort.index++;
-
-            if (currentSort.index >= presentValues.length) {
-                currentSort.column = null;
-                currentSort.index = -1;
+            if (activeSortColumn === column) {
+                activeSortColumn = null;
                 updateTableFromCSV(originalData);
                 return;
             }
 
-            const priority = presentValues[currentSort.index];
+            activeSortColumn = column;
+
+            const orderIndex = value => {
+                const normalized = (value || "").toLowerCase();
+                const idx = tierOrder.indexOf(normalized);
+                return idx === -1 ? tierOrder.length : idx;
+            };
 
             const sorted = [...allData].sort((a, b) => {
-                const aVal = (a[column] || "").toLowerCase();
-                const bVal = (b[column] || "").toLowerCase();
-
-                if (aVal === priority && bVal !== priority) return -1;
-                if (bVal === priority && aVal !== priority) return 1;
-                return 0;
+                return orderIndex(a[column]) - orderIndex(b[column]);
             });
 
             updateTableFromCSV(sorted);
