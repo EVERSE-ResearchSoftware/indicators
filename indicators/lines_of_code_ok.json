@@ -1,11 +1,11 @@
 {
   "@context": "https://w3id.org/everse/rsqi#",
-  "@id": "https://w3id.org/everse/i/indicators/lines_of_code",
+  "@id": "https://w3id.org/everse/i/indicators/lines_of_code_ok",
   "@type": "SoftwareQualityIndicator",
-  "name": "Lines of code is maintained to a reasonable number, according to community standards or expectations",
-  "abbreviation": "lines_of_code",
-  "identifier": { "@id": "https://w3id.org/everse/i/indicators/lines_of_code" },
-  "description": "Number of lines for the whole software project or components / modules / classes / functions / methods",
+  "name": "Number of lines of code follows community standards or expectations",
+  "abbreviation": "lines_of_code_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/lines_of_code_ok" },
+  "description": "Number of lines of code for the whole software project or components/modules/classes/functions/methods should follow the conventions established by the community responsible for maintaining the source code",
   "status": "Active",
   "keywords": [
     "maintainability", "lines, code"
