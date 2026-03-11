@@ -1,0 +1,41 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/coupling_between_objects_ok",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Coupling between objects follows community conventions",
+  "abbreviation": "coupling_between_objects_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/coupling_between_objects_ok" },
+  "description": "The coupling between objects (CBO) ratio is maintained at a reasonable level according to the community's standards or expectations",
+  "status": "Active",
+  "keywords": [
+    "maintainability", "coupling, software"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "@type": "schema:Person",
+    "name": "Daniel Garijo"
+  },
+  "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+  "source": [
+    {
+      "identifier": "https://zenodo.org/records/10647227",
+      "url": "https://zenodo.org/records/10647227",
+      "name": "Task Force Sub Group 3 - Review of Software Quality Attributes and Characteristics"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
+      "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
+    }
+  ],
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+  "created": "11-03-2026"
+}
