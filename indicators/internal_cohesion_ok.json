@@ -33,7 +33,7 @@
     },
     {
       "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
-      "name": "Cohesion among methods"
+      "name": "Cohesion"
     }
   ],
   "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
