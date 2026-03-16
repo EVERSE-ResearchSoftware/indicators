@@ -10,6 +10,10 @@
         "fairsoft": {
             "mapping": "narrower",
             "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        },
+        "elixir": {
+            "mapping": "equivalent",
+            "url": "https://zenodo.org/records/17035105#ListedInRegistries"
         }
     },
     "archived_in_software_heritage": {
@@ -40,10 +44,17 @@
         "helmholtz": {
             "mapping": "broader",
             "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5#RichMetadata"
+        },
+        "elixir": {
+            "mapping": "broader",
+            "url": "https://zenodo.org/records/17035105#ProjectDescription"
         }
     },
     "functional_correctness": {
-        "url": ""
+        "elixir": {
+            "mapping": "equivalent",
+            "url": "https://zenodo.org/records/17035105#FunctionalCorrectness"
+        }
     },
     "has_ci-tests": {
         "openssf": {
@@ -217,6 +228,10 @@
         "openssf": {
             "mapping": "equivalent",
             "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sast"
+        },
+        "elixir": {
+            "mapping": "narrower",
+            "url": "https://zenodo.org/records/17035105#SafeIntegration"
         }
     },
     "support_issue_tracking": {
