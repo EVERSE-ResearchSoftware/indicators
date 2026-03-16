@@ -1,0 +1,41 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/lines_of_code_ok",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Number of lines of code follows community standards or expectations",
+  "abbreviation": "lines_of_code_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/lines_of_code_ok" },
+  "description": "Number of lines of code for the whole software project or components/modules/classes/functions/methods should follow the conventions established by the community responsible for maintaining the source code",
+  "status": "Active",
+  "keywords": [
+    "maintainability", "lines, code"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "@type": "schema:Person",
+    "name": "Daniel Garijo"
+  },
+  "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+  "source": [
+    {
+      "identifier": "https://zenodo.org/records/10647227",
+      "url": "https://zenodo.org/records/10647227",
+      "name": "Task Force Sub Group 3 - Review of Software Quality Attributes and Characteristics"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
+      "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
+    }
+  ],
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+  "created": "10-03-2026"
+}
