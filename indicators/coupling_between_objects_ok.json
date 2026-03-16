@@ -29,11 +29,11 @@
     {
       "identifier": "https://zenodo.org/records/10647227",
       "url": "https://zenodo.org/records/10647227",
-      "name": "Coupling between objects ratio"
+      "name": "Task Force Sub Group 3 - Review of Software Quality Attributes and Characteristics"
     },
     {
       "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
-      "name": "Coupling between objects"
+      "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
     }
   ],
   "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
