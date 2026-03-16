@@ -1,10 +1,10 @@
 {
   "@context": "https://w3id.org/everse/rsqi#",
-  "@id": "https://w3id.org/everse/i/indicators/internal_cohesion",
+  "@id": "https://w3id.org/everse/i/indicators/internal_cohesion_ok",
   "@type": "SoftwareQualityIndicator",
   "name": "Cohesion among methods/functions of a module follows community conventions",
-  "abbreviation": "internal_cohesion",
-  "identifier": { "@id": "https://w3id.org/everse/i/indicators/internal_cohesion" },
+  "abbreviation": "internal_cohesion_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/internal_cohesion_ok" },
   "description": "The cohesion among methods/functions of a module is maintained to a reasonable level according to community expectations and standards. Cohesion describes how related the functions within a single module are. Low cohesion implies that a given module performs tasks which are not very related to each other and hence can create problems as the module becomes large",
   "status": "Active",
   "keywords": [
