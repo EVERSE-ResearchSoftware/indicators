@@ -1,0 +1,34 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/has_contribution_guidelines",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software repository has contribution guidelines",
+    "abbreviation": "has_contribution_guidelines",
+    "description": "The software repository provides contribution guidelines in case someone wants to contribute to the project.",
+    "keywords": [ "linting", "code analysis", "fair"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_contribution_guidelines" },
+    "status": "Active",
+    "version": "1.0.0",
+    "author" : {
+        "@type" : "schema:Person",
+        "name" : "Daniel Garijo"
+    },
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": [
+        {
+            "url": "https://docs.tech.cessda.eu/software/requirements.html",
+            "name": "Software Requirements"
+        }
+    ],        
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustainability" },
+    "created": "17-03-2026"
+}
