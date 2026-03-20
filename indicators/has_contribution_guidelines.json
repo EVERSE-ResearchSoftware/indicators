@@ -10,8 +10,8 @@
     "status": "Active",
     "version": "1.0.0",
     "author" : {
-        "@type" : "schema:Person",
-        "name" : "Daniel Garijo"
+        "@type" : "schema:Organization",
+        "name" : "CESSDA"
     },
     "contact": [
     {
