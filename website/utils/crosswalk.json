@@ -263,7 +263,10 @@
         }
     },
     "support_issue_tracking": {
-        "url": ""
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/issue-tracking.html"
+        }
     },
     "uses_fuzzing": {
         "openssf": {

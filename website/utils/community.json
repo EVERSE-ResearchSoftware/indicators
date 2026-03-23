@@ -1,0 +1,143 @@
+{
+    "codemeta_completeness": {
+        
+    },
+    "archived_in_scholarly_repository": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#ListedInRegistries"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/publication.html"
+        }
+    },
+    "archived_in_software_heritage": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
+        }
+    },
+    "dependency_management": {
+        
+    },
+    "descriptive_metadata": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#ProjectDescription"
+        }
+    },
+    "functional_correctness": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#FunctionalCorrectness"
+        }
+    },
+    "has_ci-tests": {
+        
+    },
+    "has_no_linting_issues": {
+        
+    },
+    "has_published_package": {
+        
+    },
+    "has_releases": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/releases.html"
+        }
+    },
+    "human_code_review_requirement": {
+        
+    },
+    "listed_in_registry": {
+        
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#ListedInRegistries"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
+        }
+    },
+    "metadata_is_up_to_date": {
+        
+    },
+    "no_critical_vulnerability": {
+        
+    },
+    "no_leaked_credentials": {
+        
+    },
+    "persistent_and_unique_identifier": {
+        
+    },
+    "repository_workflows": {
+        
+    },
+    "requirements_specified": {
+        
+    },
+    "software_has_citation": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/publication.html"
+        }
+    },
+    "software_has_documentation": {
+        "elixir": [
+            {
+                "url": "https://zenodo.org/records/17035105#BasicDocumentation"
+            },
+            {
+                "url": "https://zenodo.org/records/17035105#ProjectDescription"
+            }
+        ],
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        }
+    },
+    "software_has_license": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#LicensingAndReusability"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        }
+    },
+    "software_has_tests": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#TestCoverageOfCodeAndFunction"
+        }
+    },
+    "software_test_coverage": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#TestCoverageOfCodeAndFunction"
+        }
+    },
+    "static_analysis_common_vulnerabilities": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#SafeIntegration"
+        }
+    },
+    "support_issue_tracking": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/issue-tracking.html"
+        }
+    },
+    "uses_fuzzing": {
+        
+    },
+    "uses_tool_for_warnings_and_mistakes": {
+        
+    },
+    "version_control_use": {
+        
+    },
+    "versioning_standards_use": {
+        "elixir": {
+            "url": "https://zenodo.org/records/17035105#Versioning"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/releases.html"
+        }
+    },
+    "has_contribution_guidelines": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        }
+    }
+}
