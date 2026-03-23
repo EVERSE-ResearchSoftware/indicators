@@ -81,7 +81,8 @@
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
-                    <col style="width:14%">
+                    <col style="width:12%">
+                    <col style="width:12%">
                 </colgroup>
                 <thead>
                     <tr>
@@ -93,6 +94,7 @@
                         <th>FAIRSOFT</th>
                         <th>OpenSSF</th>
                         <th>CESSDA</th>
+                        <th>ENVRI</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -169,6 +171,13 @@
                     Set of quality guidelines for social science research software. URL:
                     <a href="https://docs.tech.cessda.eu/index.htmle" target="_blank">
                         https://docs.tech.cessda.eu/index.html
+                    </a>
+                </li>
+                <li>
+                    <span class="legend-term">ENVRI</span>:
+                    Set of quality indicators for Jupyter Notebooks. URL:
+                    <a href="https://ieeexplore.ieee.org/document/11216562" target="_blank">
+                        https://ieeexplore.ieee.org/document/11216562
                     </a>
                 </li>
             </ul>
@@ -293,7 +302,7 @@
                 }
                 row.appendChild(nameCell);
 
-                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda"]
+                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda", "envri"]
                     .forEach(key => {
                         const cell = document.createElement("td");
                         buildCrosswalkCell(cell, mapping[key]);
