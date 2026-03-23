@@ -14,6 +14,10 @@
         "elixir": {
             "mapping": "equivalent",
             "url": "https://zenodo.org/records/17035105#ListedInRegistries"
+        },
+        "cessda": {
+            "mapping": "broader",
+            "url": "https://docs.tech.cessda.eu/software/publication.html"
         }
     },
     "archived_in_software_heritage": {
@@ -24,6 +28,10 @@
         "fairsoft": {
             "mapping": "narrower",
             "url": "https://inab.github.io/FAIRsoft_indicators/indicators/findability/F3_searchability/"
+        },
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
         }
     },
     "dependency_management": {
@@ -79,6 +87,10 @@
         "fair_impact": {
             "mapping": "narrower",
             "url": "https://fair-impact.eu/metrics-software#FRSM-03"
+        },
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/releases.html"
         }
     },
     "human_code_review_requirement": {
@@ -95,6 +107,10 @@
         "elixir": {
             "mapping": "equivalent",
             "url": "https://zenodo.org/records/17035105#ListedInRegistries"
+        },
+        "cessda": {
+            "mapping": "broader",
+            "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
         }
     },
     "metadata_is_up_to_date": {
@@ -150,6 +166,10 @@
         "fair_impact": {
             "mapping": "broader",
             "url": "https://fair-impact.eu/metrics-software#FRSM-12"
+        },
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/publication.html"
         }
     },
     "software_has_documentation": {
@@ -174,7 +194,11 @@
                 "mapping": "broader",
                 "url": "https://zenodo.org/records/17035105#ProjectDescription"
             }
-        ]
+        ],
+        "cessda": {
+            "mapping": "broader",
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        }
     },
     "software_has_license": {
         "chaoss": {
@@ -202,6 +226,10 @@
         "elixir": {
             "mapping": "broader",
             "url": "https://zenodo.org/records/17035105#LicensingAndReusability"
+        },
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
         }
     },
     "software_has_tests": {
@@ -268,6 +296,16 @@
         "elixir": {
             "mapping": "narrower",
             "url": "https://zenodo.org/records/17035105#Versioning"
+        },
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/releases.html"
+        }
+    },
+    "has_contribution_guidelines": {
+        "cessda": {
+            "mapping": "equivalent",
+            "url": "https://docs.tech.cessda.eu/software/requirements.html"
         }
     }
 }

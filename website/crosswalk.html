@@ -74,13 +74,14 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width:16%">
+                    <col style="width:14%">
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
+                    <col style="width:14%">
                 </colgroup>
                 <thead>
                     <tr>
@@ -91,6 +92,7 @@
                         <th>FAIR Impact</th>
                         <th>FAIRSOFT</th>
                         <th>OpenSSF</th>
+                        <th>CESSDA</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -137,29 +139,36 @@
                 <li>
                     <span class="legend-term">OpenSSF</span>:
                     Set of checks to ensure open source projects quality. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://scorecard.dev/#the-checks" target="_blank">
                         https://scorecard.dev/#the-checks
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">CHAOSS</span>:
                     Set of metrics to promote open source community health on a global scale. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://chaoss.community/kbtopic/software/" target="_blank">
                         https://chaoss.community/kbtopic/software/
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">Helmholtz</span>:
                     Set of quality indicators for data and software products. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/" target="_blank">
                         https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">Elixir</span>:
                     Set of quality indicators to improve the quality and sustainability of research software. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://zenodo.org/records/17035105" target="_blank">
                         https://zenodo.org/records/17035105
+                    </a>
+                </li>
+                <li>
+                    <span class="legend-term">CESSDA</span>:
+                    Set of quality guidelines for social science research software. URL:
+                    <a href="https://docs.tech.cessda.eu/index.htmle" target="_blank">
+                        https://docs.tech.cessda.eu/index.html
                     </a>
                 </li>
             </ul>
@@ -284,7 +293,7 @@
                 }
                 row.appendChild(nameCell);
 
-                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf"]
+                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda"]
                     .forEach(key => {
                         const cell = document.createElement("td");
                         buildCrosswalkCell(cell, mapping[key]);
