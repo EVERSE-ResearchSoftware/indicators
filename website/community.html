@@ -123,6 +123,12 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        #json-table th {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -139,7 +145,7 @@
                                 <img src="images/everse_logo.png" alt="Logo" style="height: 40px;">
                             </a>
                         </div>
-                        <div class="col-xs-6 text-right menu-1">
+                        <div class="col-xs-12 text-right menu-1">
                             <ul style="display: flex; justify-content: flex-end; gap: 20px; margin: 0;">
                                 <li><a href="indicators.html">Indicators</a></li>
                                 <li><a href="dimensions.html">Dimensions</a></li>
@@ -199,6 +205,7 @@
 
     <script>
         let allData = [];
+        let communityData = {};
 
         async function fetchJSONFiles(directory) {
             const overlay = document.getElementById("table-loading-overlay");
@@ -208,6 +215,9 @@
                 const response = await fetch(`${directory}/../api/indicators.json`);
                 const apiData = await response.json();
                 
+                const communityResponse = await fetch(`${directory}/utils/community.json`);
+                communityData = await communityResponse.json();
+
                 allData = apiData.indicators || [];
                 updateTable(allData);
                 handleHashNavigation();
@@ -216,6 +226,53 @@
             } finally {
                 overlay.style.display = "none";
             }
+        }
+
+        function createCommunityCell(indicatorId, communityKey) {
+            const cell = document.createElement("td");
+            cell.style.textAlign = "center";
+            cell.style.verticalAlign = "middle";
+
+            const indicatorData = communityData[indicatorId];
+            if (!indicatorData || !indicatorData[communityKey]) return cell;
+
+            const entries = Array.isArray(indicatorData[communityKey])
+                ? indicatorData[communityKey]
+                : [indicatorData[communityKey]];
+
+            let hasContent = false;
+
+            entries.forEach((entry, index) => {
+                if (entry.url) {
+                    hasContent = true;
+
+                    const link = document.createElement("a");
+                    link.href = entry.url;
+                    link.target = "_blank";
+                    link.textContent = "X";
+                    link.style.color = "#1E90FF";
+                    link.style.fontSize = "18px";
+                    link.style.fontWeight = "bold";
+                    link.style.textDecoration = "none";
+                    link.style.display = "block";
+                    link.style.margin = "4px 0";
+
+                    cell.appendChild(link);
+
+                    if (index < entries.length - 1) {
+                        const hr = document.createElement("hr");
+                        hr.style.borderTop = "1px dashed #777";
+                        hr.style.margin = "4px 0";
+                        cell.appendChild(hr);
+                    }
+                }
+            });
+
+            if (!hasContent) {
+                cell.textContent = "";
+            }
+
+            return cell;
         }
 
         function updateTable(dataList) {
@@ -239,6 +296,7 @@
                     nameLink.href = data.identifier['@id'];
                     nameLink.textContent = data.name;
                     nameLink.style.color = "#1E90FF";
+                    nameLink.style.fontSize = "14px";
                     nameLink.style.marginRight = "8px";
                     nameCell.appendChild(nameLink);
 
@@ -259,18 +317,9 @@
                 }
 
                 row.appendChild(nameCell);
-
-                const elixirCell = document.createElement("td");
-                elixirCell.textContent = data.elixir || "";
-                row.appendChild(elixirCell);
-
-                const envriCell = document.createElement("td");
-                envriCell.textContent = data.envri || "";
-                row.appendChild(envriCell);
-
-                const cessdaCell = document.createElement("td");
-                cessdaCell.textContent = data.cessda || "";
-                row.appendChild(cessdaCell);
+                row.appendChild(createCommunityCell(rowId, "elixir"));
+                row.appendChild(createCommunityCell(rowId, "envri"));
+                row.appendChild(createCommunityCell(rowId, "cessda"));
 
                 tableBody.appendChild(row);
             });
