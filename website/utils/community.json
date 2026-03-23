@@ -2,6 +2,21 @@
     "codemeta_completeness": {
         
     },
+    "coupling_between_objects_ok": {
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
+    },
+    "internal_cohesion_ok": {
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
+    },
+    "lines_of_code_ok": {
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
+    }
     "archived_in_scholarly_repository": {
         "elixir": {
             "url": "https://zenodo.org/records/17035105#ListedInRegistries"
