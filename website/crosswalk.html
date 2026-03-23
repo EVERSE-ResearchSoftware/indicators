@@ -33,12 +33,13 @@
                                 <img src="images/everse_logo.png" alt="Logo" style="height: 40px;">
                             </a>
                         </div>
-                        <div class="col-xs-6 text-right menu-1">
+                        <div class="col-xs-12 text-right menu-1">
                             <ul style="display: flex; justify-content: flex-end; gap: 20px; margin: 0;">
                                 <li><a href="indicators.html">Indicators</a></li>
                                 <li><a href="dimensions.html">Dimensions</a></li>
                                 <li><a href="rs_tiers.html">RS Tiers</a></li>
                                 <li class="active"><a href="crosswalk.html">Crosswalk</a></li>
+                                <li><a href="community.html">Community</a></li>
                             </ul>
                         </div>
                     </div>
@@ -73,7 +74,9 @@
 
             <table id="json-table">
                 <colgroup>
-                    <col style="width:16%">
+                    <col style="width:14%">
+                    <col style="width:12%">
+                    <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
                     <col style="width:12%">
@@ -90,6 +93,8 @@
                         <th>FAIR Impact</th>
                         <th>FAIRSOFT</th>
                         <th>OpenSSF</th>
+                        <th>CESSDA</th>
+                        <th>ENVRI</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -136,29 +141,43 @@
                 <li>
                     <span class="legend-term">OpenSSF</span>:
                     Set of checks to ensure open source projects quality. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://scorecard.dev/#the-checks" target="_blank">
                         https://scorecard.dev/#the-checks
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">CHAOSS</span>:
                     Set of metrics to promote open source community health on a global scale. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://chaoss.community/kbtopic/software/" target="_blank">
                         https://chaoss.community/kbtopic/software/
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">Helmholtz</span>:
                     Set of quality indicators for data and software products. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/" target="_blank">
                         https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/
                     </a>
                 </li>
                 <li>
                     <span class="legend-term">Elixir</span>:
                     Set of quality indicators to improve the quality and sustainability of research software. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
+                    <a href="https://zenodo.org/records/17035105" target="_blank">
                         https://zenodo.org/records/17035105
+                    </a>
+                </li>
+                <li>
+                    <span class="legend-term">CESSDA</span>:
+                    Set of quality guidelines for social science research software. URL:
+                    <a href="https://docs.tech.cessda.eu/index.htmle" target="_blank">
+                        https://docs.tech.cessda.eu/index.html
+                    </a>
+                </li>
+                <li>
+                    <span class="legend-term">ENVRI</span>:
+                    Set of quality indicators for Jupyter Notebooks. URL:
+                    <a href="https://ieeexplore.ieee.org/document/11216562" target="_blank">
+                        https://ieeexplore.ieee.org/document/11216562
                     </a>
                 </li>
             </ul>
@@ -283,7 +302,7 @@
                 }
                 row.appendChild(nameCell);
 
-                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf"]
+                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda", "envri"]
                     .forEach(key => {
                         const cell = document.createElement("td");
                         buildCrosswalkCell(cell, mapping[key]);
