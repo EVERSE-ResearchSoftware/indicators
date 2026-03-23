@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Research Software Quality indicators
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: >-
+      European Virtual Institute for Research Software
+      Excellence
+    email: contact@everse.software
+    website: 'https://everse.software/'
+    alias: EVERSE
+identifiers:
+  - type: url
+    value: 'https://everse.software/indicators/website/indicators.html'
+repository-code: 'https://github.com/EVERSE-ResearchSoftware/indicators'
+keywords:
+  - Research Software
+  - Software Quality
+  - EVERSE
+  - EOSC
+  - Research Software Quality Indicators
+  - Research Software Quality Dimensions
+  
