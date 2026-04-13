@@ -16,7 +16,7 @@ authors:
     alias: EVERSE
 identifiers:
   - type: url
-    value: 'https://everse.software/indicators/website/indicators.html'
+    value: 'https://w3id.org/everse/i/indicators/'
 repository-code: 'https://github.com/EVERSE-ResearchSoftware/indicators'
 keywords:
   - Research Software
