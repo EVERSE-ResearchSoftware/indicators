@@ -1,14 +1,14 @@
 {
   "@context": "https://w3id.org/everse/rsqi#",
-  "@id": "https://w3id.org/everse/i/indicators/cyclomatic_complexity_ok",
+  "@id": "https://w3id.org/everse/i/indicators/maintainability_index_ok",
   "@type": "SoftwareQualityIndicator",
-  "name": "Cyclomatic complexity follows community conventions",
-  "abbreviation": "cyclomatic_complexity_ok",
-  "identifier": { "@id": "https://w3id.org/everse/i/indicators/cyclomatic_complexity_ok" },
-  "description": "Cyclomatic complexity (i.e., the number of linearly independent paths through a program’s source code) of the whole software component or modules/components/classes/functions/methods should follow the conventions established by the community responsible for maintaining the tool. Cyclomatic complexity is created by calculating the number of different code paths in the flow of the program. A program that has complex control flow requires more tests to achieve good code coverage and is less maintainable.",
+  "name": "Maintainability index follows community conventions",
+  "abbreviation": "maintainability_index_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/maintainability_index_ok" },
+  "description": "The maintainability index (i.e., degree of effectiveness and efficiency with which a product or system can be modified by the intended maintainers) should follow conventions and standards established by the community responsible for maintaining the source code or system.",
   "status": "Active",
   "keywords": [
-    "maintainability", "complexity, code"
+    "maintainability", "code"
   ],
   "version": "1.0.0",
   "author": {
@@ -37,5 +37,5 @@
     }
   ],
   "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
-  "created": "10-03-2026"
+  "created": "14-04-2026"
 }
