@@ -1,0 +1,34 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/code_smells_ok",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Code smells follow community conventions",
+  "abbreviation": "code_smells_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/code_smells_ok" },
+  "description": "The code smell ratio is maintained at a reasonable level according to community standards and conventions.",
+  "status": "Active",
+  "keywords": [
+    "maintainability", "quality", "code smell", "code"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "@type": "schema:Person",
+    "name": "Daniel Garijo"
+  },
+  "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+  ],
+  "source": {
+    "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
+    "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
+  },
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+  "created": "14-04-2026"
+}
