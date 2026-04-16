@@ -8,13 +8,9 @@
   "description": "The maintainability index (i.e., degree of effectiveness and efficiency with which a product or system can be modified by the intended maintainers) should follow conventions and standards established by the community responsible for maintaining the source code or system.",
   "status": "Active",
   "keywords": [
-    "maintainability", "code"
+    "maintainability", "code", "maintainability index"
   ],
   "version": "1.0.0",
-  "author": {
-    "@type": "schema:Person",
-    "name": "Daniel Garijo"
-  },
   "contact": [
     {
         "@type": "schema:Person",
