@@ -56,6 +56,10 @@
         "chaoss": {
             "mapping": "broader",
             "url": "https://chaoss.community/kb/metric-libyears/"
+        },
+        "openssf": {
+            "mapping": "equivalent",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#dependency-update-tool"
         }
     },
     "descriptive_metadata": {
@@ -164,7 +168,10 @@
         }
     },
     "repository_workflows": {
-        "url": ""
+        "openssf": {
+            "mapping": "broader",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests"
+        }
     },
     "requirements_specified": {
         "fair_impact": {
@@ -284,6 +291,10 @@
         "cessda": {
             "mapping": "equivalent",
             "url": "https://docs.tech.cessda.eu/software/issue-tracking.html"
+        },
+        "elixir": {
+            "mapping": "equivalent",
+            "url": "https://zenodo.org/records/17035105#IssueTracking"
         }
     },
     "uses_fuzzing": {
@@ -293,7 +304,10 @@
         }
     },
     "uses_tool_for_warnings_and_mistakes": {
-        "url": ""
+        "openssf": {
+            "mapping": "equivalent",
+            "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sast"
+        }
     },
     "version_control_use": {
         "fair_impact": {
