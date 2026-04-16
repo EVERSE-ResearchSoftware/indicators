@@ -11,10 +11,6 @@
     "maintainability", "duplication", "quality", "code"
   ],
   "version": "1.0.0",
-  "author": {
-    "@type": "schema:Person",
-    "name": "Daniel Garijo"
-  },
   "contact": [
     {
         "@type": "schema:Person",
