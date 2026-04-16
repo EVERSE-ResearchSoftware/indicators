@@ -11,10 +11,6 @@
     "maintainability", "coupling, software"
   ],
   "version": "1.0.0",
-  "author": {
-    "@type": "schema:Person",
-    "name": "Daniel Garijo"
-  },
   "contact": [
     {
         "@type": "schema:Person",
