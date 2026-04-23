@@ -24,7 +24,7 @@
     "@type": "schema:Organization",
     "name": "University of Padova"
   },
-  "contactPoint": {
+  "contact": {
     "@type": "schema:Person",
     "name": "Gavin Farrell",
     "email": "gavinmichael.farrell@studenti.unipd.it"

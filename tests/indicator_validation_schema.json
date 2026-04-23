@@ -299,7 +299,7 @@
         "name",
         "abbreviation",
         "description",
-        "author",
+        "contact",
         "version",
         "identifier",
         "qualityDimension"

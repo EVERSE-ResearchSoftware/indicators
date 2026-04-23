@@ -19,7 +19,7 @@
         "name": "OpenSSF",
         "url": "https://openssf.org/"
     },
-    "contactPoint": {
+    "contact": {
         "@type": "schema:Person",
         "name": "Federica Quaglia",
         "email": "federica.quaglia@unipd.it"

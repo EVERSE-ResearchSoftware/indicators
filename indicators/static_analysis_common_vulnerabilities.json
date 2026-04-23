@@ -19,7 +19,7 @@
         "name": "OpenSSF",
         "url": "https://openssf.org/"
     },
-    "contactPoint": {
+    "contact": {
         "@type": "schema:Person",
         "name": "Thomas Vuillaume",
         "email": "thomas.vuillaume@lapp.in2p3.fr"
