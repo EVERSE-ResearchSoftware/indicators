@@ -21,10 +21,16 @@
         "name": "Andres Montero"
     }
   ],
-  "source": {
+  "source": [
+    {
     "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11216562&tag=1",
     "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
-  },
+   },
+    {
+      "name": "A Systematic Literature Review on the Code Smells Datasets and Validation Mechanisms",
+      "url":"https://doi.org/10.1145/3596908"
+    }
+  ],
   "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
   "created": "14-04-2026"
 }
