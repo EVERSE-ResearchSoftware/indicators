@@ -12,6 +12,15 @@ A list of dimensions is available at [https://w3id.org/everse/i/dimensions](http
 All indicators and dimensions follow the naming schema: `https://w3id.org/everse/i/[indicators|dimensions]/{id}`, where `{id}` corresponds to the local identifier of the indicator or dimension. Note: the local identifier corresponds to its `Abbreviation`.
 
 
+### Defining an indicator's name
+
+When defining an indicator, names should follow these conventions:
+
+- If the indicator involves something existing as a positive aspect, then it should be named "has_XXX_XXX"
+- If it involves something not existing as a positive aspect instead, it should be named "no_YYY_YYY"
+- If the indicator is tied to a community's perspective, then it should be named "ZZZ_ZZZ_ok"
+
+
 ## Content Negotiation
 Every indicator is resolvable in a machine-readable manner, using JSON-LD and HTML. For example, the following command:
 ```
@@ -19,21 +28,6 @@ curl -sH "Accept:application/ld+json"  https://w3id.org/everse/i/indicators/pers
 ```
 will yield the description of the corresponding indicator in JSON-LD, while clicking on its URL (i.e., [https://w3id.org/everse/i/indicators/persistent_and_unique_identifier](https://w3id.org/everse/i/indicators/persistent_and_unique_identifier)) will take you to website.
 
-
-## Contributing new Quality Indicators
-If you want to create a new quality indicator, please open a pull request or an issue. 
-If you decide to open a pull request, please validate your JSON-LD with an open validator like [the JSON-LD Playground](https://json-ld.org/playground/) to agilize the review. Please make sure your indicator has a source, so we can double check its source and usefulness.
-The following template may guide you when creating a description of your indicator:
-```
-### What is being measured?
-    Explain what you are measuring
-### Why should we measure it?
-    Explain why
-### What must be provided for the measurement? 
-    For example, a zenodo record, or a GitHub id.
-### How is the measurement executed?
-    Explain the exact process for assessing the indicator
-```
 
 ## JSON API Endpoints
 
