@@ -1,23 +1,27 @@
 table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 15px;
-            table-layout: fixed;
-        }
+    width: max-content; /* Cambiado de 100% para que se expanda según sus columnas fijas */
+    min-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 0; /* Ajustado a 0 porque el margen superior ahora lo lleva el contenedor */
+    table-layout: fixed;
+}
+
 th, td {
     border: 1px solid #ddd;
     padding: 12px 18px;
     text-align: left;
-    vertical-align: top;
+    vertical-align: middle; /* Cambiado a middle para mejorar la estética visual de las celdas alineadas */
     font-size: 14px;
-    word-break: break-word;
+    white-space: nowrap; /* Cambiado de 'word-break: break-word' para evitar que el texto colapse verticalmente */
 }
+
 th {
     background-color: #1E90FF;
     color: white;
     font-size: 17px;
 }
+
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -127,4 +131,31 @@ tr:nth-child(even) {
 
 #mapping-legend li {
     margin-bottom: 6px;
+}
+
+/* ==========================================
+   Contenedor añadido para el Scroll Lateral
+   ========================================== */
+.table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Diseño personalizado para la barra de scroll (Chrome, Safari, Edge) */
+.table-responsive-container::-webkit-scrollbar {
+    height: 10px;
+}
+.table-responsive-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.table-responsive-container::-webkit-scrollbar-thumb {
+    background: #1E90FF;
+    border-radius: 5px;
+}
+.table-responsive-container::-webkit-scrollbar-thumb:hover {
+    background: #005bb5;
 }

@@ -78,12 +78,20 @@
         "elixir": {
             "mapping": "broader",
             "url": "https://zenodo.org/records/17035105#ProjectDescription"
+        },
+        "sbom": {
+            "mapping": "broader",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#comp_with_name"
         }
     },
     "functional_correctness": {
         "elixir": {
             "mapping": "equivalent",
             "url": "https://zenodo.org/records/17035105#FunctionalCorrectness"
+        },
+        "joss": {
+            "mapping": "equivalent",
+            "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#Functionality"
         }
     },
     "has_ci-tests": {
@@ -113,6 +121,10 @@
         "cessda": {
             "mapping": "equivalent",
             "url": "https://docs.tech.cessda.eu/software/releases.html"
+        },
+        "sbom": {
+            "mapping": "broader",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#comp_with_version"
         }
     },
     "human_code_review_requirement": {
@@ -142,6 +154,10 @@
         "openssf": {
             "mapping": "equivalent",
             "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#vulnerabilities"
+        },
+        "sbom": {
+            "mapping": "equivalent",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#sbom_with_vuln"
         }
     },
     "no_leaked_credentials": {
@@ -165,7 +181,12 @@
         "helmholtz": {
             "mapping": "narrower",
             "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5#Identifier"
+        },
+        "sbom": {
+            "mapping": "equivalent",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#comp_with_uniq_ids"
         }
+
     },
     "repository_workflows": {
         "openssf": {
@@ -185,6 +206,10 @@
         "helmholtz": {
             "mapping": "narrower",
             "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5#ReusabilityConditions"
+        },
+        "sbom": {
+            "mapping": "equivalent",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#sbom_dependencies"
         }
     },
     "software_has_citation": {
@@ -223,7 +248,17 @@
         "cessda": {
             "mapping": "broader",
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
-        }
+        },
+        "joss": [
+            {
+                "mapping": "broader",
+                "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#Installation"
+            },
+            {
+                "mapping": "broader",
+                "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#InstallationInstructions"
+            }
+        ]
     },
     "software_has_license": {
         "chaoss": {
@@ -255,6 +290,14 @@
         "cessda": {
             "mapping": "equivalent",
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        },
+        "sbom": {
+            "mapping": "broader",
+            "url": "https://github.com/interlynk-io/sbomqs/blob/main/docs/reference/quality-checks.md#comp_with_licenses"
+        },
+        "joss": {
+            "mapping": "equivalent",
+            "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#License"
         }
     },
     "software_has_tests": {
@@ -265,6 +308,10 @@
         "elixir": {
             "mapping": "narrower",
             "url": "https://zenodo.org/records/17035105#TestCoverageOfCodeAndFunction"
+        },
+        "joss": {
+            "mapping": "equivalent",
+            "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#AutomatedTests"
         }
     },
     "software_test_coverage": {
@@ -317,6 +364,10 @@
         "fairsoft": {
             "mapping": "narrower",
             "url": "https://inab.github.io/FAIRsoft_indicators/indicators/reusability/R4_provenance/"
+        },
+        "joss": {
+            "mapping": "equivalent",
+            "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#Repository"
         }
     },
     "versioning_standards_use": {
@@ -341,6 +392,10 @@
         "cessda": {
             "mapping": "equivalent",
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        },
+        "joss": {
+            "mapping": "equivalent",
+            "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#CommunityGuidelines"
         }
     }
 }

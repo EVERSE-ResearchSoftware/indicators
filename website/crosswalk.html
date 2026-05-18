@@ -17,7 +17,6 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -61,7 +60,6 @@
                 </div>
             </div>
 
-
             <div id="search-wrapper">
                 <input type="text" id="search-input" class="form-control" placeholder="Search in table...">
                 <button id="clear-search" title="Clear search">✕</button>
@@ -72,33 +70,41 @@
                 <p>Loading indicators...</p>
             </div>
 
-            <table id="json-table">
-                <colgroup>
-                    <col style="width:14%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                    <col style="width:12%">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Elixir</th>
-                        <th>CHAOSS</th>
-                        <th>Helmholtz</th>
-                        <th>FAIR Impact</th>
-                        <th>FAIRSOFT</th>
-                        <th>OpenSSF</th>
-                        <th>CESSDA</th>
-                        <th>ENVRI</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <!-- Contenedor responsive para activar el scroll horizontal -->
+            <div class="table-responsive-container">
+                <table id="json-table">
+                    <colgroup>
+                        <!-- Tamaños fijos en píxeles para asegurar el ancho de las columnas -->
+                        <col style="width: 260px;"> <!-- Name -->
+                        <col style="width: 130px;"> <!-- Elixir -->
+                        <col style="width: 130px;"> <!-- CHAOSS -->
+                        <col style="width: 130px;"> <!-- Helmholtz -->
+                        <col style="width: 130px;"> <!-- FAIR Impact -->
+                        <col style="width: 130px;"> <!-- FAIRSOFT -->
+                        <col style="width: 130px;"> <!-- OpenSSF -->
+                        <col style="width: 130px;"> <!-- CESSDA -->
+                        <col style="width: 130px;"> <!-- ENVRI -->
+                        <col style="width: 130px;"> <!-- SBOM -->
+                        <col style="width: 130px;"> <!-- JOSS -->
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Elixir</th>
+                            <th>CHAOSS</th>
+                            <th>Helmholtz</th>
+                            <th>FAIR Impact</th>
+                            <th>FAIRSOFT</th>
+                            <th>OpenSSF</th>
+                            <th>CESSDA</th>
+                            <th>ENVRI</th>
+                            <th>SBOM</th>
+                            <th>JOSS</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -106,84 +112,26 @@
         <div class="legend-section">
             <div class="legend-title">Relations</div>
             <ul>
-                <li>
-                    <span class="legend-term equivalent">Equivalent</span>:
-                    Same meaning or scope as the EVERSE indicator.
-                </li>
-                <li>
-                    <span class="legend-term broader">Broader</span>:
-                    Covers a wider concept than the EVERSE indicator.
-                </li>
-                <li>
-                    <span class="legend-term narrower">Narrower</span>:
-                    Covers a more specific aspect of the EVERSE indicator.
-                </li>
+                <li><span class="legend-term equivalent">Equivalent</span>: Same meaning or scope as the EVERSE indicator.</li>
+                <li><span class="legend-term broader">Broader</span>: Covers a wider concept than the EVERSE indicator.</li>
+                <li><span class="legend-term narrower">Narrower</span>: Covers a more specific aspect of the EVERSE indicator.</li>
             </ul>
         </div>
 
         <div class="legend-section">
             <div class="legend-title">Sources</div>
             <ul>
-                <li>
-                    <span class="legend-term">FAIRSOFT</span>:
-                    Set of indicators in the biomedical sciences. URL:
-                    <a href="https://inab.github.io/FAIRsoft_indicators/indicators/" target="_blank">
-                        https://inab.github.io/FAIRsoft_indicators/indicators/
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">FAIR-Impact</span>:
-                    Set of metrics for FAIR principles compliance. URL:
-                    <a href="https://fair-impact.eu/metrics-software" target="_blank">
-                        https://fair-impact.eu/metrics-software
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">OpenSSF</span>:
-                    Set of checks to ensure open source projects quality. URL:
-                    <a href="https://scorecard.dev/#the-checks" target="_blank">
-                        https://scorecard.dev/#the-checks
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">CHAOSS</span>:
-                    Set of metrics to promote open source community health on a global scale. URL:
-                    <a href="https://chaoss.community/kbtopic/software/" target="_blank">
-                        https://chaoss.community/kbtopic/software/
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">Helmholtz</span>:
-                    Set of quality indicators for data and software products. URL:
-                    <a href="https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/" target="_blank">
-                        https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">Elixir</span>:
-                    Set of quality indicators to improve the quality and sustainability of research software. URL:
-                    <a href="https://zenodo.org/records/17035105" target="_blank">
-                        https://zenodo.org/records/17035105
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">CESSDA</span>:
-                    Set of quality guidelines for social science research software. URL:
-                    <a href="https://docs.tech.cessda.eu/index.htmle" target="_blank">
-                        https://docs.tech.cessda.eu/index.html
-                    </a>
-                </li>
-                <li>
-                    <span class="legend-term">ENVRI</span>:
-                    Set of quality indicators for Jupyter Notebooks. URL:
-                    <a href="https://ieeexplore.ieee.org/document/11216562" target="_blank">
-                        https://ieeexplore.ieee.org/document/11216562
-                    </a>
-                </li>
+                <li><span class="legend-term">FAIRSOFT</span>: Set of indicators in the biomedical sciences. URL: <a href="https://inab.github.io/FAIRsoft_indicators/indicators/" target="_blank">https://inab.github.io/FAIRsoft_indicators/indicators/</a></li>
+                <li><span class="legend-term">FAIR-Impact</span>: Set of metrics for FAIR principles compliance. URL: <a href="https://fair-impact.eu/metrics-software" target="_blank">https://fair-impact.eu/metrics-software</a></li>
+                <li><span class="legend-term">OpenSSF</span>: Set of checks to ensure open source projects quality. URL: <a href="https://scorecard.dev/#the-checks" target="_blank">https://scorecard.dev/#the-checks</a></li>
+                <li><span class="legend-term">CHAOSS</span>: Set of metrics to promote open source community health on a global scale. URL: <a href="https://chaoss.community/kbtopic/software/" target="_blank">https://chaoss.community/kbtopic/software/</a></li>
+                <li><span class="legend-term">Helmholtz</span>: Set of quality indicators for data and software products. URL: <a href="https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/" target="_blank">https://os.helmholtz.de/en/open-science-in-helmholtz/working-group-open-science/task-group-quality-indicators/</a></li>
+                <li><span class="legend-term">Elixir</span>: Set of quality indicators to improve the quality and sustainability of research software. URL: <a href="https://zenodo.org/records/17035105" target="_blank">https://zenodo.org/records/17035105</a></li>
+                <li><span class="legend-term">CESSDA</span>: Set of quality guidelines for social science research software. URL: <a href="https://docs.tech.cessda.eu/index.htmle" target="_blank">https://docs.tech.cessda.eu/index.html</a></li>
+                <li><span class="legend-term">ENVRI</span>: Set of quality indicators for Jupyter Notebooks. URL: <a href="https://ieeexplore.ieee.org/document/11216562" target="_blank">https://ieeexplore.ieee.org/document/11216562</a></li>
             </ul>
         </div>
     </div>
-
 
     <script>
         let allData = [];
@@ -258,7 +206,6 @@
             }
         }
 
-
         function updateTable(dataList) {
             const tableBody = document.querySelector("#json-table tbody");
             tableBody.innerHTML = "";
@@ -302,7 +249,7 @@
                 }
                 row.appendChild(nameCell);
 
-                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda", "envri"]
+                ["elixir","chaoss","helmholtz","fair_impact","fairsoft","openssf","cessda", "envri", "sbom", "joss"]
                     .forEach(key => {
                         const cell = document.createElement("td");
                         buildCrosswalkCell(cell, mapping[key]);
@@ -361,7 +308,6 @@
                     under GA 101129744 — EVERSE — HORIZON-INFRA-2023-EOSC-01-02
                 </small>
             </p>
-
             <p>
                 <small class="block">
                     This page was built on a free template designed by 
@@ -381,7 +327,6 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
     <script src="js/main.js"></script>
-
 
 </body>
 </html>
