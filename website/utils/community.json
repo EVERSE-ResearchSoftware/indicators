@@ -121,6 +121,9 @@
     "software_test_coverage": {
         "elixir": {
             "url": "https://zenodo.org/records/17035105#TestCoverageOfCodeAndFunction"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/quality-gate.html"
         }
     },
     "static_analysis_common_vulnerabilities": {
@@ -154,5 +157,13 @@
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
         }
+    },
+    "maintainability_index_ok": {
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/quality-gate.html#Maintainability"
+        }
+    },
+    "code_duplication_ok": {
+        "url": "https://docs.tech.cessda.eu/software/quality-gate.html"
     }
 }

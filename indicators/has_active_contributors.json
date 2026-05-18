@@ -1,0 +1,30 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/has_active_contributors",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Project has active contributors beyond core maintainers",
+  "abbreviation": "has_active_contributors",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_active_contributors" },
+  "description": "Contributions and/or other additions/updates to the project aren't centralised on only the core maintainers, but also other contributors.",
+  "status": "Active",
+  "keywords": [
+    "contributor", "active"
+  ],
+  "version": "1.0.0",
+  "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+  "source": {
+        "name": "2.5 Community",
+        "url": "https://github.com/EVERSE-ResearchSoftware/reference-framework/blob/main/source/02-framework/community.md"
+  },
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/community"},
+  "created": "18-05-2026"
+}
