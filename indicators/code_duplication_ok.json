@@ -25,6 +25,9 @@
     "url": "https://doi.org/10.1007/s00521-022-07707-2",
     "name": "Definition, approaches, and analysis of code duplication detection (2006–2020): a critical review"
    },
-  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+  "qualityDimension": [
+    { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+    { "@id": "https://w3id.org/everse/i/dimensions/community"}
+  ],
   "created": "14-04-2026"
 }

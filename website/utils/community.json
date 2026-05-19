@@ -161,9 +161,27 @@
     "maintainability_index_ok": {
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/quality-gate.html#Maintainability"
+        },
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
         }
     },
     "code_duplication_ok": {
-        "url": "https://docs.tech.cessda.eu/software/quality-gate.html"
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        },
+        "cessda": {
+            "url": "https://docs.tech.cessda.eu/software/quality-gate.html"
+        }
+    },
+    "code_smells_ok": {
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
+    },
+    "cyclomatic_complexity_ok": {
+        "envri": {
+            "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
     }
 }

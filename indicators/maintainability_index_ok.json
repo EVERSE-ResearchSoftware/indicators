@@ -36,6 +36,9 @@
       "name": "Code metrics - Maintainability index range and meaning"
     }
   ],
-  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+  "qualityDimension": [
+    { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
+    { "@id": "https://w3id.org/everse/i/dimensions/community"}
+  ],
   "created": "14-04-2026"
 }
