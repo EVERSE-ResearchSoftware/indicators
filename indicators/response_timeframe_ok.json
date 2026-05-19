@@ -1,0 +1,30 @@
+{
+  "@context": "https://w3id.org/everse/rsqi#",
+  "@id": "https://w3id.org/everse/i/indicators/response_timeframe_ok",
+  "@type": "SoftwareQualityIndicator",
+  "name": "Responses to issues and/or pull requests are done within a defined timeframe",
+  "abbreviation": "response_timeframe_ok",
+  "identifier": { "@id": "https://w3id.org/everse/i/indicators/response_timeframe_ok" },
+  "description": "The maintainers of the project's repository respond to issues and/or pull requests within a defined time frame that follows the related community's conventions.",
+  "status": "Active",
+  "keywords": [
+    "response", "issue", "pull request", "timeframe"
+  ],
+  "version": "1.0.0",
+  "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+  "source": {
+        "name": "2.5 Community",
+        "url": "https://github.com/EVERSE-ResearchSoftware/reference-framework/blob/main/source/02-framework/community.md"
+  },
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/community"},
+  "created": "18-05-2026"
+}

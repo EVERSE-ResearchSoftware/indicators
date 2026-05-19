@@ -29,6 +29,9 @@
             "name": "Software Requirements"
         }
     ],        
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/sustainability" },
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/sustaintability" },
+        { "@id": "https://w3id.org/everse/i/dimensions/community"}
+    ],
     "created": "17-03-2026"
 }
