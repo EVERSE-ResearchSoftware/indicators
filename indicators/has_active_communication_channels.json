@@ -2,7 +2,7 @@
   "@context": "https://w3id.org/everse/rsqi#",
   "@id": "https://w3id.org/everse/i/indicators/has_active_communication_channels",
   "@type": "SoftwareQualityIndicator",
-  "name": "Project has active communication channel/s",
+  "name": "Project has active communication channels",
   "abbreviation": "has_active_communication_channels",
   "identifier": { "@id": "https://w3id.org/everse/i/indicators/has_active_communication_channels" },
   "description": "The project has communication channels (i.e. Slack, Gitter, etc.) where users and developers can discuss project-related matters and also be up to date with updates, notices and other relevant information.",
