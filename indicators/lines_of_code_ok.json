@@ -32,9 +32,6 @@
       "name": "Socially-Informed Jupyter Notebook Quality: A Role- and Lifecycle-Aware Metrics Framework"
     }
   ],
-  "qualityDimension": [
-    { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
-    { "@id": "https://w3id.org/everse/i/dimensions/community"}
-  ],
+  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
   "created": "10-03-2026"
 }
