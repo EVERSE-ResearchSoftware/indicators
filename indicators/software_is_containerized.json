@@ -1,0 +1,28 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_is_containerized",
+    "@type": "SoftwareQualityIndicator",
+    "name": "The project's repository includes a container build file",
+    "abbreviation": "software_is_containerized",
+    "description": "The project's repository where its source code is hosted includes a container build file (i.e. Dockerfile, Podman, Apptainer, etc.).",
+    "source": {
+        "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/",
+        "name": "Software Package Checklist"
+    },
+    "keywords": ["container", "fair", "containerized", "docker"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_is_containerized"},
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "status": "Active",
+    "version": "1.0.0",
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "20-05-2026"
+  }
