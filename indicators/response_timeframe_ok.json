@@ -25,6 +25,9 @@
         "name": "2.5 Community",
         "url": "https://github.com/EVERSE-ResearchSoftware/reference-framework/blob/main/source/02-framework/community.md"
   },
-  "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/community"},
+  "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/community"},
+        { "@id": "https://w3id.org/everse/i/dimensions/open_source_software" }
+  ],
   "created": "18-05-2026"
 }

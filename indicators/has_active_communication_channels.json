@@ -28,7 +28,8 @@
   },
   "qualityDimension": [
     { "@id": "https://w3id.org/everse/i/dimensions/maintainability" },
-    { "@id": "https://w3id.org/everse/i/dimensions/community"}
+    { "@id": "https://w3id.org/everse/i/dimensions/community" },
+    { "@id": "https://w3id.org/everse/i/dimensions/open_source_software" }
   ],
   "created": "18-05-2026"
 }
