@@ -1,0 +1,35 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/software_has_license_for_file_types",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Software uses an appropriate license for different file types",
+    "abbreviation": "software_has_license_for_file_types",
+    "description": "This indicator determines if the project has an appropriate licenses for its different file types (e.g., documentation, images, code, tests, etc.). The REUSE specification defines good practices for accomplishing this task.",
+    "alternateName": "FRSM-15",
+    "keywords": [ "license", "metadata", "fair", "reuse", "reusability" ],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/software_has_license_for_file_types" },
+    "status": "Active",
+    "version": "1.0.0",
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "source": [
+        {
+            "url": "https://github.com/EVERSE-ResearchSoftware/schemas/issues/5",
+            "name": "Reusability Conditions"
+        },
+        {
+            "url": "https://fair-impact.github.io/RSMD-guidelines/6.Reuse_legal/",
+            "name": "Reuse, licensing and legal aspects. RSMD-6.2"
+        }
+    ],
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "created": "19-05-2026"
+}
