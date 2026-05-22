@@ -33,7 +33,6 @@ def collect_indicator_dimensions(item, filename, dimension_map):
     if isinstance(quality_dimensions, dict):
         quality_dimensions = [quality_dimensions]
 
-    # Nombre del fichero sin extensión
     indicator_name = Path(filename).stem
 
     for dimension in quality_dimensions:
@@ -42,11 +41,9 @@ def collect_indicator_dimensions(item, filename, dimension_map):
         if dimension_id:
             dimension_name = dimension_id.rstrip('/').split('/')[-1]
 
-            # Crear lista si no existe
             if dimension_name not in dimension_map:
                 dimension_map[dimension_name] = []
 
-            # Evitar duplicados
             if indicator_name not in dimension_map[dimension_name]:
                 dimension_map[dimension_name].append(indicator_name)
 
