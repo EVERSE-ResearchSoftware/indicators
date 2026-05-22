@@ -21,7 +21,47 @@ def load_json_file(filepath):
     """Load and parse a JSON file."""
     with open(filepath, 'r', encoding='utf-8') as f:
         return json.load(f)
+    
+    
+def collect_indicator_dimensions(item, filename, dimension_map):
+    """
+    Collect indicator filenames per dimension.
+    """
 
+    quality_dimensions = item.get("qualityDimension", [])
+
+    if isinstance(quality_dimensions, dict):
+        quality_dimensions = [quality_dimensions]
+
+    indicator_name = Path(filename).stem
+
+    for dimension in quality_dimensions:
+        dimension_id = dimension.get("@id", "")
+
+        if dimension_id:
+            dimension_name = dimension_id.rstrip('/').split('/')[-1]
+
+            if dimension_name not in dimension_map:
+                dimension_map[dimension_name] = []
+
+            if indicator_name not in dimension_map[dimension_name]:
+                dimension_map[dimension_name].append(indicator_name)
+
+
+def write_dimension_counts(dimension_map):
+    """
+    Write indicator counts per dimension to a JSON file.
+    """
+
+    output_file = (Path(__file__).parent.parent / "website" / "utils" / "indicators_per_dimension.json")
+
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(dict(dimension_map.items()), f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Generated indicators per dimension file: "f"{output_file}")
+    
 
 def generate_api(source_dir, output_file, context_url, collection_type, item_key, item_name):
     """
@@ -44,18 +84,33 @@ def generate_api(source_dir, output_file, context_url, collection_type, item_key
     
     # Load all items
     items = []
+
+    # Counter for dimensions
+    dimension_indicators = {}
+
     for filepath in json_files:
         try:
             item = load_json_file(filepath)
-            # Add the source filename for reference (useful for linking back to GitHub)
+
+            # Add the source filename for reference
             item['_filename'] = filepath.name
-            # Remove the "created" field if it exists (not needed in API)
+
+            # Remove the "created" field if it exists
             if 'created' in item:
                 del item['created']
+
+            # Count indicator dimensions
+            if source_dir.parts[-1] == "indicators":
+                collect_indicator_dimensions(item, filepath.name, dimension_indicators)
+
             items.append(item)
+
             print(f"✓ Loaded: {filepath.name}")
+
         except Exception as e:
             print(f"✗ Error loading {filepath.name}: {e}")
+            
+    write_dimension_counts(dimension_indicators)
     
     # Sort items by name
     items.sort(key=lambda x: x.get('name', ''))
