@@ -24,19 +24,24 @@
             margin-top: 15px;
             table-layout: fixed;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 2px 18px;
             text-align: left;
             vertical-align: top;
             font-size: 12px;
-            word-break: break-word;
+
+            word-break: normal;
+            overflow-wrap: break-word;
         }
+
         th {
             background-color: #1E90FF;
             color: white;
             font-size: 13px;
         }
+
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
@@ -44,27 +49,27 @@
         td p {
             margin: 0.4em 0;
         }
-    
+
         #search-wrapper {
             display: flex;
             gap: 10px;
             align-items: center;
             margin-bottom: 15px;
         }
-    
+
         #search-input {
             font-size: 16px;
             padding: 10px;
             width: 100%;
             border: 2px solid #005bb5;
         }
-    
+
         #search-input:focus {
             border-color: #1E90FF;
             box-shadow: 0 0 5px rgba(30, 144, 255, 0.6);
             outline: none;
         }
-    
+
         #clear-search {
             padding: 10px 15px;
             font-size: 16px;
@@ -72,26 +77,108 @@
             background-color: #ddd;
             cursor: pointer;
         }
-    
+
         #clear-search:hover {
             background-color: #bbb;
         }
-    
+
         #fh5co-about {
             padding-top: 20px;
             padding-bottom: 20px;
         }
-    
+
         #fh5co-about .container {
             padding-top: 0;
             padding-bottom: 0;
             margin-top: 0;
             margin-bottom: 0;
         }
-    
+
         .fh5co-heading {
             margin-top: 20px;
             margin-bottom: 20px;
+        }
+
+        .info-tooltip {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 6px;
+            cursor: pointer;
+            color: gray;
+
+            flex-shrink: 0;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+
+            position: absolute;
+            z-index: 9999;
+
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            background-color: white;
+            color: black;
+
+            padding: 10px 12px;
+            border-radius: 6px;
+
+            min-width: 200px;
+            max-width: 320px;
+
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: normal;
+
+            font-size: 12px;
+            line-height: 1.4;
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+            transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+
+            pointer-events: auto;
+        }
+
+        .tooltip-text * {
+            word-break: normal;
+            overflow-wrap: normal;
+        }
+
+        .tooltip-text::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent #333333 transparent;
+        }
+
+        .info-tooltip:hover .tooltip-text,
+        .tooltip-text:hover {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip-text ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .tooltip-text li {
+            margin-bottom: 4px;
+        }
+
+        .info-tooltip {
+            padding: 2px;
         }
     </style>
     
@@ -176,20 +263,26 @@
 
     <script>
         let allData = [];
+        let indicatorsPerDimension = {};
 
         async function fetchJSONFiles(directory) {
             try {
-                // Fetch from the new API endpoint
                 const response = await fetch(`${directory}/../api/dimensions.json`);
                 const apiData = await response.json();
-                
-                // Extract the dimensions array from the API response
+
                 allData = apiData.dimensions || [];
+
+                const indicatorsResponse = await fetch(
+                    `${directory}/../website/utils/indicators_per_dimension.json`
+                );
+
+                indicatorsPerDimension = await indicatorsResponse.json();
 
                 updateTable(allData);
                 handleHashNavigation();
+
             } catch (error) {
-                console.error("Error loading dimensions from API:", error);
+                console.error("Error loading data:", error);
             }
         }
 
@@ -235,6 +328,50 @@
 
                     iconLink.appendChild(iconImg);
                     nameCell.appendChild(iconLink);
+
+
+                    const infoWrapper = document.createElement("span");
+                    infoWrapper.className = "info-tooltip";
+
+                    infoWrapper.innerHTML = "ℹ";
+
+                    const tooltip = document.createElement("span");
+                    tooltip.className = "tooltip-text";
+
+                    const indicators = indicatorsPerDimension[data.name] || indicatorsPerDimension[rowId] || [];
+
+                    if (indicators.length > 0) {
+
+                        const title = document.createElement("div");
+                        title.style.fontWeight = "bold";
+                        title.style.marginBottom = "6px";
+                        title.textContent = "Associated indicators";
+
+                        tooltip.appendChild(title);
+
+                        const list = document.createElement("ul");
+                        list.style.paddingLeft = "18px";
+                        list.style.margin = "0";
+                        list.style.textAlign = "left";
+
+                        indicators.forEach(indicator => {
+                            const li = document.createElement("li");
+                            li.textContent = indicator;
+                            li.style.marginBottom = "4px";
+                            list.appendChild(li);
+                        });
+
+                        tooltip.appendChild(list);
+
+                    } else {
+
+                        tooltip.textContent = "No associated indicators";
+
+                    }
+
+                    infoWrapper.appendChild(tooltip);
+
+                    nameCell.appendChild(infoWrapper);
                 } else {
                     nameCell.textContent = data.name || "";
                 }
