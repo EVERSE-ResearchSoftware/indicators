@@ -36,6 +36,9 @@
     "descriptive_metadata": {
         "elixir": {
             "url": "https://zenodo.org/records/17035105#ProjectDescription"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         }
     },
     "functional_correctness": {
@@ -50,11 +53,16 @@
         
     },
     "has_published_package": {
-        
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+        }
     },
     "has_releases": {
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/releases.html"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         }
     },
     "human_code_review_requirement": {
@@ -85,7 +93,12 @@
         
     },
     "requirements_specified": {
-        
+        "skao": {
+            "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
+        }
     },
     "software_has_citation": {
         "cessda": {
@@ -103,6 +116,12 @@
         ],
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        },
+        "skao": {
+            "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "software_has_license": {
@@ -111,11 +130,23 @@
         },
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        },
+        "skao": {
+            "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "software_has_tests": {
         "elixir": {
             "url": "https://zenodo.org/records/17035105#TestCoverageOfCodeAndFunction"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "software_test_coverage": {
@@ -134,6 +165,9 @@
     "support_issue_tracking": {
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/issue-tracking.html"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "uses_fuzzing": {
@@ -143,7 +177,12 @@
         
     },
     "version_control_use": {
-        
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
+        }
     },
     "versioning_standards_use": {
         "elixir": {
@@ -151,11 +190,17 @@
         },
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/releases.html"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "has_contribution_guidelines": {
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/requirements.html"
+        },
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
     "maintainability_index_ok": {
@@ -182,6 +227,21 @@
     "cyclomatic_complexity_ok": {
         "envri": {
             "url": "https://ieeexplore.ieee.org/document/11216562"
+        }
+    },
+    "software_is_containerized": {
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+        }
+    },
+    "has_active_communication_channels": {
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
+        }
+    },
+    "response_timeframe_ok": {
+        "hsf": {
+            "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     }
 }
