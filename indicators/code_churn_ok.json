@@ -1,0 +1,28 @@
+{
+    "@context": "https://w3id.org/everse/rsqi#",
+    "@id": "https://w3id.org/everse/i/indicators/code_churn_ok",
+    "@type": "SoftwareQualityIndicator",
+    "name": "Code churn follows community conventions",
+    "abbreviation": "code_churn_ok",
+    "description": "The code churn (how much a source code has changed over time) of the project's source code is maintained within a reasonable level according to the community's standards and conventions. An example of how to calculate it would be code churn = added lines + deleted lines.",
+    "source": {
+        "url": "https://ieeexplore.ieee.org/document/738486",
+        "name": "Code churn: a measure for estimating the impact of code change"
+    },
+    "keywords": ["code", "churn", "maintainability"],
+    "identifier": { "@id": "https://w3id.org/everse/i/indicators/code_churn_ok"},
+    "contact": [
+    {
+        "@type": "schema:Person",
+        "name": "Daniel Garijo"
+    },
+    {
+        "@type": "schema:Person",
+        "name": "Andres Montero"
+    }
+    ],
+    "status": "Active",
+    "version": "1.0.0",
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability"},
+    "created": "20-05-2026"
+  }
