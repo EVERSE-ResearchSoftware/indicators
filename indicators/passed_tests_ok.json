@@ -2,9 +2,9 @@
     "@context": "https://w3id.org/everse/rsqi#",
     "@id": "https://w3id.org/everse/i/indicators/passed_tests_ok",
     "@type": "SoftwareQualityIndicator",
-    "name": "Passed tests by the software follows community conventions",
+    "name": "All tests defined by the software component pass",
     "abbreviation": "passed_tests_ok",
-    "description": "The software passes a reasonable amount of the tests provided within its own repository according to community's conventions and standards.",
+    "description": "The software tool passes all the tests provided within its own repository.",
     "source": {
         "url": "https://docs.codecov.com/docs/about-code-coverage",
         "name": "About Code Coverage"

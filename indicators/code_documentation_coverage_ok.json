@@ -6,8 +6,8 @@
     "abbreviation": "code_documentation_coverage_ok",
     "description": "This check tries to determine if the project's codebase is mostly documented according according to community conventions and standards (i.e. docstrings).",
     "source": {
-        "url": "",
-        "name": ""
+        "url": "https://interrogate.readthedocs.io/en/latest/",
+        "name": "interrogate"
     },
     "keywords": ["documentation", "docstring", "documentation coverage"],
     "identifier": { "@id": "https://w3id.org/everse/i/indicators/code_documentation_coverage_ok"},
@@ -23,6 +23,9 @@
     ],
     "status": "Active",
     "version": "1.0.0",
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability"},
+    "qualityDimension": [
+        { "@id": "https://w3id.org/everse/i/dimensions/maintainability"},
+        { "@id": "https://w3id.org/everse/i/dimensions/fairness"}
+    ],
     "created": "20-05-2026"
   }

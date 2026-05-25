@@ -4,7 +4,7 @@
     "@type": "SoftwareQualityIndicator",
     "name": "The project's repository includes a container build file",
     "abbreviation": "software_is_containerized",
-    "description": "The project's repository where its source code is hosted includes a container build file (i.e. Dockerfile, Podman, Apptainer, etc.).",
+    "description": "The project's repository where its source code is hosted includes a container build file to containerize it (i.e. Dockerfile, Podman, Apptainer, etc.).",
     "source": {
         "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/",
         "name": "Software Package Checklist"
