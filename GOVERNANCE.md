@@ -4,9 +4,9 @@ This repository is aimed at defining and maintaining Research Software Quality a
 
 The research software quality and project health indicators are used in: 
 - The [Research Software Quality Kit](https://github.com/EVERSE-ResearchSoftware/RSQKit), for annotating task pages.
-- The [TechRadar](), where tools helping measure or improve indicators are defined.
-- The [Research Software Quality Pipelines](), which provide actions to assess the indicators of a given repository.
-- The [DASHVerse]() dashboards, where they define what to visualize in a given tracked repository.
+- The [TechRadar](https://github.com/EVERSE-ResearchSoftware/TechRadar), where tools helping measure or improve indicators are defined.
+- The [Research Software Quality Pipelines](https://github.com/EVERSE-ResearchSoftware/QualityPipelines/tree/main), which provide actions to assess the indicators of a given repository.
+- The [DASHVerse](https://github.com/EVERSE-ResearchSoftware/DashVERSE) dashboards, where they define what to visualize in a given tracked repository.
 
 
 ## Indicator lifecycle
@@ -21,4 +21,3 @@ Once an indicator is added, reviewers will propagate it through the other tools:
 - Annotating the corresponding tasks in RSQKit.
 - Adding the corresponding tools to the TechRadar.
 - Improving the quality pipelines with open source tools required for assessing them.
-
