@@ -24,6 +24,6 @@
         "name": "Federica Quaglia",
         "email": "federica.quaglia@unipd.it"
     },
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability "},
+    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/maintainability"},
     "created": "03-12-2025"
  }
