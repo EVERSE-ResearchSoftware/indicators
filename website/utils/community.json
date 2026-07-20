@@ -1,6 +1,8 @@
 {
     "codemeta_completeness": {
-        
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+        }
     },
     "coupling_between_objects_ok": {
         "envri": {
@@ -23,6 +25,9 @@
         },
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/publication.html"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "archived_in_software_heritage": {
@@ -30,9 +35,7 @@
             "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
         }
     },
-    "dependency_management": {
-        
-    },
+    "dependency_management": {},
     "descriptive_metadata": {
         "elixir": {
             "url": "https://zenodo.org/records/17035105#ProjectDescription"
@@ -46,58 +49,44 @@
             "url": "https://zenodo.org/records/17035105#FunctionalCorrectness"
         }
     },
-    "has_ci-tests": {
-        
-    },
-    "has_no_linting_issues": {
-        
-    },
-    "has_published_package": {
-        "ossr": {
-            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
-        }
-    },
+    "has_ci-tests": {},
+    "has_no_linting_issues": {},
+    "has_published_package": {},
     "has_releases": {
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/releases.html"
-        },
-        "ossr": {
-            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         }
     },
-    "human_code_review_requirement": {
-        
-    },
+    "human_code_review_requirement": {},
     "listed_in_registry": {
-        
         "elixir": {
             "url": "https://zenodo.org/records/17035105#ListedInRegistries"
         },
         "cessda": {
             "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
-    "metadata_is_up_to_date": {
-        
-    },
-    "no_critical_vulnerability": {
-        
-    },
-    "no_leaked_credentials": {
-        
-    },
+    "metadata_is_up_to_date": {},
+    "no_critical_vulnerability": {},
+    "no_leaked_credentials": {},
     "persistent_and_unique_identifier": {
-        
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/"
+        }
     },
-    "repository_workflows": {
-        
-    },
+    "repository_workflows": {},
     "requirements_specified": {
         "skao": {
             "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
         },
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "software_has_citation": {
@@ -122,6 +111,9 @@
         },
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
+        },
+        "ossr": {
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "software_has_license": {
@@ -135,7 +127,7 @@
             "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
         },
         "ossr": {
-            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/guidelines/"
         },
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
@@ -170,12 +162,8 @@
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         }
     },
-    "uses_fuzzing": {
-        
-    },
-    "uses_tool_for_warnings_and_mistakes": {
-        
-    },
+    "uses_fuzzing": {},
+    "uses_tool_for_warnings_and_mistakes": {},
     "version_control_use": {
         "ossr": {
             "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
@@ -229,11 +217,7 @@
             "url": "https://ieeexplore.ieee.org/document/11216562"
         }
     },
-    "software_is_containerized": {
-        "ossr": {
-            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
-        }
-    },
+    "software_is_containerized": {},
     "has_active_communication_channels": {
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
