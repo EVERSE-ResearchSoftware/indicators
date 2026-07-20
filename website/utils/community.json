@@ -1,7 +1,7 @@
 {
     "codemeta_completeness": {
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         }
     },
     "coupling_between_objects_ok": {
@@ -27,7 +27,7 @@
             "url": "https://docs.tech.cessda.eu/software/publication.html"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "archived_in_software_heritage": {
@@ -41,7 +41,7 @@
             "url": "https://zenodo.org/records/17035105#ProjectDescription"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         }
     },
     "functional_correctness": {
@@ -66,19 +66,15 @@
             "url": "https://docs.tech.cessda.eu/software/code-archiving.html"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "metadata_is_up_to_date": {},
     "no_critical_vulnerability": {},
-    "no_leaked_credentials": {
-        "ossr": {
-            "url": "https://purl.org/escape/ossr"
-        }
-    },
+    "no_leaked_credentials": {},
     "persistent_and_unique_identifier": {
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/"
         }
     },
     "repository_workflows": {},
@@ -90,7 +86,7 @@
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "software_has_citation": {
@@ -117,7 +113,7 @@
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/onboarding/"
         }
     },
     "software_has_license": {
@@ -131,7 +127,7 @@
             "url": "https://developer.skao.int/en/latest/policies/fundamental-sw-requirements.html#standards-applicable-to-derived-software"
         },
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/guidelines/"
         },
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
@@ -170,7 +166,7 @@
     "uses_tool_for_warnings_and_mistakes": {},
     "version_control_use": {
         "ossr": {
-            "url": "https://purl.org/escape/ossr"
+            "url": "https://escape-ossr.gitlab.io/ossr-pages/contribute/checklist/"
         },
         "hsf": {
             "url": "https://hepsoftwarefoundation.org/projects/guidelines.html"
