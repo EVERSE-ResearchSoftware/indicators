@@ -22,6 +22,7 @@ The following template may guide you when creating a description of your indicat
 ### How is the measurement executed?
     Explain the exact process for assessing the indicator
 ```
+To contribute a pull request, please **use the `dev` branch**
 
 ### About a Quality Indicator's response
 
