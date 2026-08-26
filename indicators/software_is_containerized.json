@@ -23,6 +23,9 @@
     ],
     "status": "Active",
     "version": "1.0.0",
-    "qualityDimension": { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    "qualityDimension": [
+    { "@id": "https://w3id.org/everse/i/dimensions/fairness" },
+    { "@id": "https://w3id.org/everse/i/dimensions/susatinability" }
+    ],
     "created": "20-05-2026"
   }

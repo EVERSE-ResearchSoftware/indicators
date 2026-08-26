@@ -4,7 +4,7 @@
   "@type": "SoftwareQualityIndicator",
   "name": "Software has sufficient test coverage",
   "abbreviation": "software_test_coverage",
-  "description": "Indicates that the test suite covers most (or ideally all) the code branches, input fields, and functionality",
+  "description": "Indicates that the test suite covers most (or ideally all) the code branches, input fields, and functionality.",
   "keywords": [
     "test coverage",
     "code coverage",
@@ -42,6 +42,9 @@
     },
     {
       "@id": "https://w3id.org/everse/i/dimensions/functional_suitability"
+    },
+    {
+      "@id": "https://w3id.org/everse/i/dimensions/sustainability"
     }
   ],
   "created": "03-12-2025"
