@@ -397,5 +397,41 @@
             "mapping": "equivalent",
             "url": "https://joss.readthedocs.io/en/latest/review_checklist.html#CommunityGuidelines"
         }
+    },
+    "response_timeframe_ok": {
+        "chaoss": [
+            {
+                "mapping": "equivalent",
+                "url": "https://www.chaoss.community/kb/metric-time-to-first-response/"
+            },
+            {
+                "mapping": "broader",
+                "url": "https://www.chaoss.community/kb/metric-issue-response-time/"
+            }
+        ]
+    },
+    "has_active_contributors": {
+        "chaoss": {
+            "mapping": "narrower",
+            "url": "https://www.chaoss.community/kb/metric-contributors/"
+        }
+    },
+    "project_is_active": {
+        "chaoss": {
+            "mapping": "broader",
+            "url": "https://www.chaoss.community/kb/metric-activity-dates-and-times/"
+        }
+    },
+    "has_active_communication_channels": {
+        "chaoss": {
+            "mapping": "broader",
+            "url": "https://www.chaoss.community/kb/metric-collaboration-platform-activity/"
+        }
+    },
+    "code_churn_ok": {
+        "chaoss": {
+            "mapping": "narrower",
+            "url": "https://www.chaoss.community/kb/metric-code-changes-lines/"
+        }
     }
 }
